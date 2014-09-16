@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "RTCenaJogo.h"
 
 @interface RTCenaMenu : SKScene
 

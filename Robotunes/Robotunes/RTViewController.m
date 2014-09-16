@@ -8,42 +8,24 @@
 
 #import "RTViewController.h"
 
-@interface RTViewController ()
-
-@end
-
 @implementation RTViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
+    //Chama a classe mãe
     [super viewDidLoad];
-    NSLog(@"oi");
+    
+    //Inicia a view
+    SKView *skView = [[SKView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.height, self.view.bounds.size.width)];
+    [self.view addSubview:skView];
+    
+    //Cria a cena de menu
+    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+    menu.scaleMode = SKSceneScaleModeAspectFill;
+    
+    //Mostra a cena de menu
+    [skView presentScene:menu];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

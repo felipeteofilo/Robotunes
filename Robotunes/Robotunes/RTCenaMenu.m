@@ -10,4 +10,20 @@
 
 @implementation RTCenaMenu
 
+-(id)initWithSize:(CGSize)size
+{
+    if(self = [super initWithSize:size]){
+        NSLog(@"Você está no menu");
+        self.backgroundColor = [UIColor cyanColor];
+    }
+    return self;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size];
+    [self.view presentScene:jogo];
+}
+
+
 @end

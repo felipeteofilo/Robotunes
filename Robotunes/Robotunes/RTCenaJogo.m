@@ -10,4 +10,13 @@
 
 @implementation RTCenaJogo
 
+-(id)initWithSize:(CGSize)size
+{
+    if(self = [super initWithSize:size]){
+        NSLog(@"Você está no Jogo");
+        self.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
+
 @end
