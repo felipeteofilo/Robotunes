@@ -23,6 +23,7 @@
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
 		7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */; };
+		C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */; };
 		CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
@@ -62,6 +63,7 @@
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
 		7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IphoneStoryboard.storyboard; sourceTree = "<group>"; };
+		C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7531155319C8B55F00EC3955 /* CoreGraphics.framework in Frameworks */,
+				C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */,
 				7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */,
 				7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */,
 				7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		7531154F19C8B55F00EC3955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */,
 				7531155019C8B55F00EC3955 /* Foundation.framework */,
 				7531155219C8B55F00EC3955 /* CoreGraphics.framework */,
 				7531155419C8B55F00EC3955 /* UIKit.framework */,
@@ -251,6 +255,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				he,
 			);
 			mainGroup = 7531154419C8B55F00EC3955;
 			productRefGroup = 7531154E19C8B55F00EC3955 /* Products */;
@@ -374,6 +379,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Robotunes;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,6 +412,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = Robotunes;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -419,6 +426,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
+					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
@@ -435,6 +448,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
+					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
