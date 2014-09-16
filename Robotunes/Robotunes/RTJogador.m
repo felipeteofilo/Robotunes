@@ -70,28 +70,20 @@
 {
     //Se estiver indo para o lado direito...
     if([direcao isEqualToString:@"Direita"]){
+        //Faz a animação
+        [self.spriteNode runAction:self.acaoAndarDireita];
         
-        //Se puder ir mais para o lado direito...
-        if(self.position.x + self.spriteNode.size.width >= self.frame.size.width){
-            //Faz a animação
-            [self.spriteNode runAction:self.acaoAndarDireita];
-            
-            //Movimenta o personagem
-            [self.spriteNode runAction:self.acaoDancarDireita];
-        }
+        //Movimenta o personagem
+        [self.spriteNode runAction:self.acaoDancarDireita];
     }
     
     //Se estiver indo para o lado esquerdo...
     else if([direcao isEqualToString:@"Esquerda"]){
+        //Faz a animação
+        [self.spriteNode runAction:self.acaoAndarEsquerda];
         
-        //Se puder ir mais para o lado esquerdo...
-        if(self.position.x <= 0){
-            //Faz a animação
-            [self.spriteNode runAction:self.acaoAndarEsquerda];
-            
-            //Movimenta o personagem
-            [self.spriteNode runAction:self.acaoDancarEsquerda];
-        }
+        //Movimenta o personagem
+        [self.spriteNode runAction:self.acaoDancarEsquerda];
     }
 }
 
