@@ -22,6 +22,12 @@
 		7531157219C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
+		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
+		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
+		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
+		CDEA607519C8BBD90099EEA7 /* RTCenaJogo.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607419C8BBD90099EEA7 /* RTCenaJogo.m */; };
+		CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607A19C8BC160099EEA7 /* RTMusica.m */; };
+		CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607D19C8BC240099EEA7 /* RTNota.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,18 @@
 		7531157719C8B55F00EC3955 /* RobotunesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobotunesTests-Info.plist"; sourceTree = "<group>"; };
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
+		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
+		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
+		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
+		CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTViewController.m; sourceTree = "<group>"; };
+		CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaMenu.h; sourceTree = "<group>"; };
+		CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaMenu.m; sourceTree = "<group>"; };
+		CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaJogo.h; sourceTree = "<group>"; };
+		CDEA607419C8BBD90099EEA7 /* RTCenaJogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaJogo.m; sourceTree = "<group>"; };
+		CDEA607919C8BC160099EEA7 /* RTMusica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMusica.h; sourceTree = "<group>"; };
+		CDEA607A19C8BC160099EEA7 /* RTMusica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMusica.m; sourceTree = "<group>"; };
+		CDEA607C19C8BC240099EEA7 /* RTNota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNota.h; sourceTree = "<group>"; };
+		CDEA607D19C8BC240099EEA7 /* RTNota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNota.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +135,18 @@
 			children = (
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
+				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
+				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
+				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
+				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
+				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
+				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
+				CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */,
+				CDEA607419C8BBD90099EEA7 /* RTCenaJogo.m */,
+				CDEA607919C8BC160099EEA7 /* RTMusica.h */,
+				CDEA607A19C8BC160099EEA7 /* RTMusica.m */,
+				CDEA607C19C8BC240099EEA7 /* RTNota.h */,
+				CDEA607D19C8BC240099EEA7 /* RTNota.m */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
@@ -250,8 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7531156619C8B55F00EC3955 /* Robotunes.xcdatamodeld in Sources */,
+				CDEA607519C8BBD90099EEA7 /* RTCenaJogo.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
+				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
+				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
+				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
+				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
 				7531155F19C8B55F00EC3955 /* main.m in Sources */,
+				CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +486,7 @@
 				7531158119C8B55F00EC3955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7531158219C8B55F00EC3955 /* Build configuration list for PBXNativeTarget "RobotunesTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +495,7 @@
 				7531158419C8B55F00EC3955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
