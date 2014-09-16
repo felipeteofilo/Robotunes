@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTViewController.h"
 
 @interface RTAppDelegate : UIResponder <UIApplicationDelegate>
 
