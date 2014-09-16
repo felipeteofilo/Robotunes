@@ -22,7 +22,9 @@
 		7531157219C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
-		7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */; };
+		7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */; };
+		7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531159119C8CCA200EC3955 /* Storyboard.storyboard */; };
+		755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -60,7 +62,11 @@
 		7531157719C8B55F00EC3955 /* RobotunesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobotunesTests-Info.plist"; sourceTree = "<group>"; };
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
-		7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IphoneStoryboard.storyboard; sourceTree = "<group>"; };
+		7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewControllerTeste.h; sourceTree = "<group>"; };
+		7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTViewControllerTeste.m; sourceTree = "<group>"; };
+		7531159119C8CCA200EC3955 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBancoDeDadosController.h; sourceTree = "<group>"; };
+		755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBancoDeDadosController.m; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -137,11 +143,15 @@
 			children = (
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
-				7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */,
+				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
+				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
+				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
 				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
 				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
 				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
+				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
+				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
 				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
 				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
 				CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */,
@@ -262,9 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
+				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,9 +295,11 @@
 			files = (
 				7531156619C8B55F00EC3955 /* Robotunes.xcdatamodeld in Sources */,
 				CDEA607519C8BBD90099EEA7 /* RTCenaJogo.m in Sources */,
+				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
+				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
 				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
 				7531155F19C8B55F00EC3955 /* main.m in Sources */,

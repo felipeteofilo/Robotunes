@@ -16,12 +16,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    RTViewController *viewController = [[RTViewController alloc]init];
-    [self.window setRootViewController:viewController];
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//   // RTViewController *viewController = [[RTViewController alloc]init];
+//    RTViewControllerTeste *viewController = [[RTViewControllerTeste alloc]init];
+//    [self.window setRootViewController:viewController];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 
