@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A957FF49-CCE3-4D1B-9F95-033FA34039AF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Robotunes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6FD03FAC-1C52-4CD8-B147-A1EFFCD02715</key>
+		<string>https://github.com/felipeteofilo/Robotunes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Robotunes/Robotunes.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6FD03FAC-1C52-4CD8-B147-A1EFFCD02715</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/felipeteofilo/Robotunes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6FD03FAC-1C52-4CD8-B147-A1EFFCD02715</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6FD03FAC-1C52-4CD8-B147-A1EFFCD02715</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Robotunes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
