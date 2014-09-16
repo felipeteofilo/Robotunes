@@ -10,4 +10,25 @@
 
 @implementation RTMusica
 
+-(id)init
+{
+    if(self = [super init]){
+        //TODO
+    }
+    return self;
+}
+
+-(BOOL)acabou
+{
+    //TODO
+    return NO;
+}
+
+-(RTNota *)notaAtual: (float)tempo
+{
+    //TODO
+    return nil;
+}
+
+
 @end
