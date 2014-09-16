@@ -13,8 +13,14 @@
 -(id)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size]){
-        NSLog(@"Você está no Jogo");
+        //Acrescenta um fundo branco
         self.backgroundColor = [UIColor whiteColor];
+        
+        //Define a gravidade da Cena
+        self.physicsWorld.gravity = CGVectorMake(0, -3);
+        
+        //Determina que o delegate para colisão é a própria cena
+        self.physicsWorld.contactDelegate = self;
         
         //Cria a imagem de fundo
         [self criarImagemFundo];
@@ -22,6 +28,7 @@
         //Cria o chão
         [self criarChao];
         
+        //Cria o jogador
     }
     return self;
 }
@@ -45,6 +52,7 @@
     SKSpriteNode *chao = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.size.width, self.size.height * 0.01)];
     chao.anchorPoint = CGPointZero;
     chao.position = CGPointMake(0, 0);
+    chao.zPosition = -1;
     
     //Cria o corpo físico do chão
     chao.physicsBody =[SKPhysicsBody bodyWithRectangleOfSize:chao.size];
@@ -56,6 +64,14 @@
 
     //Adiciona o chão
     [self addChild:chao];
+}
+
+-(void)criarJogador
+{
+    self.jogador = [[RTJogador alloc]init];
+    self.jogador.spriteNode.size = CGSizeMake(self.frame.size.width * 0.2, self.frame.size.width * 0.2);
+    self.jogador.spriteNode.position = CGPointMake(self.frame.size.width * 0.5 - self.jogador.spriteNode.size.width / 2, self.frame.size.height * 0.015);
+    [self addChild:self.jogador];
 }
 
 @end

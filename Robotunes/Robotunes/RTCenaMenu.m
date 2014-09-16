@@ -13,7 +13,8 @@
 -(id)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size]){
-        NSLog(@"Você está no menu");
+        //TODO
+        
         self.backgroundColor = [UIColor cyanColor];
     }
     return self;
