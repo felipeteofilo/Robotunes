@@ -24,6 +24,7 @@
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
 		7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */; };
 		CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */; };
+		CD36E5F419C8CC81002BFEEF /* Fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD36E5F319C8CC81002BFEEF /* Fundo.png */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -63,6 +64,7 @@
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
 		7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IphoneStoryboard.storyboard; sourceTree = "<group>"; };
 		CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
+		CD36E5F319C8CC81002BFEEF /* Fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fundo.png; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD36E5F319C8CC81002BFEEF /* Fundo.png */,
 				CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */,
 				7531155A19C8B55F00EC3955 /* Robotunes-Info.plist */,
 				7531155B19C8B55F00EC3955 /* InfoPlist.strings */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */,
+				CD36E5F419C8CC81002BFEEF /* Fundo.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */,
