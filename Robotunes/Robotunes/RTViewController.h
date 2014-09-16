@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
+#import "RTCenaMenu.h"
+#import "RTCenaJogo.h"
 
 @interface RTViewController : UIViewController
 
