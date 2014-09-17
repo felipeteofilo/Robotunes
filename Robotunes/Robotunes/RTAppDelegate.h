@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "RTViewController.h"
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface RTAppDelegate : UIResponder <UIApplicationDelegate>
 

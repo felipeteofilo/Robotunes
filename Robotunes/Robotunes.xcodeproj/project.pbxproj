@@ -23,6 +23,8 @@
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
 		7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */; };
+		C591A6B219C9DBAF00DABF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C591A6B019C9DBAF00DABF83 /* Parse.framework */; };
+		C591A6B319C9DBAF00DABF83 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */; };
 		C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */; };
 		CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
@@ -63,6 +65,8 @@
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
 		7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IphoneStoryboard.storyboard; sourceTree = "<group>"; };
+		C591A6B019C9DBAF00DABF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
+		C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = Robotunes/Frameworks/Parse/ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
@@ -84,10 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C591A6B319C9DBAF00DABF83 /* ParseFacebookUtils.framework in Frameworks */,
 				7531155319C8B55F00EC3955 /* CoreGraphics.framework in Frameworks */,
 				C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */,
 				7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */,
 				7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */,
+				C591A6B219C9DBAF00DABF83 /* Parse.framework in Frameworks */,
 				7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +134,8 @@
 		7531154F19C8B55F00EC3955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C591A6B019C9DBAF00DABF83 /* Parse.framework */,
+				C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */,
 				C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */,
 				7531155019C8B55F00EC3955 /* Foundation.framework */,
 				7531155219C8B55F00EC3955 /* CoreGraphics.framework */,
@@ -431,6 +439,7 @@
 					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
 					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
+					"$(PROJECT_DIR)/Robotunes/Frameworks/Parse",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
@@ -453,6 +462,7 @@
 					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
 					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
+					"$(PROJECT_DIR)/Robotunes/Frameworks/Parse",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";

@@ -22,6 +22,12 @@
     RTViewController *viewController = [[RTViewController alloc]init];
     [self.window setRootViewController:viewController];
     [self.window makeKeyAndVisible];
+
+    
+    //Config Parse
+    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq"
+                  clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
+    
     return YES;
 }
 
