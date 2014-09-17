@@ -14,5 +14,7 @@
 
 
 +(void)salvarUsuario:(NSString*)nome pontos:(float)pontos ultimaVerificacao:(NSDate*)data;
++(void)salvarMusica :(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas;
++(int)ultimaMusica ;
 
 @end

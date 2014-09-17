@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"foi");
+   
     
     
 }
@@ -37,46 +37,66 @@
 }
 - (IBAction)gravar:(id)sender {
     
-    [RTBancoDeDadosController salvarUsuario:self.texto.text pontos:0 ultimaVerificacao:[NSDate date]];
+    NSArray *array = [NSArray arrayWithObjects:@"foi",@"mano", nil];
+    
+    [RTBancoDeDadosController salvarMusica:10 nome:@"MinhaMusica" notas:array];
     
     [self.texto resignFirstResponder];
 }
 
 - (IBAction)verificar:(id)sender {
-    RTAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
+//    RTAppDelegate *appDelegate =
+//    [[UIApplication sharedApplication] delegate];
+//    
+//    NSManagedObjectContext *context =
+//    [appDelegate managedObjectContext];
+//    
+//    NSEntityDescription *entityDesc =
+//    [NSEntityDescription entityForName:@"Musica"
+//                inManagedObjectContext:context];
+//    
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    [request setEntity:entityDesc];
+//    
+////    NSPredicate *pred =
+////    [NSPredicate predicateWithFormat:@"(nome = %@)",
+////     @"MinhaMusica"];
+////    [request setPredicate:pred];
+//    
+//    [request setResultType:NSDictionaryResultType];
+//    
+//    NSExpression *keyDaExpressao = [NSExpression expressionForKeyPath:@"idmusica"];
+//    
+//    NSExpression *max = [NSExpression expressionForFunction:@"max:" arguments:[NSArray arrayWithObject:keyDaExpressao]];
+//    
+//    NSExpressionDescription *descricaoDaExpressao = [[NSExpressionDescription alloc]init];
+//    
+//    [descricaoDaExpressao setName:@"maxValue"];
+//    [descricaoDaExpressao setExpression:max];
+//    [descricaoDaExpressao setExpressionResultType:NSInteger64AttributeType];
+//    
+//    [request setPropertiesToFetch:[NSArray arrayWithObject:descricaoDaExpressao]];
+//    
+//    
+//    NSError *error;
+//    NSArray *objects = [context executeFetchRequest:request
+//                                              error:&error];
+//    
+//    if ([objects count] == 0) {
+//        [self.retorno setText: @"No matches"];
+//    } else {
+//        
+//        for (int i = 0; i< objects.count; i++) {
+//            NSLog(@"Valor maximo: %@",[[objects objectAtIndex:i]valueForKey:@"maxValue"]);
+//            //NSLog([objects objectAtIndex:i]valueForKey:@"max"])
+//        }
+//        
+//        [self.retorno setText:[NSString stringWithFormat:
+//                        @"%lu matches found", (unsigned long)[objects count]]];
+//    }
     
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
+    NSLog(@"%d",[RTBancoDeDadosController ultimaMusica]);
     
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"Usuario"
-                inManagedObjectContext:context];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    
-    NSPredicate *pred =
-    [NSPredicate predicateWithFormat:@"(nome = %@)",
-     _texto.text];
-    [request setPredicate:pred];
-    
-    
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                              error:&error];
-    
-    if ([objects count] == 0) {
-        [self.retorno setText: @"No matches"];
-    } else {
-        
-        for (int i = 0; i< objects.count; i++) {
-            NSLog([[objects objectAtIndex:i]valueForKey:@"nome"]);
-        }
-        
-        [self.retorno setText:[NSString stringWithFormat:
-                        @"%lu matches found", (unsigned long)[objects count]]];
-    }
 }
 
 

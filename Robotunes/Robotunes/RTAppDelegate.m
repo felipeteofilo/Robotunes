@@ -16,28 +16,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-<<<<<<< HEAD
+//<<<<<<< HEAD
+////    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+////    // Override point for customization after application launch.
+////    self.window.backgroundColor = [UIColor whiteColor];
+////   // RTViewController *viewController = [[RTViewController alloc]init];
+////    RTViewControllerTeste *viewController = [[RTViewControllerTeste alloc]init];
+////    [self.window setRootViewController:viewController];
+////    [self.window makeKeyAndVisible];
+//=======
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor whiteColor];
-//   // RTViewController *viewController = [[RTViewController alloc]init];
-//    RTViewControllerTeste *viewController = [[RTViewControllerTeste alloc]init];
+//    RTViewController *viewController = [[RTViewController alloc]init];
 //    [self.window setRootViewController:viewController];
 //    [self.window makeKeyAndVisible];
-=======
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    RTViewController *viewController = [[RTViewController alloc]init];
-    [self.window setRootViewController:viewController];
-    [self.window makeKeyAndVisible];
-
-    
-    //Config Parse
-    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq"
-                  clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
-    
->>>>>>> origin/Leo
+//
+//    
+//    //Config Parse
+//    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq"
+//                  clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
+//    
+//>>>>>>> origin/Leo
     return YES;
 }
 
