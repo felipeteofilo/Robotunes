@@ -8,17 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "RTViewController.h"
-<<<<<<< HEAD
 #import "RTViewControllerTeste.h"
-=======
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
->>>>>>> origin/Leo
 
 @interface RTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;

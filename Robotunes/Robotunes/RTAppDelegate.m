@@ -16,7 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-<<<<<<< HEAD
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor whiteColor];
@@ -24,7 +23,13 @@
 //    RTViewControllerTeste *viewController = [[RTViewControllerTeste alloc]init];
 //    [self.window setRootViewController:viewController];
 //    [self.window makeKeyAndVisible];
-=======
+    
+    //Config Parse
+    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq" clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
+    
+    //Inicializa o FB p pegar info do user
+    [PFFacebookUtils initializeFacebook];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -32,13 +37,15 @@
     [self.window setRootViewController:viewController];
     [self.window makeKeyAndVisible];
 
-    
-    //Config Parse
-    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq"
-                  clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
-    
->>>>>>> origin/Leo
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
