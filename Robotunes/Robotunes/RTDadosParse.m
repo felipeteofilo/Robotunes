@@ -65,15 +65,34 @@
 
 //Atualiza musicas
 +(void)atualizaMusicasCoreData{
+    //Pega o ID da ultima musica
+    int ultimoIDMusicaDB=[RTBancoDeDadosController ultimaMusica];
+    
     //Verifica se precisa baixar
-    if ([RTDadosParse precisaAtualizar]) {
+    if ([RTDadosParse precisaAtualizar: ultimoIDMusicaDB]) {
         PFQuery *musicasNovas=[[PFQuery alloc]initWithClassName:@"Musicas"];
+        [musicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
         
-        musicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:<#(int)#>]
-        //Tenta baixar as musicas, montando um array
+        
+        
+        //Tenta baixar as musicas, montando um array // usa um metodo separado p executar em uma nova thread
+        [musicasNovas findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            //Código de erro para quanto excede qtde n de requisições
+            if (error.code == 155) {
+                [RTDadosParse aguardarTempo:@selector(atualizaMusicasCoreData)];
+            }else{
+                
+                //Salva as musicas baixadas em um array
+                
+            }
+        }];
         
         //Tenta salvar o array no core data
         
     }
+}
++(void)salvar
++(void)processaQuerry:(PFQuery*)querry{
+    
 }
 @end

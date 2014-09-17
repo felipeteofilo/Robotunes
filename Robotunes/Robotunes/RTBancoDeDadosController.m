@@ -139,6 +139,7 @@
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *novaMusica = [self procurarMusica:idMusica];
+    
     if (novaMusica == nil) {
         novaMusica = [NSEntityDescription
                       insertNewObjectForEntityForName:@"Musica"
@@ -150,6 +151,30 @@
     
     NSError *erro;
     [context save:&erro];
+}
+
+//Metodo recebe um array de dictionarys e para cada posicao salva uma nova musica no BD
++(void)salvarArrayMusicas:(NSArray*)arrayMusicas{
+    RTAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
+    
+    NSManagedObjectContext *contexto=[appDelegate managedObjectContext];
+    
+    for (int i=0; i < [arrayMusicas count]; i++) {
+        NSDictionary *musicaArray=[arrayMusicas objectAtIndex:i];
+        
+        NSManagedObject *novaMusica =[self procurarMusica:(int)[musicaArray objectForKey:@"idMusica" ]];
+        
+        if (!novaMusica) {
+            novaMusica =[NSEntityDescription insertNewObjectForEntityForName:@"Musica" inManagedObjectContext:contexto];
+            
+            [novaMusica setValue:[musicaArray objectForKey:@"idMusica"] forKey:@"idMusica"];
+            [novaMusica setValue:[musicaArray objectForKey:@"nomeMusica" ] forKey:@"nome"];
+            [novaMusica setValue:[musicaArray objectForKey:@"notas" ] forKey:@"notas"];
+        }
+    }
+    
+    NSError *erro;
+    [contexto save:&erro];
 }
 
 @end

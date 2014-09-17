@@ -11,6 +11,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
+#import "RTBancoDeDadosController.h"
+
 @interface RTDadosParse : NSObject
 
 
