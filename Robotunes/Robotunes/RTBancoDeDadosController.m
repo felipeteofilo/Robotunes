@@ -23,8 +23,6 @@
        // [newContact setValue: forKey:@"pontos"];
         
     }
-    
-    
 }
 
 +(NSManagedObject*)procurarUsuario :(NSString*)nome{
