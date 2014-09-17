@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RTViewController.h"
+<<<<<<< HEAD
+#import "RTViewControllerTeste.h"
+=======
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+>>>>>>> origin/Leo
 
 @interface RTAppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -10,4 +10,12 @@
 
 @implementation RTNota
 
+-(id)initComNome: (NSString *)nome
+{
+    if(self = [super init]){
+        //TODO
+    }
+    return self;
+}
+
 @end

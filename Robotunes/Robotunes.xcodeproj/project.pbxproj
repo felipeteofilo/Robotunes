@@ -22,11 +22,14 @@
 		7531157219C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
-		7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */; };
-		C591A6B219C9DBAF00DABF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C591A6B019C9DBAF00DABF83 /* Parse.framework */; };
-		C591A6B319C9DBAF00DABF83 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */; };
-		C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */; };
-		CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */; };
+		7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */; };
+		7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531159119C8CCA200EC3955 /* Storyboard.storyboard */; };
+		755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */; };
+		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
+		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
+		94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8619CA04C600E2C5BC /* Parse.framework */; };
+		94C0FB8919CA04C600E2C5BC /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8719CA04C600E2C5BC /* ParseFacebookUtils.framework */; };
+		94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -64,11 +67,17 @@
 		7531157719C8B55F00EC3955 /* RobotunesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobotunesTests-Info.plist"; sourceTree = "<group>"; };
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
-		7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IphoneStoryboard.storyboard; sourceTree = "<group>"; };
-		C591A6B019C9DBAF00DABF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
-		C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = Robotunes/Frameworks/Parse/ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
+		7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewControllerTeste.h; sourceTree = "<group>"; };
+		7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTViewControllerTeste.m; sourceTree = "<group>"; };
+		7531159119C8CCA200EC3955 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBancoDeDadosController.h; sourceTree = "<group>"; };
+		755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBancoDeDadosController.m; sourceTree = "<group>"; };
+		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		94C0FB8619CA04C600E2C5BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
+		94C0FB8719CA04C600E2C5BC /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = Robotunes/Frameworks/Parse/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		94C0FB8A19CA052A00E2C5BC /* RTDadosParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTDadosParse.h; sourceTree = "<group>"; };
+		94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTDadosParse.m; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -88,13 +97,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C591A6B319C9DBAF00DABF83 /* ParseFacebookUtils.framework in Frameworks */,
+				94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */,
 				7531155319C8B55F00EC3955 /* CoreGraphics.framework in Frameworks */,
-				C5CF9D2219C8E0D000163079 /* FacebookSDK.framework in Frameworks */,
 				7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */,
+				94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */,
 				7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */,
-				C591A6B219C9DBAF00DABF83 /* Parse.framework in Frameworks */,
 				7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */,
+				94C0FB8919CA04C600E2C5BC /* ParseFacebookUtils.framework in Frameworks */,
+				94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +144,10 @@
 		7531154F19C8B55F00EC3955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C591A6B019C9DBAF00DABF83 /* Parse.framework */,
-				C591A6B119C9DBAF00DABF83 /* ParseFacebookUtils.framework */,
-				C5CF9D2119C8E0D000163079 /* FacebookSDK.framework */,
+				94C0FB8619CA04C600E2C5BC /* Parse.framework */,
+				94C0FB8719CA04C600E2C5BC /* ParseFacebookUtils.framework */,
+				94C0FB8219CA04B200E2C5BC /* Bolts.framework */,
+				94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */,
 				7531155019C8B55F00EC3955 /* Foundation.framework */,
 				7531155219C8B55F00EC3955 /* CoreGraphics.framework */,
 				7531155419C8B55F00EC3955 /* UIKit.framework */,
@@ -151,11 +162,15 @@
 			children = (
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
-				7531158519C8BF7C00EC3955 /* IphoneStoryboard.storyboard */,
+				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
+				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
+				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
 				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
 				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
 				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
+				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
+				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
 				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
 				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
 				CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */,
@@ -167,6 +182,8 @@
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
+				94C0FB8A19CA052A00E2C5BC /* RTDadosParse.h */,
+				94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */,
 			);
 			path = Robotunes;
 			sourceTree = "<group>";
@@ -174,7 +191,6 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD36E5F119C8C95A002BFEEF /* RobotuneY3.png */,
 				7531155A19C8B55F00EC3955 /* Robotunes-Info.plist */,
 				7531155B19C8B55F00EC3955 /* InfoPlist.strings */,
 				7531155E19C8B55F00EC3955 /* main.m */,
@@ -249,9 +265,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "FELIPE TEOFILO SOUZA SANTOS";
 				TargetAttributes = {
-					7531154C19C8B55F00EC3955 = {
-						DevelopmentTeam = M25JU54534;
-					};
 					7531156C19C8B55F00EC3955 = {
 						TestTargetID = 7531154C19C8B55F00EC3955;
 					};
@@ -263,7 +276,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				he,
 			);
 			mainGroup = 7531154419C8B55F00EC3955;
 			productRefGroup = 7531154E19C8B55F00EC3955 /* Products */;
@@ -281,10 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7531158619C8BF7C00EC3955 /* IphoneStoryboard.storyboard in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
-				CD36E5F219C8C95A002BFEEF /* RobotuneY3.png in Resources */,
+				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,9 +316,12 @@
 			files = (
 				7531156619C8B55F00EC3955 /* Robotunes.xcdatamodeld in Sources */,
 				CDEA607519C8BBD90099EEA7 /* RTCenaJogo.m in Sources */,
+				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
+				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
+				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
 				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
 				7531155F19C8B55F00EC3955 /* main.m in Sources */,
@@ -387,7 +401,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = Robotunes;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,7 +433,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = Robotunes;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -432,12 +444,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
-					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/Parse",
 				);
@@ -445,7 +453,6 @@
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -455,12 +462,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Robotunes/FacebookSDK",
-					"$(PROJECT_DIR)/Robotunes/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/FacebookSDK",
 					"$(PROJECT_DIR)/Robotunes/Frameworks/Parse",
 				);
@@ -468,7 +471,6 @@
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
