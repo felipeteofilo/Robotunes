@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "RTCenaJogo.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "RTDadosParse.h"
 
 @interface RTCenaMenu : SKScene
 

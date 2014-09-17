@@ -17,4 +17,5 @@
 
 
 +(void)logarParse;
++(void)logout;
 @end

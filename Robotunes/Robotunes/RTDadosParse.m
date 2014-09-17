@@ -67,6 +67,10 @@
     }];
 }
 
++(void)logout{
+    [PFUser logOut];
+}
+
 //Atualiza musicas
 +(void)atualizaMusicasCoreData{
     //Pega o ID da ultima musica

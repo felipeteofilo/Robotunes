@@ -26,8 +26,17 @@
     
     //Mostra a cena de menu
     [skView presentScene:menu];
-
+    
+    FBLoginView *teste=[[FBLoginView alloc]init];
+    [teste setDelegate:self];
 }
 
+-(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
+    NSLog(@"talokado");
+}
+
+-(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
+    NSLog(@"nao ta lokado");
+}
 
 @end

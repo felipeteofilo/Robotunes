@@ -14,8 +14,11 @@
 {
     if(self = [super initWithSize:size]){
         //TODO
+        //[RTDadosParse logout];
         
         self.backgroundColor = [UIColor cyanColor];
+        
+        [RTDadosParse logarParse];
     }
     return self;
 }

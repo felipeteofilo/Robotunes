@@ -11,6 +11,6 @@
 #import "RTCenaMenu.h"
 #import "RTCenaJogo.h"
 
-@interface RTViewController : UIViewController
+@interface RTViewController : UIViewController<FBLoginViewDelegate>
 
 @end

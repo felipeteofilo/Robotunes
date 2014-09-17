@@ -16,23 +16,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    RTViewController *viewController = [[RTViewController alloc]init];
-//    [self.window setRootViewController:viewController];
-//    [self.window makeKeyAndVisible];
-    
     //Config Parse
-    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq" clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
+    [Parse setApplicationId:@"CWmSB78Ihayr92QxyWwh34IseTsQxu8qb68iaQ0v" clientKey:@"VSh7Kw4SqOJaZLGfPjcQ3OBaCbrNKGHv5XTButGs"];
     
     //Inicializa o FB p pegar info do user
-    //[PFFacebookUtils initializeFacebook];
+    [PFFacebookUtils initializeFacebook];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
     RTViewController *viewController = [[RTViewController alloc]init];
     [self.window setRootViewController:viewController];
     [self.window makeKeyAndVisible];

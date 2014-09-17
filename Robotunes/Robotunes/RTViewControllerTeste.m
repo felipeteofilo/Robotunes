@@ -26,8 +26,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
    
+    FBLoginView *login=[[FBLoginView alloc]init];
     
-    
+    [self.view addSubview:login];
 }
 
 - (void)didReceiveMemoryWarning
