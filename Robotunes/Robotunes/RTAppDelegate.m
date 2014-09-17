@@ -16,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+<<<<<<< HEAD
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor whiteColor];
@@ -23,6 +24,20 @@
 //    RTViewControllerTeste *viewController = [[RTViewControllerTeste alloc]init];
 //    [self.window setRootViewController:viewController];
 //    [self.window makeKeyAndVisible];
+=======
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    RTViewController *viewController = [[RTViewController alloc]init];
+    [self.window setRootViewController:viewController];
+    [self.window makeKeyAndVisible];
+
+    
+    //Config Parse
+    [Parse setApplicationId:@"NqcQibuUFOv31C9GEgGgX6CGC4PkRdgrmMufNbCq"
+                  clientKey:@"35lUV8WFSGImAEehmZ3Nv9paqinvJ6L0Jzn2L47C"];
+    
+>>>>>>> origin/Leo
     return YES;
 }
 
