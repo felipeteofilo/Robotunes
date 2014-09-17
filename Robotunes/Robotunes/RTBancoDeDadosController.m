@@ -19,11 +19,18 @@
     NSManagedObject *newContact = [self procurarUsuario:nome];
     
     if (newContact == nil) {
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
         [newContact setValue:nome forKey:@"nome"];
-       // [newContact setValue: forKey:@"pontos"];
-        
+    }
+    [newContact setValue:[NSNumber numberWithFloat:pontos] forKey:@"pontos"];
+    if (data != nil) {
+        [newContact setValue:data forKey:@"ultimaverificacao"];
     }
     
+    NSError *erro;
+    [context save:&erro];
     
 }
 
@@ -56,7 +63,7 @@
         return nil;
     }
     else{
-        return [objects objectAtIndex:1];
+        return [objects objectAtIndex:0];
     }
     
 }

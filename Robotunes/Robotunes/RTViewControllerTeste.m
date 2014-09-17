@@ -8,10 +8,12 @@
 
 #import "RTViewControllerTeste.h"
 #import "RTAppDelegate.h"
+#import "RTBancoDeDadosController.h"
 
 @interface RTViewControllerTeste ()
 @property (strong, nonatomic) IBOutlet UITextField *texto;
 @property (strong, nonatomic) IBOutlet UILabel *retorno;
+
 
 @end
 
@@ -35,18 +37,7 @@
 }
 - (IBAction)gravar:(id)sender {
     
-    RTAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact;
-    newContact = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"Usuario"
-                  inManagedObjectContext:context];
-    
-    [newContact setValue:self.texto.text forKey:@"nome"];
-    NSError *error;
-    [context save:&error];
+    [RTBancoDeDadosController salvarUsuario:self.texto.text pontos:0 ultimaVerificacao:[NSDate date]];
     
     [self.texto resignFirstResponder];
 }
