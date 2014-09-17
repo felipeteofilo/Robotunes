@@ -11,6 +11,7 @@
 #import "RTViewControllerTeste.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface RTAppDelegate : UIResponder <UIApplicationDelegate>
 

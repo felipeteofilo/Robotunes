@@ -28,7 +28,11 @@
 
 //Aguarda um seg requisisão excedeu o limite
 +(void)aguardarTempo:(SEL)seletorMetodoRetorno{
+    //Cria uma thread
     
+    //da sleep de 1 seg
+    
+        //Executa metodo
 }
 
 +(int)ultimoIDMusica{
@@ -70,28 +74,26 @@
     
     //Verifica se precisa baixar
     if ([RTDadosParse precisaAtualizar: ultimoIDMusicaDB]) {
-        PFQuery *musicasNovas=[[PFQuery alloc]initWithClassName:@"Musicas"];
-        [musicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
+        PFQuery *queryMusicasNovas=[[PFQuery alloc]initWithClassName:@"Musicas"];
+        [queryMusicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
         
-        
+        //Configura a query p pegar apenas alguns campos da tabela
+        [queryMusicasNovas selectKeys:@[@"idMusica",@"nomeMusica",@"notas"]];
         
         //Tenta baixar as musicas, montando um array // usa um metodo separado p executar em uma nova thread
-        [musicasNovas findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [queryMusicasNovas findObjectsInBackgroundWithBlock:^(NSArray *novasMusicas, NSError *error) {
             //Código de erro para quanto excede qtde n de requisições
             if (error.code == 155) {
                 [RTDadosParse aguardarTempo:@selector(atualizaMusicasCoreData)];
             }else{
-                
-                //Salva as musicas baixadas em um array
-                
+                if (![novasMusicas count]==0) {
+                    //Tenta salvar o array no core data
+                    [RTBancoDeDadosController salvarArrayMusicas:novasMusicas];
+                }
             }
         }];
-        
-        //Tenta salvar o array no core data
-        
     }
 }
-+(void)salvar
 +(void)processaQuerry:(PFQuery*)querry{
     
 }
