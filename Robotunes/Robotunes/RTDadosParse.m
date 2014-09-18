@@ -48,7 +48,7 @@
 +(void)logarParse{
     
     //Pega as info basicas do user
-    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInWithPermissions:@[@"publish_actions",@"user_games_activity"] block:^(PFUser *user, NSError *error) {
 
         //Não logou
         if (!user) {
