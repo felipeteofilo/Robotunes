@@ -10,7 +10,14 @@
 #import "RTCenaJogo.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "RTDadosParse.h"
+#import "RTBancoDeDadosController.h"
 
 @interface RTCenaMenu : SKScene
+
+@property int numeroDeMusicas;
+
+@property int musicaEscolhida;
+
+
 
 @end

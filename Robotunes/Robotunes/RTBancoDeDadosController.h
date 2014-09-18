@@ -17,5 +17,6 @@
 +(void)salvarMusica :(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas;
 +(void)salvarArrayMusicas:(NSArray*)arrayMusicas;
 +(int)ultimaMusica ;
++(NSManagedObject*)procurarMusica :(int)idMusica;
 
 @end

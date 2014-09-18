@@ -14,7 +14,9 @@
 {
     if(self = [super initWithSize:size]){
         
-       
+        self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
+        self.musicaEscolhida = 1;
+        
         
         SKSpriteNode * fundo = [SKSpriteNode spriteNodeWithImageNamed:@"fundo"];
         [fundo setSize:self.frame.size];
@@ -54,8 +56,15 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size];
-    [self.view presentScene:jogo];
+    if (self.musicaEscolhida >= self.numeroDeMusicas) {
+        self.musicaEscolhida = 0;
+        
+    }
+    self.musicaEscolhida++;
+    
+    NSLog(@"%d",self.musicaEscolhida);
+//    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size];
+//    [self.view presentScene:jogo];
 }
 
 
