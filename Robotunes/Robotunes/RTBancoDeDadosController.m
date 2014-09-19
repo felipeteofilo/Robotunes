@@ -21,13 +21,16 @@
     if (newContact == nil) {
         [newContact setValue:nome forKey:@"nome"];
     }
+    
+    NSError *erro;
+    [context save:&erro];
 }
 
 +(NSManagedObject*)procurarUsuario :(NSString*)nome{
     return nil;
 }
 
-+(NSManagedObject*)procurarUsuario{
++(Usuario*)procurarUsuario{
     
     RTAppDelegate *appDelegate =
     [[UIApplication sharedApplication] delegate];
@@ -152,6 +155,8 @@
         
         [RTBancoDeDadosController salvarMusica:[[musicaDictionary objectForKey:@"idMusica"]intValue] nome:[musicaDictionary valueForKey:@"nomeMusica"] notas:[musicaDictionary valueForKey:@"notasMusica"]];
     }
+    
+    [RTBancoDeDadosController atualizarDataVerificacao];
 }
 +(float)pontuacaoSalva{
     RTAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
@@ -169,7 +174,7 @@
     if ([objetos count]==0) {
         return 0;
     }else{
-        return [[[objetos objectAtIndex:0]valueForKey:@"pontos"]intValue];
+        return [[[objetos objectAtIndex:0]valueForKey:@"pontos"]floatValue];
     }
 }
 
@@ -204,6 +209,9 @@
         //Marca para sincronizar para tentar postar no FB na prox vez que tiver net
         [infoUser setValue:[NSNumber numberWithBool:YES] forKey:@"sincronizarpontos"];
     }
+    
+    NSError *erro;
+    [contexto save:&erro];
 }
 
 +(NSDictionary*)infoMusica:(int)idMusica{
@@ -217,5 +225,28 @@
     [infoMusica setValue:[musicaSalva notas] forKey:@"notas"];
     
     return infoMusica;
+}
+
++(NSDate*)ultimaDataVerificacao{
+    Usuario *infoUser=[RTBancoDeDadosController procurarUsuario];
+    
+    NSDate *dataRetorno=[infoUser ultimaverificacao];
+    
+    return [RTUteis formataData:dataRetorno];
+}
+
++(void)atualizarDataVerificacao{
+    NSManagedObjectContext *contexto=[RTBancoDeDadosController contextoApp];
+    Usuario *infoUser=[RTBancoDeDadosController procurarUsuario];
+    
+    if (!infoUser) {
+        infoUser =[NSEntityDescription insertNewObjectForEntityForName:@"Usuario" inManagedObjectContext:contexto];
+    }
+    
+    [infoUser setUltimaverificacao:[RTUteis formataData:[NSDate date]]];
+    
+    
+    NSError *erro;
+    [contexto save:&erro];
 }
 @end

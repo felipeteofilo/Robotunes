@@ -73,8 +73,22 @@
     [PFUser logOut];
 }
 
++(BOOL)possuiConexaoParse{
+    return [RTUteis possuiConexaoServidor:@"www.parse.com"];
+}
+
 //Atualiza musicas
 +(void)atualizaMusicasCoreData{
+    //Verifica se tem internet
+    if ((![RTUteis possuiConexao]) || (![RTDadosParse possuiConexaoParse]) ) {
+        return;
+    }
+    
+    //Verifica se está no prazo de att
+    if ([RTUteis diasEntreDataInicial:[RTBancoDeDadosController ultimaDataVerificacao] andDate:[RTUteis formataData:[NSDate date]]] < 1) {
+        return;
+    }
+    
     //Pega o ID da ultima musica
     int ultimoIDMusicaDB=[RTBancoDeDadosController ultimaMusica];
     
@@ -101,7 +115,6 @@
                         [infoMusica setValue:musica[@"nomeMusica"] forKey:@"nomeMusica"];
                         [infoMusica setValue:musica[@"idMusica"] forKey:@"idMusica"];
                         [infoMusica setValue:[NSArray arrayWithArray:[musica objectForKey:@"notasMusica"]] forKey:@"notasMusica"];
-                        
                         
                         [novasMusicas addObject:infoMusica];
                     }

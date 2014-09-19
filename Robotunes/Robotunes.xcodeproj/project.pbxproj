@@ -28,6 +28,11 @@
 		7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150719CB5B40003487E8 /* RobotuneB2.png */; };
 		7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150819CB5B40003487E8 /* RobotuneR1.png */; };
 		7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150919CB5B40003487E8 /* RobotuneY3.png */; };
+		9486ED6D19CCD68C007BDCD9 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486ED6C19CCD68C007BDCD9 /* Usuario.m */; };
+		9486ED7019CCD69D007BDCD9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486ED6F19CCD69D007BDCD9 /* Reachability.m */; };
+		9486ED7319CCD6A7007BDCD9 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486ED7219CCD6A7007BDCD9 /* Musica.m */; };
+		9486ED7719CCD6BE007BDCD9 /* RTUteis.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486ED7619CCD6BE007BDCD9 /* RTUteis.m */; };
+		9486ED7A19CCD6F4007BDCD9 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486ED7919CCD6F4007BDCD9 /* RTBarraStatus.m */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
 		94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8619CA04C600E2C5BC /* Parse.framework */; };
@@ -40,8 +45,6 @@
 		94C0FB9619CA0AC200E2C5BC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */; };
 		94C0FB9819CA0AD200E2C5BC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9719CA0AD200E2C5BC /* Security.framework */; };
 		94C0FB9A19CA0ADC00E2C5BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */; };
-		C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526B19CC82E800C6A0A4 /* Musica.m */; };
-		C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -88,6 +91,16 @@
 		7598150719CB5B40003487E8 /* RobotuneB2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneB2.png; sourceTree = "<group>"; };
 		7598150819CB5B40003487E8 /* RobotuneR1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneR1.png; sourceTree = "<group>"; };
 		7598150919CB5B40003487E8 /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
+		9486ED6B19CCD68C007BDCD9 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		9486ED6C19CCD68C007BDCD9 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
+		9486ED6E19CCD69D007BDCD9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9486ED6F19CCD69D007BDCD9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9486ED7119CCD6A7007BDCD9 /* Musica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musica.h; sourceTree = "<group>"; };
+		9486ED7219CCD6A7007BDCD9 /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musica.m; sourceTree = "<group>"; };
+		9486ED7519CCD6BE007BDCD9 /* RTUteis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTUteis.h; sourceTree = "<group>"; };
+		9486ED7619CCD6BE007BDCD9 /* RTUteis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTUteis.m; sourceTree = "<group>"; };
+		9486ED7819CCD6F4007BDCD9 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
+		9486ED7919CCD6F4007BDCD9 /* RTBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBarraStatus.m; sourceTree = "<group>"; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		94C0FB8619CA04C600E2C5BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
@@ -101,10 +114,6 @@
 		94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		94C0FB9719CA0AD200E2C5BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C5F8526A19CC82E800C6A0A4 /* Musica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musica.h; sourceTree = "<group>"; };
-		C5F8526B19CC82E800C6A0A4 /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musica.m; sourceTree = "<group>"; };
-		C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
-		C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBarraStatus.m; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -200,6 +209,7 @@
 		7531155819C8B55F00EC3955 /* Robotunes */ = {
 			isa = PBXGroup;
 			children = (
+				9486ED7419CCD6AC007BDCD9 /* Conectividade */,
 				C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
@@ -220,13 +230,15 @@
 				CDEA607A19C8BC160099EEA7 /* RTMusica.m */,
 				CDEA607C19C8BC240099EEA7 /* RTNota.h */,
 				CDEA607D19C8BC240099EEA7 /* RTNota.m */,
-				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
-				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
 				94C0FB8A19CA052A00E2C5BC /* RTDadosParse.h */,
 				94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */,
+				9486ED7519CCD6BE007BDCD9 /* RTUteis.h */,
+				9486ED7619CCD6BE007BDCD9 /* RTUteis.m */,
+				9486ED7819CCD6F4007BDCD9 /* RTBarraStatus.h */,
+				9486ED7919CCD6F4007BDCD9 /* RTBarraStatus.m */,
 			);
 			path = Robotunes;
 			sourceTree = "<group>";
@@ -272,11 +284,22 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		9486ED7419CCD6AC007BDCD9 /* Conectividade */ = {
+			isa = PBXGroup;
+			children = (
+				9486ED6E19CCD69D007BDCD9 /* Reachability.h */,
+				9486ED6F19CCD69D007BDCD9 /* Reachability.m */,
+			);
+			name = Conectividade;
+			sourceTree = "<group>";
+		};
 		C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C5F8526A19CC82E800C6A0A4 /* Musica.h */,
-				C5F8526B19CC82E800C6A0A4 /* Musica.m */,
+				9486ED6B19CCD68C007BDCD9 /* Usuario.h */,
+				9486ED6C19CCD68C007BDCD9 /* Usuario.m */,
+				9486ED7119CCD6A7007BDCD9 /* Musica.h */,
+				9486ED7219CCD6A7007BDCD9 /* Musica.m */,
 			);
 			name = EntidadesCoreData;
 			sourceTree = "<group>";
@@ -387,14 +410,17 @@
 				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
+				9486ED7319CCD6A7007BDCD9 /* Musica.m in Sources */,
+				9486ED7A19CCD6F4007BDCD9 /* RTBarraStatus.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
-				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
 				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
+				9486ED7019CCD69D007BDCD9 /* Reachability.m in Sources */,
+				9486ED6D19CCD68C007BDCD9 /* Usuario.m in Sources */,
 				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
+				9486ED7719CCD6BE007BDCD9 /* RTUteis.m in Sources */,
 				7531155F19C8B55F00EC3955 /* main.m in Sources */,
-				C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */,
 				CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

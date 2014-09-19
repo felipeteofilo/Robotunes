@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "RTAppDelegate.h"
+#import "RTUteis.h"
+//Classes para acessar as entidades
 #import "Musica.h"
+#import "Usuario.h"
 
 @interface RTBancoDeDadosController : NSObject
-
-
 
 +(void)salvarUsuario:(NSString*)nome pontos:(float)pontos ultimaVerificacao:(NSDate*)data;
 +(void)salvarMusica :(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas;
@@ -21,4 +22,6 @@
 +(float)pontuacaoSalva;
 +(void)salvarPontuacaoUser:(float)pontos;
 +(NSDictionary*)infoMusica:(int)idMusica;
++(void)atualizarDataVerificacao;
++(NSDate*)ultimaDataVerificacao;
 @end
