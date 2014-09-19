@@ -18,4 +18,5 @@
 
 +(void)logarParse;
 +(void)logout;
++(void)atualizaMusicasCoreData;
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RTAppDelegate.h"
+#import "Musica.h"
 
 @interface RTBancoDeDadosController : NSObject
 
@@ -17,6 +18,7 @@
 +(void)salvarMusica :(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas;
 +(void)salvarArrayMusicas:(NSArray*)arrayMusicas;
 +(int)ultimaMusica ;
-+(NSManagedObject*)procurarMusica :(int)idMusica;
-
++(float)pontuacaoSalva;
++(void)salvarPontuacaoUser:(float)pontos;
++(NSDictionary*)infoMusica:(int)idMusica;
 @end

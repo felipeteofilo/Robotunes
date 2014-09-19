@@ -20,12 +20,14 @@
     
     if (newContact == nil) {
         [newContact setValue:nome forKey:@"nome"];
-       // [newContact setValue: forKey:@"pontos"];
-        
     }
 }
 
 +(NSManagedObject*)procurarUsuario :(NSString*)nome{
+    return nil;
+}
+
++(NSManagedObject*)procurarUsuario{
     
     RTAppDelegate *appDelegate =
     [[UIApplication sharedApplication] delegate];
@@ -40,12 +42,6 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred =
-    [NSPredicate predicateWithFormat:@"(nome = %@)",
-     nome];
-    [request setPredicate:pred];
-    
-    
     NSError *error;
     NSArray *objects = [context executeFetchRequest:request
                                               error:&error];
@@ -54,17 +50,14 @@
         return nil;
     }
     else{
-        return [objects objectAtIndex:1];
+        return [objects objectAtIndex:0];
     }
     
 }
-+(NSManagedObject*)procurarMusica :(int)idMusica{
-    
-    RTAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
+//Alterado para retornar a classe especifica da entidade Musica
+//MUSICA = TABELA MUSICA COREDATA
++(Musica*)procurarMusica :(int)idMusica{
+    NSManagedObjectContext *context = [RTBancoDeDadosController contextoApp];
     
     NSEntityDescription *descricaoEntidade =
     [NSEntityDescription entityForName:@"Musica"
@@ -89,13 +82,9 @@
     else{
         return [objects objectAtIndex:0];
     }
-    
 }
 
-
-
 +(int)ultimaMusica {
-    
     RTAppDelegate *appDelegate =
     [[UIApplication sharedApplication] delegate];
     
@@ -136,20 +125,21 @@
 }
 
 +(void)salvarMusica:(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas{
-    RTAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [RTBancoDeDadosController contextoApp];
     
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *novaMusica = [self procurarMusica:idMusica];
+    //Alterado para usar a classe especifica da Entidade
+    //MUSICA = TABELA MUSICA COREDATA
+    Musica *novaMusicaSalvar=[self procurarMusica:idMusica];
     
-    if (novaMusica == nil) {
-        novaMusica = [NSEntityDescription
-                      insertNewObjectForEntityForName:@"Musica"
-                      inManagedObjectContext:context];
-        [novaMusica setValue:[NSNumber numberWithInt:idMusica] forKey:@"idmusica"];
-        [novaMusica setValue:nome forKey:@"nome"];
+    if (novaMusicaSalvar == nil) {
+        novaMusicaSalvar = [NSEntityDescription
+                            insertNewObjectForEntityForName:@"Musica"
+                            inManagedObjectContext:context];
+        
+        [novaMusicaSalvar setIdmusica:[NSNumber numberWithInt:idMusica]];
+        [novaMusicaSalvar setNome:nome];
     }
-    [novaMusica setValue:notas forKey:@"notas"];
+    [novaMusicaSalvar setNotas:notas];
     
     NSError *erro;
     [context save:&erro];
@@ -157,26 +147,75 @@
 
 //Metodo recebe um array de dictionarys e para cada posicao salva uma nova musica no BD
 +(void)salvarArrayMusicas:(NSArray*)arrayMusicas{
+    for (int i=0; i < [arrayMusicas count]; i++) {
+        NSDictionary *musicaDictionary=[arrayMusicas objectAtIndex:i];
+        
+        [RTBancoDeDadosController salvarMusica:[[musicaDictionary objectForKey:@"idMusica"]intValue] nome:[musicaDictionary valueForKey:@"nomeMusica"] notas:[musicaDictionary valueForKey:@"notasMusica"]];
+    }
+}
++(float)pontuacaoSalva{
     RTAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
-    
     NSManagedObjectContext *contexto=[appDelegate managedObjectContext];
     
-    for (int i=0; i < [arrayMusicas count]; i++) {
-        NSDictionary *musicaArray=[arrayMusicas objectAtIndex:i];
-        
-        NSManagedObject *novaMusica =[self procurarMusica:(int)[musicaArray objectForKey:@"idMusica" ]];
-        
-        if (!novaMusica) {
-            novaMusica =[NSEntityDescription insertNewObjectForEntityForName:@"Musica" inManagedObjectContext:contexto];
-            
-            [novaMusica setValue:[musicaArray objectForKey:@"idMusica"] forKey:@"idMusica"];
-            [novaMusica setValue:[musicaArray objectForKey:@"nomeMusica" ] forKey:@"nome"];
-            [novaMusica setValue:[musicaArray objectForKey:@"notas" ] forKey:@"notas"];
-        }
-    }
+    //Cria a requisicao
+    NSFetchRequest *requisicao=[[NSFetchRequest alloc]initWithEntityName:@"Usuario"];
+    [requisicao setPropertiesToFetch:@[@"pontos"]];
     
-    NSError *erro;
-    [contexto save:&erro];
+    [requisicao setResultType:NSDictionaryResultType];
+    
+    NSError *error;
+    NSArray *objetos=[contexto executeFetchRequest:requisicao error:&error];
+    
+    if ([objetos count]==0) {
+        return 0;
+    }else{
+        return [[[objetos objectAtIndex:0]valueForKey:@"pontos"]intValue];
+    }
 }
 
+//Pega o contexto do app p manipular o BD
++(NSManagedObjectContext*)contextoApp{
+    RTAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
+    return [appDelegate managedObjectContext];
+}
+
++(void)salvarPontuacaoUser:(float)pontos{
+    NSManagedObjectContext *contexto=[RTBancoDeDadosController contextoApp];
+    
+    float ultimaPontuacao=[RTBancoDeDadosController pontuacaoSalva];
+    
+    //Só salva a pontuação se for maior q a anterior
+    if (!pontos > ultimaPontuacao) {
+        return;
+    }
+    
+    NSManagedObject *infoUser=[RTBancoDeDadosController procurarUsuario];
+    
+    if (!infoUser) {
+        //Não encontrou o user add novo registro
+        infoUser=[NSEntityDescription insertNewObjectForEntityForName:@"Usuario" inManagedObjectContext:contexto];
+        
+        [infoUser setValue:[NSNumber numberWithFloat:pontos] forKey:@"pontos"];
+        [infoUser setValue:[NSNumber numberWithBool:YES] forKey:@"sincronizarpontos"];
+    }else{
+        //Encontrou atualiza
+        [infoUser setValue:[NSNumber numberWithFloat:pontos] forKey:@"pontos"];
+        
+        //Marca para sincronizar para tentar postar no FB na prox vez que tiver net
+        [infoUser setValue:[NSNumber numberWithBool:YES] forKey:@"sincronizarpontos"];
+    }
+}
+
++(NSDictionary*)infoMusica:(int)idMusica{
+    //MUSICA = TABELA MUSICA DO CORE DATA
+    Musica *musicaSalva=[RTBancoDeDadosController procurarMusica:idMusica];
+    
+    NSMutableDictionary *infoMusica=[[NSMutableDictionary alloc]init];
+    
+    
+    [infoMusica setValue:[musicaSalva nome] forKey:@"nome"];
+    [infoMusica setValue:[musicaSalva notas] forKey:@"notas"];
+    
+    return infoMusica;
+}
 @end

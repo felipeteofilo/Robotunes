@@ -13,9 +13,8 @@
 
 //Verifica se tem tem novas musicas
 +(BOOL)precisaAtualizar:(int)ultimoIDDB{
-
+    
     int ultimoIDServidor=[self ultimoIDMusica];
-    ultimoIDDB=1;
     
     if (ultimoIDDB == ultimoIDServidor) {
         return NO;
@@ -32,24 +31,27 @@
     
     //da sleep de 1 seg
     
-        //Executa metodo
+    //Executa metodo
 }
 
 +(int)ultimoIDMusica{
     //Cria uma query na tabela Musicas
     PFQuery *consultaMusicas=[[PFQuery alloc]initWithClassName:@"Musicas"];
-
+    
     //Ordena decrescente e pega o primeiro
     [consultaMusicas orderByDescending:@"idMusica"];
-    return (int)[consultaMusicas getFirstObject];
+    [consultaMusicas selectKeys:@[@"idMusica"]];
+    
+    //PEGA O PRIMEIRO OBJ DA QUERRY // PEGA O VALOR DA CHAVE ID // E TRANSFORMA EM INT
+    return [[consultaMusicas getFirstObject][@"idMusica"] intValue];
 }
 
 //Loga no Parse
 +(void)logarParse{
     
     //Pega as info basicas do user
-    [PFFacebookUtils logInWithPermissions:@[@"publish_actions",@"user_games_activity"] block:^(PFUser *user, NSError *error) {
-
+    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
+        
         //Não logou
         if (!user) {
             if (!error) {
@@ -82,15 +84,28 @@
         [queryMusicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
         
         //Configura a query p pegar apenas alguns campos da tabela
-        [queryMusicasNovas selectKeys:@[@"idMusica",@"nomeMusica",@"notas"]];
+        [queryMusicasNovas selectKeys:@[@"idMusica",@"nomeMusica",@"notasMusica"]];
         
         //Tenta baixar as musicas, montando um array // usa um metodo separado p executar em uma nova thread
-        [queryMusicasNovas findObjectsInBackgroundWithBlock:^(NSArray *novasMusicas, NSError *error) {
+        [queryMusicasNovas findObjectsInBackgroundWithBlock:^(NSArray *retorno, NSError *error) {
             //Código de erro para quanto excede qtde n de requisições
             if (error.code == 155) {
                 [RTDadosParse aguardarTempo:@selector(atualizaMusicasCoreData)];
             }else{
-                if (![novasMusicas count]==0) {
+                if (![retorno count]==0) {
+                    //Faz um for each e monta o array
+                    NSMutableArray *novasMusicas=[NSMutableArray array];
+                    NSMutableDictionary *infoMusica=[[NSMutableDictionary alloc]init];
+                    
+                    for (PFObject *musica in retorno){
+                        [infoMusica setValue:musica[@"nomeMusica"] forKey:@"nomeMusica"];
+                        [infoMusica setValue:musica[@"idMusica"] forKey:@"idMusica"];
+                        [infoMusica setValue:[NSArray arrayWithArray:[musica objectForKey:@"notasMusica"]] forKey:@"notasMusica"];
+                        
+                        
+                        [novasMusicas addObject:infoMusica];
+                    }
+                    
                     //Tenta salvar o array no core data
                     [RTBancoDeDadosController salvarArrayMusicas:novasMusicas];
                 }
