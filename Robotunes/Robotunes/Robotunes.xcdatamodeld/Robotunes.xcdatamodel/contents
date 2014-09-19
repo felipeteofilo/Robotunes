@@ -8,7 +8,7 @@
     <entity name="Usuario" syncable="YES">
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pontos" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="sincronizarPontos" optional="YES" syncable="YES"/>
+        <attribute name="sincronizarPontos" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="ultimaverificacao" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
