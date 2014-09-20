@@ -211,7 +211,6 @@
 			children = (
 				C5B85A4A19CDDAC100446492 /* Conectividade */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
-				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
 				C5B85A5219CDDFE000446492 /* CoreData */,
@@ -294,6 +293,7 @@
 		C5B85A5219CDDFE000446492 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
 				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
 				C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */,

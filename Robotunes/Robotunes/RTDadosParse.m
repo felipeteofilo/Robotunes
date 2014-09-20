@@ -95,6 +95,7 @@
     //Verifica se precisa baixar
     if ([RTDadosParse precisaAtualizar: ultimoIDMusicaDB]) {
         PFQuery *queryMusicasNovas=[[PFQuery alloc]initWithClassName:@"Musicas"];
+        
         [queryMusicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
         
         //Configura a query p pegar apenas alguns campos da tabela
@@ -110,9 +111,11 @@
                 if (![retorno count]==0) {
                     //Faz um for each e monta o array
                     NSMutableArray *novasMusicas=[NSMutableArray array];
-                    NSMutableDictionary *infoMusica=[[NSMutableDictionary alloc]init];
+                    NSMutableDictionary *infoMusica;
                     
                     for (PFObject *musica in retorno){
+                        infoMusica=[NSMutableDictionary dictionary];
+                        
                         [infoMusica setValue:musica[@"nomeMusica"] forKey:@"nomeMusica"];
                         [infoMusica setValue:musica[@"idMusica"] forKey:@"idMusica"];
                         [infoMusica setValue:[NSArray arrayWithArray:[musica objectForKey:@"notasMusica"]] forKey:@"notasMusica"];

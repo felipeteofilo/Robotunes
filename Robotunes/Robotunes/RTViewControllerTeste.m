@@ -40,7 +40,7 @@
     
     NSArray *array = [NSArray arrayWithObjects:@"foi",@"mano", nil];
     
-    [RTBancoDeDadosController salvarMusica:10 nome:@"MinhaMusica" notas:array];
+    [RTBancoDeDadosController salvarMusica:10 nome:@"MinhaMusica" notas:array autor:@"teste"];
     
     [self.texto resignFirstResponder];
 }

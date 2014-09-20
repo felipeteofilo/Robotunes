@@ -7,6 +7,7 @@
 //
 
 #import "RTCenaJogo.h"
+#import "RTBancoDeDadosController.h"
 
 @implementation RTCenaJogo
 
@@ -29,6 +30,8 @@
         [self criarChao];
         
         //Cria o jogador
+        Musica *musica=[RTBancoDeDadosController procurarMusica:1];
+        Musica *musica2=[RTBancoDeDadosController procurarMusica:2];
     }
     return self;
 }

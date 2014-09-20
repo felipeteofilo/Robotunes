@@ -10,7 +10,8 @@
 #import <SpriteKit/SpriteKit.h>
 #import "RTCenaMenu.h"
 #import "RTCenaJogo.h"
+#import "RTDadosParse.h"
 
-@interface RTViewController : UIViewController<FBLoginViewDelegate>
+@interface RTViewController : UIViewController
 
 @end

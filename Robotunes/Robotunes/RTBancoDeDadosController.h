@@ -24,4 +24,5 @@
 +(NSDictionary*)infoMusica:(int)idMusica;
 +(void)atualizarDataVerificacao;
 +(NSDate*)ultimaDataVerificacao;
++(Musica*)procurarMusica :(int)idMusica;
 @end
