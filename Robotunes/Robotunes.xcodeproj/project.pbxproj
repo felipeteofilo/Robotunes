@@ -40,6 +40,9 @@
 		94C0FB9619CA0AC200E2C5BC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */; };
 		94C0FB9819CA0AD200E2C5BC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9719CA0AD200E2C5BC /* Security.framework */; };
 		94C0FB9A19CA0ADC00E2C5BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */; };
+		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
+		C5B85A4D19CDDAD000446492 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4C19CDDAD000446492 /* Usuario.m */; };
+		C5B85A5019CDDB0200446492 /* RTUteis.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4F19CDDB0200446492 /* RTUteis.m */; };
 		C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526B19CC82E800C6A0A4 /* Musica.m */; };
 		C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
@@ -101,6 +104,12 @@
 		94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		94C0FB9719CA0AD200E2C5BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C5B85A4719CDDABD00446492 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C5B85A4819CDDABD00446492 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C5B85A4B19CDDAD000446492 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		C5B85A4C19CDDAD000446492 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
+		C5B85A4E19CDDB0200446492 /* RTUteis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTUteis.h; sourceTree = "<group>"; };
+		C5B85A4F19CDDB0200446492 /* RTUteis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTUteis.m; sourceTree = "<group>"; };
 		C5F8526A19CC82E800C6A0A4 /* Musica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musica.h; sourceTree = "<group>"; };
 		C5F8526B19CC82E800C6A0A4 /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musica.m; sourceTree = "<group>"; };
 		C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
@@ -200,33 +209,36 @@
 		7531155819C8B55F00EC3955 /* Robotunes */ = {
 			isa = PBXGroup;
 			children = (
+				C5B85A4A19CDDAC100446492 /* Conectividade */,
 				C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */,
+				7531156719C8B55F00EC3955 /* Images.xcassets */,
+				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
-				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
 				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
 				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
-				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
-				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
-				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
-				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
-				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
-				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
-				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
-				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
+				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
+				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
 				CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */,
 				CDEA607419C8BBD90099EEA7 /* RTCenaJogo.m */,
+				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
+				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
+				94C0FB8A19CA052A00E2C5BC /* RTDadosParse.h */,
+				94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */,
+				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
+				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
 				CDEA607919C8BC160099EEA7 /* RTMusica.h */,
 				CDEA607A19C8BC160099EEA7 /* RTMusica.m */,
 				CDEA607C19C8BC240099EEA7 /* RTNota.h */,
 				CDEA607D19C8BC240099EEA7 /* RTNota.m */,
-				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
-				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
-				7531156719C8B55F00EC3955 /* Images.xcassets */,
-				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
+				C5B85A4E19CDDB0200446492 /* RTUteis.h */,
+				C5B85A4F19CDDB0200446492 /* RTUteis.m */,
+				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
+				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
+				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
+				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
+				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
-				94C0FB8A19CA052A00E2C5BC /* RTDadosParse.h */,
-				94C0FB8B19CA052A00E2C5BC /* RTDadosParse.m */,
 			);
 			path = Robotunes;
 			sourceTree = "<group>";
@@ -272,11 +284,22 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		C5B85A4A19CDDAC100446492 /* Conectividade */ = {
+			isa = PBXGroup;
+			children = (
+				C5B85A4719CDDABD00446492 /* Reachability.h */,
+				C5B85A4819CDDABD00446492 /* Reachability.m */,
+			);
+			name = Conectividade;
+			sourceTree = "<group>";
+		};
 		C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				C5F8526A19CC82E800C6A0A4 /* Musica.h */,
 				C5F8526B19CC82E800C6A0A4 /* Musica.m */,
+				C5B85A4B19CDDAD000446492 /* Usuario.h */,
+				C5B85A4C19CDDAD000446492 /* Usuario.m */,
 			);
 			name = EntidadesCoreData;
 			sourceTree = "<group>";
@@ -386,6 +409,7 @@
 				CDEA607519C8BBD90099EEA7 /* RTCenaJogo.m in Sources */,
 				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
+				C5B85A4919CDDABD00446492 /* Reachability.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
 				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,
@@ -393,6 +417,8 @@
 				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
 				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
+				C5B85A4D19CDDAD000446492 /* Usuario.m in Sources */,
+				C5B85A5019CDDB0200446492 /* RTUteis.m in Sources */,
 				7531155F19C8B55F00EC3955 /* main.m in Sources */,
 				C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */,
 				CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */,
