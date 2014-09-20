@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSNumber * idmusica;
 @property (nonatomic, retain) NSString * nome;
+@property (nonatomic,retain) NSString * autor;
 @property (nonatomic, retain) id notas;
 
 @end

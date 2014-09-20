@@ -14,6 +14,7 @@
 @dynamic idmusica;
 @dynamic nome;
 @dynamic notas;
+@dynamic autor;
 
 @end
 

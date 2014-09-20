@@ -98,13 +98,14 @@
         [queryMusicasNovas whereKey:@"idMusica" greaterThan:[NSNumber numberWithInt:ultimoIDMusicaDB]];
         
         //Configura a query p pegar apenas alguns campos da tabela
-        [queryMusicasNovas selectKeys:@[@"idMusica",@"nomeMusica",@"notasMusica"]];
+        [queryMusicasNovas selectKeys:@[@"idMusica",@"nomeMusica",@"notasMusica",@"Autor"]];
         
         //Tenta baixar as musicas, montando um array // usa um metodo separado p executar em uma nova thread
         [queryMusicasNovas findObjectsInBackgroundWithBlock:^(NSArray *retorno, NSError *error) {
             //Código de erro para quanto excede qtde n de requisições
             if (error.code == 155) {
                 [RTDadosParse aguardarTempo:@selector(atualizaMusicasCoreData)];
+                
             }else{
                 if (![retorno count]==0) {
                     //Faz um for each e monta o array
@@ -115,6 +116,7 @@
                         [infoMusica setValue:musica[@"nomeMusica"] forKey:@"nomeMusica"];
                         [infoMusica setValue:musica[@"idMusica"] forKey:@"idMusica"];
                         [infoMusica setValue:[NSArray arrayWithArray:[musica objectForKey:@"notasMusica"]] forKey:@"notasMusica"];
+                        [infoMusica setValue:musica[@"Autor"] forKey:@"autor"];
                         
                         [novasMusicas addObject:infoMusica];
                     }

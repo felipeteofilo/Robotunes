@@ -127,7 +127,7 @@
     }
 }
 
-+(void)salvarMusica:(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas{
++(void)salvarMusica:(int)idMusica nome:(NSString*)nome notas:(NSArray*)notas autor:(NSString*)autor{
     NSManagedObjectContext *context = [RTBancoDeDadosController contextoApp];
     
     //Alterado para usar a classe especifica da Entidade
@@ -142,6 +142,7 @@
         [novaMusicaSalvar setIdmusica:[NSNumber numberWithInt:idMusica]];
         [novaMusicaSalvar setNome:nome];
     }
+    [novaMusicaSalvar setAutor:autor];
     [novaMusicaSalvar setNotas:notas];
     
     NSError *erro;
@@ -153,7 +154,7 @@
     for (int i=0; i < [arrayMusicas count]; i++) {
         NSDictionary *musicaDictionary=[arrayMusicas objectAtIndex:i];
         
-        [RTBancoDeDadosController salvarMusica:[[musicaDictionary objectForKey:@"idMusica"]intValue] nome:[musicaDictionary valueForKey:@"nomeMusica"] notas:[musicaDictionary valueForKey:@"notasMusica"]];
+        [RTBancoDeDadosController salvarMusica:[[musicaDictionary objectForKey:@"idMusica"]intValue] nome:[musicaDictionary valueForKey:@"nomeMusica"] notas:[musicaDictionary valueForKey:@"notasMusica"] autor:[musicaDictionary valueForKey:@"autor"]];
     }
     
     [RTBancoDeDadosController atualizarDataVerificacao];

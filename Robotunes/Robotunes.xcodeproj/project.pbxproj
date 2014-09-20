@@ -210,13 +210,11 @@
 			isa = PBXGroup;
 			children = (
 				C5B85A4A19CDDAC100446492 /* Conectividade */,
-				C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156419C8B55F00EC3955 /* Robotunes.xcdatamodeld */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
-				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
-				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
+				C5B85A5219CDDFE000446492 /* CoreData */,
 				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
 				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
 				CDEA607319C8BBD90099EEA7 /* RTCenaJogo.h */,
@@ -291,6 +289,16 @@
 				C5B85A4819CDDABD00446492 /* Reachability.m */,
 			);
 			name = Conectividade;
+			sourceTree = "<group>";
+		};
+		C5B85A5219CDDFE000446492 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */,
+				755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */,
+				C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */ = {

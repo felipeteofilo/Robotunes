@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Musica" syncable="YES">
+        <attribute name="autor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idmusica" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="notas" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="notas" optional="YES" attributeType="Transformable" valueTransformerName="ArrayNotas" syncable="YES"/>
     </entity>
     <entity name="Usuario" syncable="YES">
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pontos" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sincronizarpontos" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="ultimaverificacao" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Musica" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Usuario" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="Musica" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Usuario" positionX="-54" positionY="9" width="128" height="105"/>
     </elements>
 </model>
