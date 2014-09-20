@@ -10,8 +10,8 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+
 #import "RTBancoDeDadosController.h"
-#import "RTUteis.h"
 
 @interface RTDadosParse : NSObject
 
