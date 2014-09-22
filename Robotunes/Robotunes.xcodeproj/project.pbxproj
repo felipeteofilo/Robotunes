@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2356164119D0A94C00B44EE6 /* RT_fundo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356163D19D0A94C00B44EE6 /* RT_fundo1.png */; };
+		2356164219D0A94C00B44EE6 /* RT_fundo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356163E19D0A94C00B44EE6 /* RT_fundo2.png */; };
+		2356164319D0A94C00B44EE6 /* RT_fundo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356163F19D0A94C00B44EE6 /* RT_fundo3.png */; };
+		2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */; };
 		7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155019C8B55F00EC3955 /* Foundation.framework */; };
 		7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155419C8B55F00EC3955 /* UIKit.framework */; };
 		7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
@@ -64,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2356163D19D0A94C00B44EE6 /* RT_fundo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo1.png; sourceTree = "<group>"; };
+		2356163E19D0A94C00B44EE6 /* RT_fundo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo2.png; sourceTree = "<group>"; };
+		2356163F19D0A94C00B44EE6 /* RT_fundo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo3.png; sourceTree = "<group>"; };
+		2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		7531154D19C8B55F00EC3955 /* Robotunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robotunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531155019C8B55F00EC3955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7531155219C8B55F00EC3955 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -273,6 +281,10 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				2356163D19D0A94C00B44EE6 /* RT_fundo1.png */,
+				2356163E19D0A94C00B44EE6 /* RT_fundo2.png */,
+				2356163F19D0A94C00B44EE6 /* RT_fundo3.png */,
+				2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */,
 				7598150619CB5B40003487E8 /* fundo.png */,
 				7598150719CB5B40003487E8 /* RobotuneB2.png */,
 				7598150819CB5B40003487E8 /* RobotuneR1.png */,
@@ -388,8 +400,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2356164319D0A94C00B44EE6 /* RT_fundo3.png in Resources */,
+				2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */,
 				7598150A19CB5B40003487E8 /* fundo.png in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
+				2356164119D0A94C00B44EE6 /* RT_fundo1.png in Resources */,
+				2356164219D0A94C00B44EE6 /* RT_fundo2.png in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,
