@@ -227,6 +227,8 @@
     
     [self criarNotas];
     
+    //Chama a verificação do combo
+    [self atualizarCombo];
     
     //    //ACELEROMETRO! NÃO USADO
     //    //VERIFICAÇÃO DE MOVIMENTO
@@ -264,7 +266,7 @@
 //Verifica se o jogador ja acertou N notas e atualiza o multiplicador dos pontos
 -(void)atualizarCombo{
     //Aumenta a qtde de notas p gerar o combo
-    if (self.notasCertasSeq == (2 + self.combo)) {
+    if (self.notasCertasSeq >= (2 + self.combo)) {
         self.combo++;
         self.notasCertasSeq =0;
     }
