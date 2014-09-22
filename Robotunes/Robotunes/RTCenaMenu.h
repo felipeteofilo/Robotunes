@@ -14,10 +14,16 @@
 
 @interface RTCenaMenu : SKScene
 
+
 @property int numeroDeMusicas;
 
 @property int musicaEscolhida;
 
+
+
+@property SKSpriteNode *robotuneR1;
+@property SKSpriteNode *robotuneB2;
+@property SKSpriteNode *robotuneY3;
 
 
 @end

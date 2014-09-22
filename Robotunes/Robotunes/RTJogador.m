@@ -10,24 +10,26 @@
 
 @implementation RTJogador
 
--(id)init{
-    if(self = [super init]){
-        //Inicia o jogador e seu sprite node
-        [self iniciarSpriteNode];
+-(id)initWithSize :(CGSize)size
+{
+    if(self = [super initWithImageNamed:@"RobotuneY3"]){
+        self.anchorPoint = CGPointZero;
+        
+        self.size = size;
+        
+        //Cria corpo fisico
+        [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:self.size withAnchorPoint:self.anchorPoint]]];
         
         //Iniciar os pontos e vidas do jogador
         [self iniciarPontosVida];
         
-        //Iniciar as animacoes
+        //Iniciar as animaçõess
         [self iniciarAnimacoes];
+        
+        //Criar corpo físico do jogador e todas as suas características
+        
     }
     return self;
-}
-
--(void)iniciarSpriteNode
-{
-    self.spriteNode = [[SKSpriteNode alloc] initWithImageNamed:@"RobotuneY3"];
-    self.spriteNode.anchorPoint = CGPointZero;
 }
 
 -(void)iniciarPontosVida
@@ -41,6 +43,15 @@
 {
     
 }
+
+- (CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor {
+    CGPathRef path = CGPathCreateWithRect( CGRectMake(-size.width * anchor.x, -size.height * anchor.y,
+                                                      size.width,   size.height), nil);
+    return path;
+}
+
+
+
 
 -(BOOL)morreu
 {
@@ -66,35 +77,36 @@
     self.vida = self.vida + valor;
 }
 
--(void)movimentar: (NSString*)direcao
+
+-(void)movimentarPara: (NSString*)direcao naPosicao:(NSNumber*)posicao;
 {
     //Se estiver indo para o lado direito...
     if([direcao isEqualToString:@"Direita"]){
         //Faz a animação
-        [self.spriteNode runAction:self.acaoAndarDireita];
+        [self runAction:self.acaoDancarDireita];
         
         //Movimenta o personagem
-        [self.spriteNode runAction:self.acaoDancarDireita];
+        [self runAction:[SKAction moveToX:[posicao floatValue] duration:0.2]];
     }
     
     //Se estiver indo para o lado esquerdo...
     else if([direcao isEqualToString:@"Esquerda"]){
         //Faz a animação
-        [self.spriteNode runAction:self.acaoAndarEsquerda];
+        [self runAction:self.acaoDancarEsquerda];
         
         //Movimenta o personagem
-        [self.spriteNode runAction:self.acaoDancarEsquerda];
+        [self runAction:[SKAction moveToX:[posicao floatValue] duration:0.2]];
     }
 }
 
 -(void)perder
 {
-    [self.spriteNode runAction:self.acaoPerder];
+    [self runAction:self.acaoPerder];
 }
 
 -(void)ganhar
 {
-    [self.spriteNode runAction:self.acaoGanhar];
+    [self runAction:self.acaoGanhar];
 }
 
 -(void)dancarBem
@@ -102,15 +114,15 @@
     int aleatorio = arc4random() % 3;
     switch (aleatorio) {
         case 0:
-            [self.spriteNode runAction:self.acaoDancarBem1];
+            [self runAction:self.acaoDancarBem1];
             break;
             
         case 1:
-            [self.spriteNode runAction:self.acaoDancarBem2];
+            [self runAction:self.acaoDancarBem2];
             break;
             
         case 2:
-            [self.spriteNode runAction:self.acaoDancarBem3];
+            [self runAction:self.acaoDancarBem3];
             break;
     }
 }
@@ -120,13 +132,14 @@
     int aleatorio = arc4random() % 2;
     switch (aleatorio) {
         case 0:
-            [self.spriteNode runAction:self.acaoDancarMal1];
+            [self runAction:self.acaoDancarMal1];
             break;
             
         case 1:
-            [self.spriteNode runAction:self.acaoDancarMal2];
+            [self runAction:self.acaoDancarMal2];
             break;
     }
 }
+
 
 @end

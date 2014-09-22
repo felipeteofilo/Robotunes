@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface RTJogador : SKNode
+@interface RTJogador : SKSpriteNode
 
 //Variável de controle do nível de vida do jogador
 @property int vida;
@@ -16,12 +16,9 @@
 //Variável do controle de pontos do jogador
 @property int pontos;
 
-//SKSpriteNode que armazena o sprite do jogador
-@property SKSpriteNode *spriteNode;
+
 
 //SKActions de todas as ações do personagem
-@property SKAction *acaoAndarDireita; //Ao andar para a direita
-@property SKAction *acaoAndarEsquerda; //Ao andar para a esperda
 @property SKAction *acaoDancarDireita; //Ao andar para a direita - Dancinha de quem anda
 @property SKAction *acaoDancarEsquerda; //Ao andar para a esperda - Dancinha de quem anda
 @property SKAction *acaoPerder; //Ao perder toda a vida
@@ -42,7 +39,7 @@
 -(void)atualizarPontos: (int)valor;
 
 //Método que ativa as animações de movimento do personagem
--(void)movimentar: (NSString*)direcao;
+-(void)movimentarPara: (NSString*)direcao naPosicao:(NSNumber*)posicao;
 
 //Método que ativa a animação de "Perdeu" do personagem
 -(void)perder;
@@ -55,6 +52,7 @@
 
 //Método que ativa as animações de "Dançar mal" do personagem
 -(void)dancarMal;
-
+//metodo de init do jogador
+-(id)initWithSize :(CGSize)size;
 
 @end

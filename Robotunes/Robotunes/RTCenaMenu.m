@@ -14,44 +14,63 @@
 {
     if(self = [super initWithSize:size]){
         
+        
         self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
         self.musicaEscolhida = 1;
         
+        //Adiciona o fundo
+        SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundoMenu"];
+        imagemFundo.anchorPoint = CGPointZero;
+        imagemFundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+        imagemFundo.zPosition = -20;
         
-        SKSpriteNode * fundo = [SKSpriteNode spriteNodeWithImageNamed:@"fundo"];
-        [fundo setSize:self.frame.size];
-        [fundo setAnchorPoint:CGPointZero];
-        [fundo setZPosition:-10];
+        //adiciona titulo
+        SKSpriteNode *titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logorobotunes"];
+        titulo.anchorPoint = CGPointZero;
+        titulo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+        titulo.zPosition = -10;
         
+        [self addChild:titulo];
+        [self addChild:imagemFundo];
         
+        //Cria e adiciona o robo de venda
+        [self criarRobotuneR1];
         
-        SKSpriteNode * roboY3 = [SKSpriteNode spriteNodeWithImageNamed:@"RobotuneY3"];
-        [roboY3 setAnchorPoint:CGPointZero];
-        [roboY3 setSize:CGSizeMake(self.frame.size.width*0.176, self.frame.size.height*0.25)];
+        //Cria e adiciona o robo de play
+        [self criarRobotuneB2];
         
-        [roboY3 setPosition:CGPointMake(self.frame.size.width*0.056, 5)];
+        //Cria e adiciona o robo principal - só a imagem
+        [self criarRobotuneY3];
         
-        SKSpriteNode * roboB2 = [SKSpriteNode spriteNodeWithImageNamed:@"RobotuneB2"];
-        [roboB2 setAnchorPoint:CGPointZero];
-        [roboB2 setSize:CGSizeMake(self.frame.size.width*0.372, self.frame.size.height*0.767)];
-        
-        [roboB2 setPosition:CGPointMake(self.frame.size.width*0.299, 5)];
-        
-        SKSpriteNode * roboR1 = [SKSpriteNode spriteNodeWithImageNamed:@"RobotuneR1"];
-        [roboR1 setAnchorPoint:CGPointZero];
-        [roboR1 setSize:CGSizeMake(self.frame.size.width*0.261, self.frame.size.height*0.45)];
-        
-        [roboR1 setPosition:CGPointMake(self.frame.size.width*0.70, 5)];
-        
-        
-        
-        
-        [self addChild:fundo];
-        [self addChild:roboY3];
-        [self addChild:roboB2];
-        [self addChild:roboR1];
     }
     return self;
+}
+
+-(void)criarRobotuneR1
+{
+    self.robotuneR1 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneR1"];
+    self.robotuneR1.anchorPoint = CGPointZero;
+    self.robotuneR1.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.45);
+    self.robotuneR1.position = CGPointMake(self.frame.size.width * 0.7, 5);
+    [self addChild:self.robotuneR1];
+}
+
+-(void)criarRobotuneB2
+{
+    self.robotuneB2 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneB2"];
+    self.robotuneB2.anchorPoint = CGPointZero;
+    self.robotuneB2.size = CGSizeMake(self.frame.size.width * 0.372, self.frame.size.height*0.767);
+    self.robotuneB2.position = CGPointMake(self.frame.size.width * 0.299, 5);
+    [self addChild:self.robotuneB2];
+}
+
+-(void)criarRobotuneY3
+{
+    self.robotuneY3 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneY3"];
+    self.robotuneY3.anchorPoint = CGPointZero;
+    self.robotuneY3.size = CGSizeMake(self.frame.size.width * 0.176, self.frame.size.height * 0.25);
+    self.robotuneY3.position = CGPointMake(self.frame.size.width * 0.056, 5);
+    [self addChild:self.robotuneY3];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -62,10 +81,21 @@
     }
     self.musicaEscolhida++;
     
-    NSLog(@"%d",self.musicaEscolhida);
-//    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size];
-//    [self.view presentScene:jogo];
+    NSArray *notas = [NSArray arrayWithObjects:@"do",@"0.0",@"re",@"1.0", nil];
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    
+    
+    
+    [dictionary setValue:@"Musica" forKey:@"nome"];
+    [dictionary setValue:[NSNumber numberWithFloat:10.5] forKey:@"tempoTotal"];
+    [dictionary setValue:notas forKey:@"notas"];
+    
+    
+   // RTMusica *musica = [[RTMusica alloc]initMusica:dictionary];
+    
+   // RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:musica];
+   // [self.view presentScene:jogo];
 }
-
 
 @end
