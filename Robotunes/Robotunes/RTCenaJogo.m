@@ -45,6 +45,9 @@
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];
         
+        //Inicia propriedade p controle dos combos
+        //Comeca com 1 pq ao atribuir a pontuacao do jogador ele multiplica pelo combo
+        self.combo=1;
         
     }
     return self;
@@ -194,6 +197,26 @@
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             NSLog(@"foi player");
+            
+            [self.jogador atualizarPontos:10*[self combo]];
+            
+            self.notasCertasSeq++;
+        }
+    }
+    
+    //A categoria nota errada esta com um numero maior que o jogador
+    if ((firstBody.categoryBitMask & JogadorCategoria )!=0) {
+        
+        //Verifica se colidiu com uma nota errada
+        if ((secondBody.categoryBitMask & NotaErradaCategoria)!=0) {
+            //TODO: tocar som errado
+            
+            [self.jogador atualizarVida:-10];
+            //zerar contador de notas certas
+            self.notasCertasSeq=0;
+            
+            //Volta p o primeito combo
+            self.combo=1;
         }
     }
 }
@@ -238,6 +261,13 @@
     //    NSLog(@"inclinado? %hhd", self.inclinado);
 }
 
-
+//Verifica se o jogador ja acertou N notas e atualiza o multiplicador dos pontos
+-(void)atualizarCombo{
+    //Aumenta a qtde de notas p gerar o combo
+    if (self.notasCertasSeq == (2 + self.combo)) {
+        self.combo++;
+        self.notasCertasSeq =0;
+    }
+}
 
 @end

@@ -25,11 +25,10 @@
     
     //Cria a cena de menu
 //    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
-    RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
+    RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size andMusica:[[RTMusica alloc]init]];
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
 
-    
     //Mostra a cena de menu
     [skView presentScene:menu];
     
