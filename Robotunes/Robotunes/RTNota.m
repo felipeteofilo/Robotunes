@@ -10,12 +10,21 @@
 
 @implementation RTNota
 
--(id)initComNome: (NSString *)nome
+-(id)initComNome: (NSString *)nome tempo:(float)tempo posicao:(int)posicao
 {
-    if(self = [super init]){
-        //TODO
+    if(self = [super initWithImageNamed:<#(NSString *)#>]){
+        self.nome = nome;
+        self.tempo = tempo;
+        self.posicao = posicao;
     }
     return self;
+}
+
+-(NSString*)imagem :(NSString*)nome{
+//    
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
 }
 
 @end

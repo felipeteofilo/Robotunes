@@ -24,6 +24,9 @@
 //Float que armazena o tempo total da música
 @property float tempoTotal;
 
+//Int que armazena a nota atual
+@property int notaAtual;
+
 //Método que indica se a música acabou ou não
 -(BOOL)acabou;
 

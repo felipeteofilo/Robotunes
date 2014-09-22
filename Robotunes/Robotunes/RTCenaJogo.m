@@ -40,7 +40,15 @@
         //Cria o jogador
         [self criarJogador];
         
-        self.musica = [
+        Musica *musica = [RTBancoDeDadosController procurarMusica:1];
+        
+        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
+        
+        [musica setValue:@"musica" forKey:@"nome"];
+        [musica setValue:@"eu" forKey:@"autor"];
+        [musica setValue:array forKey:@"notas"];
+        
+        self.musica = [[RTMusica alloc]initMusica:musica];
         
         
         
