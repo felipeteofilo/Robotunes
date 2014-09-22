@@ -22,7 +22,7 @@
         SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundoMenu"];
         imagemFundo.anchorPoint = CGPointZero;
         imagemFundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
-        imagemFundo.zPosition = -20;
+        imagemFundo.zPosition = -100;
         
         //adiciona titulo
         SKSpriteNode *titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logorobotunes"];
@@ -96,6 +96,25 @@
     
    // RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:musica];
    // [self.view presentScene:jogo];
+}
+
+-(void)update:(NSTimeInterval)currentTime{
+    //Tempo desde ultimo update
+    
+    CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
+    //A cada meio segundo tenta criar uma nuvem
+    if (ultimoUpdate > 0.8) {
+        if ([RTUteis sortearChanceSim:30]) {
+            //Cria a nuvem
+            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            
+            //add na arvore de nodes
+            [self addChild:nuvem];
+        }
+        
+        //Atualiza o contador
+        self.intervaloUltimoUpdate =currentTime;
+    }
 }
 
 @end

@@ -76,4 +76,13 @@
     
     return rndValue;
 }
++(BOOL)sortearChanceSim:(float)chanceSim{
+    float valorSorteardo=(float)(arc4random()%100)/100;
+    
+    if (valorSorteardo < (chanceSim/100)) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 @end

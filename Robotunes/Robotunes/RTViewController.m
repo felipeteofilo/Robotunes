@@ -22,6 +22,7 @@
     SKView *skView = [[SKView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.height, self.view.bounds.size.width)];
     [self.view addSubview:skView];
     skView.showsNodeCount = YES;
+    skView.showsFPS=YES;
     
     //Cria a cena de menu
     RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];

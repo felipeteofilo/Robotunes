@@ -14,4 +14,5 @@
 @property float alturaY;
 @property float velocidade;
 
+-(id)initNuvem:(float)alturaMinima :(float)alturaMaxima;
 @end

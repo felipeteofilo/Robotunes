@@ -28,9 +28,11 @@
 //Aguarda um seg requisisão excedeu o limite
 +(void)aguardarTempo:(SEL)seletorMetodoRetorno{
     //Cria uma thread
+    NSThread *threadTempo=[[NSThread alloc]initWithTarget:self selector:seletorMetodoRetorno object:nil];
     
     //da sleep de 1 seg
-    
+    [threadTempo start];
+    threadTempo.
     //Executa metodo
 }
 
