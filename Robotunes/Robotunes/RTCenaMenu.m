@@ -42,8 +42,6 @@
         //Cria e adiciona o robo principal - só a imagem
         [self criarRobotuneY3];
         
-        [RTDadosParse teste];
-        
     }
     return self;
 }
