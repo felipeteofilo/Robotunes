@@ -86,10 +86,11 @@
     chao.physicsBody =[SKPhysicsBody bodyWithRectangleOfSize:chao.size];
     chao.physicsBody.affectedByGravity = NO;
     chao.physicsBody.restitution = 0;
-    chao.physicsBody.collisionBitMask = ChaoCategoria;
+    chao.physicsBody.categoryBitMask= ChaoCategoria;
     chao.physicsBody.contactTestBitMask = NotaCategoria;
     chao.physicsBody.usesPreciseCollisionDetection = YES;
     chao.physicsBody.dynamic = NO;
+    
     
     //Adiciona o chão
     [self addChild:chao];
@@ -114,25 +115,35 @@
 
 //Metodo para criar as notas na tela
 -(void)criarNotas{
+   
+    //TODO
+    //Mudar para o tempo da musica
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
     }
     
-    int posicao = arc4random() %4;
     
-  //  RTNota* nota = [self.musica notaAtual:CACurrentMediaTime()- self.tempoInicial];
-   // if (nota != nil) {
+   //pega a nota do tempo especifico e a faz cair pela tela
+   RTNota* nota = [self.musica nota:CACurrentMediaTime()- self.tempoInicial];
+   if (nota != nil) {
         
-//        
-//        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
-//        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
-//        
-//        [nota criarCorpoFisico];
-//        nota.physicsBody.categoryBitMask = NotaCategoria;
-//        nota.physicsBody.contactTestBitMask = ChaoCategoria;
-//        
-//        [self addChild:nota];
-   // }
+        
+        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
+       
+        [nota criarCorpoFisico];
+//       if ([nota.nome isEqualToString:@"nota"]) {
+//           nota.physicsBody.categoryBitMask = NotaCategoria;
+//       }
+//       else{
+//           //TODO mudar para categoria de quebrada
+//           nota.physicsBody.categoryBitMask = NotaCategoria;
+//       }
+       nota.physicsBody.categoryBitMask = NotaCategoria;
+       nota.physicsBody.contactTestBitMask = ChaoCategoria;
+        
+        [self addChild:nota];
+    }
 }
 
 

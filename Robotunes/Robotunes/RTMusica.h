@@ -31,7 +31,9 @@
 -(BOOL)acabou;
 
 //Método que retorna a música atual de acordo com o tempo passado
--(RTNota *)notaAtual: (float)tempo;
+-(RTNota *)nota: (float)tempo;
 
+
+//Método init da musica que recebe o objeto do banco de dados
 -(id)initMusica :(Musica*)musica;
 @end

@@ -22,4 +22,7 @@
 //INIT que recebe o nome da nota e a partir disso adquire suas informações
 -(id)initComNome: (NSString *)nome tempo:(float)tempo posicao:(int)posicao;
 
+//Criar corpo fisico da nota
+-(void)criarCorpoFisico;
+
 @end

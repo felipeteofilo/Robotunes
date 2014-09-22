@@ -30,7 +30,7 @@
     return self;
 }
 
-//funcao que cria as notas de acordo com o array passado
+//Método que cria as notas de acordo com o array passado
 -(void)criarNotas:(NSArray*)notas{
     
     self.arrayDeNotas = [[NSMutableArray alloc]init];
@@ -43,7 +43,7 @@
         RTNota *nota = [[RTNota alloc]initComNome:nomeNota tempo:tempoNota posicao:posicaoNota];
         
         [self.arrayDeNotas addObject:nota];
-    
+        
     }
     
 }
@@ -54,14 +54,16 @@
     return NO;
 }
 
--(RTNota *)notaAtual: (float)tempo
-{
+//Método que retorna a nota pelo tempo
+-(RTNota *)nota: (float)tempo
+{   if(self.notaAtual < self.arrayDeNotas.count){
     RTNota *nota = [self.arrayDeNotas objectAtIndex:self.notaAtual];
     
-    if (nota.tempo >= tempo) {
+    if (tempo >= nota.tempo ) {
         self.notaAtual++;
         return nota;
     }
+}
     
     return nil;
 }
