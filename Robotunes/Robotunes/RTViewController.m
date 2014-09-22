@@ -24,8 +24,8 @@
     skView.showsNodeCount = YES;
     
     //Cria a cena de menu
-//    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
-    RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
+   RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+   // RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
 

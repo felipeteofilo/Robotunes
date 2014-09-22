@@ -10,6 +10,8 @@
 #import  <CoreMotion/CoreMotion.h>
 #import "RTJogador.h"
 #import "RTMusica.h"
+#import "RTBancoDeDadosController.h"
+#import "Musica.h"
 
 //Categorias do jogo (chão, nota e jogador)
 static const UInt32 NotaCategoria = 0x1 << 0;
@@ -25,7 +27,7 @@ static const UInt32 ChaoCategoria = 0x1 << 2;
 @property int posicaoAtual;
 
 //RTMusica a musica que ira ser tocada
-@property RTMusica *musica;
+@property Musica *musica;
 
 
 //Float tempo inicial da musica
@@ -43,6 +45,6 @@ static const UInt32 ChaoCategoria = 0x1 << 2;
 //inteiro que armazena os pontos feitos nessa música
 @property int pontos;
 
--(id)initWithSize:(CGSize)size andMusica:(RTMusica*)musica;
+-(id)initWithSize:(CGSize)size andMusica:(int)musica;
 
 @end

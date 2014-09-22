@@ -92,10 +92,10 @@
     [dictionary setValue:notas forKey:@"notas"];
     
     
-   // RTMusica *musica = [[RTMusica alloc]initMusica:dictionary];
+    //Musica *musica = [RTBancoDeDadosController procurarMusica:1];
     
-   // RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:musica];
-   // [self.view presentScene:jogo];
+    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:1];
+    [self.view presentScene:jogo];
 }
 
 @end

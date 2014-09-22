@@ -10,7 +10,7 @@
 
 @implementation RTCenaJogo
 
--(id)initWithSize:(CGSize)size andMusica:(RTMusica*)musica
+-(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
         //Acrescenta um fundo branco
@@ -40,7 +40,7 @@
         //Cria o jogador
         [self criarJogador];
         
-        self.musica = musica;
+        self.musica = [RTBancoDeDadosController procurarMusica:musica];
         
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];
@@ -109,8 +109,8 @@
     
     int posicao = arc4random() %4;
     
-    RTNota* nota = [self.musica notaAtual:CACurrentMediaTime()- self.tempoInicial];
-    if (nota != nil) {
+  //  RTNota* nota = [self.musica notaAtual:CACurrentMediaTime()- self.tempoInicial];
+   // if (nota != nil) {
         
 //        
 //        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
@@ -121,7 +121,7 @@
 //        nota.physicsBody.contactTestBitMask = ChaoCategoria;
 //        
 //        [self addChild:nota];
-    }
+   // }
 }
 
 
