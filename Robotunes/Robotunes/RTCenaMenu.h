@@ -14,6 +14,8 @@
 
 @interface RTCenaMenu : SKScene
 
+@property float tempo;
+@property int fundoAtual;
 
 @property int numeroDeMusicas;
 @property int musicaEscolhida;
@@ -26,6 +28,9 @@
 @property SKSpriteNode *fundo2;
 @property SKSpriteNode *fundo3;
 @property SKSpriteNode *fundo4;
+
+@property SKAction *acaoFundoFadeIn;
+@property SKAction *acaoFundoFadeOut;
 
 @property SKSpriteNode *titulo;
 @property SKSpriteNode *btnFace;

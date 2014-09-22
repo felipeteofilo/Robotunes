@@ -7,6 +7,7 @@
 //
 
 #import "RTCenaMenu.h"
+#define tempoParaMudar 300;
 
 @implementation RTCenaMenu
 
@@ -15,6 +16,9 @@
     if(self = [super initWithSize:size]){
         self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
         self.musicaEscolhida = 1;
+        
+        self.tempo = -80;
+        self.fundoAtual = 1;
     
         //Cria e adiciona o fundo
         [self criarFundos];
@@ -49,7 +53,7 @@
     self.fundo1 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
     self.fundo1.anchorPoint = CGPointZero;
     self.fundo1.size = self.frame.size;
-    self.fundo1.zPosition = -20;
+    self.fundo1.zPosition = -18;
     self.fundo1.position = CGPointZero;
     [self addChild:self.fundo1];
     
@@ -82,6 +86,10 @@
     self.fundo2.alpha = 0;
     self.fundo3.alpha = 0;
     self.fundo4.alpha = 0;
+    
+    //Animações que serão aplicadas aos fundos
+    self.acaoFundoFadeIn = [SKAction fadeInWithDuration:15];
+    self.acaoFundoFadeOut = [SKAction fadeOutWithDuration:15];
 }
 
 -(void)criarTitulo
@@ -181,6 +189,94 @@
     
     RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:1];
     [self.view presentScene:jogo];
+}
+
+-(void)update:(NSTimeInterval)currentTime
+{
+    //primeira vez
+    if(self.tempo == -80){
+        self.tempo = currentTime + tempoParaMudar;
+    }
+    
+    if(self.tempo - currentTime <= 0){
+        NSLog(@"Olha o tempo!");
+        self.tempo = currentTime + tempoParaMudar;
+        
+        //Aplica os efeitos ao fundo que se deve
+        switch (self.fundoAtual) {
+            case 1:
+                //Vai para o 2
+                self.fundoAtual = 2;
+                
+                //Faz o fundo anterior ir para -20 em z
+                self.fundo1.zPosition = -20;
+                
+                //Faz o fundo atual ir para -18 em z
+                self.fundo2.zPosition = -18;
+                
+                //Anima fundo anterior - fadeOut
+                [self.fundo1 runAction:self.acaoFundoFadeOut];
+                
+                //anima fundo Atual - fadeIn
+                [self.fundo2 runAction:self.acaoFundoFadeIn];
+                
+                break;
+            case 2:
+                //Vai para o 3
+                self.fundoAtual = 3;
+                
+                //Faz o fundo anterior ir para -20 em z
+                self.fundo2.zPosition = -20;
+                
+                //Faz o fundo atual ir para -18 em z
+                self.fundo3.zPosition = -18;
+                
+                //Anima fundo anterior - fadeOut
+                [self.fundo2 runAction:self.acaoFundoFadeOut];
+                
+                //anima fundo Atual - fadeIn
+                [self.fundo3 runAction:self.acaoFundoFadeIn];
+                
+                break;
+            case 3:
+                //Vai para o 4
+                self.fundoAtual = 4;
+                
+                //Faz o fundo anterior ir para -20 em z
+                self.fundo3.zPosition = -20;
+                
+                //Faz o fundo atual ir para -18 em z
+                self.fundo4.zPosition = -18;
+                
+                //Anima fundo anterior - fadeOut
+                [self.fundo3 runAction:self.acaoFundoFadeOut];
+                
+                //anima fundo Atual - fadeIn
+                [self.fundo4 runAction:self.acaoFundoFadeIn];
+                
+                break;
+            case 4:
+                //Vai para o 1
+                self.fundoAtual = 1;
+                
+                //Faz o fundo anterior ir para -20 em z
+                self.fundo4.zPosition = -20;
+                
+                //Faz o fundo atual ir para -18 em z
+                self.fundo1.zPosition = -18;
+                
+                //Anima fundo anterior - fadeOut
+                [self.fundo4 runAction:self.acaoFundoFadeOut];
+                
+                //anima fundo Atual - fadeIn
+                [self.fundo1 runAction:self.acaoFundoFadeIn];
+                
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 @end
