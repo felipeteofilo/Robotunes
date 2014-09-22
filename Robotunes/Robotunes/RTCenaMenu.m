@@ -42,6 +42,8 @@
         //Cria e adiciona o robo principal - só a imagem
         [self criarRobotuneY3];
         
+        [RTDadosParse teste];
+        
     }
     return self;
 }
@@ -104,7 +106,7 @@
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.8) {
-        if ([RTUteis sortearChanceSim:30]) {
+        if ([RTUteis sortearChanceSim:25]) {
             //Cria a nuvem
             RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
             
