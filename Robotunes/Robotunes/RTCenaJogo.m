@@ -40,7 +40,10 @@
         //Cria o jogador
         [self criarJogador];
         
-        self.musica = [RTBancoDeDadosController procurarMusica:musica];
+        self.musica = [
+        
+        
+        
         
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];

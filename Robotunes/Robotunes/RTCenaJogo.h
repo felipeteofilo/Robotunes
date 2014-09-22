@@ -27,7 +27,7 @@ static const UInt32 ChaoCategoria = 0x1 << 2;
 @property int posicaoAtual;
 
 //RTMusica a musica que ira ser tocada
-@property Musica *musica;
+@property RTMusica *musica;
 
 
 //Float tempo inicial da musica

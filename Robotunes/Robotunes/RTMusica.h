@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RTNota.h"
+#import "Musica.h"
 
 @interface RTMusica : NSObject
 
@@ -16,6 +17,9 @@
 
 //NSString que armazena o nome da música
 @property NSString *nome;
+
+//NSString que armazena o nome do autor
+@property NSString *autor;
 
 //Float que armazena o tempo total da música
 @property float tempoTotal;
@@ -26,4 +30,5 @@
 //Método que retorna a música atual de acordo com o tempo passado
 -(RTNota *)notaAtual: (float)tempo;
 
+-(id)initMusica :(Musica*)musica;
 @end

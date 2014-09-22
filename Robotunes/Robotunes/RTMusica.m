@@ -10,12 +10,30 @@
 
 @implementation RTMusica
 
--(id)init
+-(id)initMusica :(Musica*)musica
 {
     if(self = [super init]){
-        //TODO
+        
+        self.nome = [musica valueForKey:@"nome"];
+        self.autor =[musica valueForKey:@"autor"];
+        
+        
+        
+        
+        
     }
     return self;
+}
+
+-(void)criarNotas:(NSArray*)notas{
+    
+    for (int i =0; i < notas.count; i+=3) {
+        NSString * nomeNota = [notas objectAtIndex:i];
+        float tempoNota = 
+        
+        
+    }
+    
 }
 
 -(BOOL)acabou
