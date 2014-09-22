@@ -70,4 +70,10 @@
     
     return abs((int)[difference day]);
 }
++(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum{
+    //O -1 é para que o numero passado como minimo possa ser sorteado
+    int rndValue = (menorNum-1) + arc4random() % (maiorNum - menorNum);
+    
+    return rndValue;
+}
 @end
