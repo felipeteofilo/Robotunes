@@ -35,12 +35,12 @@
     
     self.arrayDeNotas = [[NSMutableArray alloc]init];
     //percorre o array passado e cria as notas com nome, tempo e posicao e o add no array das notas
-    for (int i =0; i < notas.count; i+=3) {
-        NSString * nomeNota = [notas objectAtIndex:i];
-        float tempoNota = [[notas objectAtIndex:i+1]floatValue];
-        int posicaoNota = [[notas objectAtIndex:i+2]intValue];
+    for (int i =0; i < notas.count; i+=2) {
         
-        RTNota *nota = [[RTNota alloc]initComNome:nomeNota tempo:tempoNota posicao:posicaoNota];
+        float tempoNota = [[notas objectAtIndex:i]floatValue];
+        int posicaoNota = [[notas objectAtIndex:i+1]intValue];
+        
+       RTNota *nota = [[RTNota alloc]initComNome:@"nota" tempo:tempoNota posicao:posicaoNota];
         
         [self.arrayDeNotas addObject:nota];
         

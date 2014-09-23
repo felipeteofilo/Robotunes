@@ -46,6 +46,7 @@
 		7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150719CB5B40003487E8 /* RobotuneB2.png */; };
 		7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150819CB5B40003487E8 /* RobotuneR1.png */; };
 		7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150919CB5B40003487E8 /* RobotuneY3.png */; };
+		75D3870C19D2123300CEF943 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D3870B19D2123300CEF943 /* AVFoundation.framework */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
 		94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8619CA04C600E2C5BC /* Parse.framework */; };
@@ -152,6 +153,7 @@
 		7598150719CB5B40003487E8 /* RobotuneB2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneB2.png; sourceTree = "<group>"; };
 		7598150819CB5B40003487E8 /* RobotuneR1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneR1.png; sourceTree = "<group>"; };
 		7598150919CB5B40003487E8 /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
+		75D3870B19D2123300CEF943 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		94C0FB8619CA04C600E2C5BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D3870C19D2123300CEF943 /* AVFoundation.framework in Frameworks */,
 				94C0FB9A19CA0ADC00E2C5BC /* SystemConfiguration.framework in Frameworks */,
 				94C0FB9819CA0AD200E2C5BC /* Security.framework in Frameworks */,
 				94C0FB9619CA0AC200E2C5BC /* StoreKit.framework in Frameworks */,
@@ -272,6 +275,7 @@
 		7531154F19C8B55F00EC3955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75D3870B19D2123300CEF943 /* AVFoundation.framework */,
 				94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */,
 				94C0FB9719CA0AD200E2C5BC /* Security.framework */,
 				94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */,
