@@ -10,7 +10,7 @@
 
 @implementation RTCenaJogo
 
--(id)initWithSize:(CGSize)size andMusica:(RTMusica*)musica
+-(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
         //Acrescenta um fundo branco
@@ -40,7 +40,18 @@
         //Cria o jogador
         [self criarJogador];
         
-        self.musica = musica;
+        Musica *musica = [RTBancoDeDadosController procurarMusica:1];
+        
+        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
+        
+        [musica setValue:@"musica" forKey:@"nome"];
+        [musica setValue:@"eu" forKey:@"autor"];
+        [musica setValue:array forKey:@"notas"];
+        
+        self.musica = [[RTMusica alloc]initMusica:musica];
+        
+        
+        
         
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];
@@ -78,10 +89,11 @@
     chao.physicsBody =[SKPhysicsBody bodyWithRectangleOfSize:chao.size];
     chao.physicsBody.affectedByGravity = NO;
     chao.physicsBody.restitution = 0;
-    chao.physicsBody.collisionBitMask = ChaoCategoria;
+    chao.physicsBody.categoryBitMask= ChaoCategoria;
     chao.physicsBody.contactTestBitMask = NotaCategoria;
     chao.physicsBody.usesPreciseCollisionDetection = YES;
     chao.physicsBody.dynamic = NO;
+    
     
     //Adiciona o chão
     [self addChild:chao];
@@ -106,24 +118,34 @@
 
 //Metodo para criar as notas na tela
 -(void)criarNotas{
+   
+    //TODO
+    //Mudar para o tempo da musica
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
     }
     
-    int posicao = arc4random() %4;
     
-    RTNota* nota = [self.musica notaAtual:CACurrentMediaTime()- self.tempoInicial];
-    if (nota != nil) {
+   //pega a nota do tempo especifico e a faz cair pela tela
+   RTNota* nota = [self.musica nota:CACurrentMediaTime()- self.tempoInicial];
+   if (nota != nil) {
         
-//        
-//        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
-//        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
-//        
-//        [nota criarCorpoFisico];
-//        nota.physicsBody.categoryBitMask = NotaCategoria;
-//        nota.physicsBody.contactTestBitMask = ChaoCategoria;
-//        
-//        [self addChild:nota];
+        
+        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
+       
+        [nota criarCorpoFisico];
+//       if ([nota.nome isEqualToString:@"nota"]) {
+//           nota.physicsBody.categoryBitMask = NotaCategoria;
+//       }
+//       else{
+//           //TODO mudar para categoria de quebrada
+//           nota.physicsBody.categoryBitMask = NotaCategoria;
+//       }
+       nota.physicsBody.categoryBitMask = NotaCategoria;
+       nota.physicsBody.contactTestBitMask = ChaoCategoria;
+        
+        [self addChild:nota];
     }
 }
 

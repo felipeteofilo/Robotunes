@@ -19,6 +19,7 @@
         
         //Cria corpo fisico
         [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:self.size withAnchorPoint:self.anchorPoint]]];
+        self.physicsBody.restitution = 0;
         
         //Iniciar os pontos e vidas do jogador
         [self iniciarPontosVida];

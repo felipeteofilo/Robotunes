@@ -10,6 +10,8 @@
 #import  <CoreMotion/CoreMotion.h>
 #import "RTJogador.h"
 #import "RTMusica.h"
+#import "RTBancoDeDadosController.h"
+#import "Musica.h"
 
 //Categorias do jogo (chão, nota e jogador)
 static const UInt32 NotaCategoria = 0x1 << 0;
@@ -52,7 +54,6 @@ static const UInt32 NotaErradaCategoria = 0x1<<3;
 //Propriedade combo que aumentará os pontos
 @property int combo;
 
-
--(id)initWithSize:(CGSize)size andMusica:(RTMusica*)musica;
+-(id)initWithSize:(CGSize)size andMusica:(int)musica;
 
 @end
