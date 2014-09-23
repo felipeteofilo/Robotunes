@@ -41,5 +41,7 @@
 @property SKSpriteNode *nuvem1;
 @property SKSpriteNode *nuvem2;
 
+@property SKAction *acaoDancaR1;
+
 
 @end
