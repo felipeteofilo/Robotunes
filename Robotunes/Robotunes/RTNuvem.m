@@ -20,7 +20,7 @@
         [self sorteiaAltura:alturaMinima :alturaMaxima];
         
         //Sortei a velocidade da nuvem
-        [self setVelocidade:(float)[RTUteis sorteioIntEntre:5 eMaiorNum:20]];
+        [self setVelocidade:(float)[RTUteis sorteioIntEntre:20 eMaiorNum:40]];
         
         //faz ela mover
         [self movimentar];
@@ -30,8 +30,8 @@
 
 -(void)sorteiaAltura:(float)alturaMinima :(float)alturaMaxima{
     //define posicao Z para ficar a frente do fundo da tela e atras dos robos
-    [self setZPosition:-50.0];
-    [self setScale:0.5];
+    [self setZPosition:-17.0];
+    [self setScale:0.4];
     
     [self setPosition:CGPointMake(-500, [RTUteis sorteioIntEntre:(int)alturaMinima eMaiorNum:(int)alturaMaxima])];
 }

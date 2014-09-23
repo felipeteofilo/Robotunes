@@ -39,7 +39,7 @@
         [self criarChao];
         
         //Criar nuvens
-        [self criarNuvens];
+        //[self criarNuvens];
         
         //Cria e adiciona o robo de venda
         [self criarRobotuneR1];
@@ -203,8 +203,8 @@
     
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
     //A cada meio segundo tenta criar uma nuvem
-    if (ultimoUpdate > 0.8) {
-        if ([RTUteis sortearChanceSim:25]) {
+    if (ultimoUpdate > 0.4) {
+        if ([RTUteis sortearChanceSim:15]) {
             //Cria a nuvem
             RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
             

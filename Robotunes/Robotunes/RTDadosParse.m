@@ -84,8 +84,12 @@
     }
     
     //Verifica se está no prazo de att
-    if ([RTUteis diasEntreDataInicial:[RTBancoDeDadosController ultimaDataVerificacao] andDate:[RTUteis formataData:[NSDate date]]] < 1) {
-        return;
+    NSDate *ultimaDataVerificacao=[RTBancoDeDadosController ultimaDataVerificacao];
+    
+    if (!ultimaDataVerificacao) {
+        if ([RTUteis diasEntreDataInicial:ultimaDataVerificacao andDate:[RTUteis formataData:[NSDate date]]] < 1) {
+            return;
+        }
     }
     
     //Pega o ID da ultima musica

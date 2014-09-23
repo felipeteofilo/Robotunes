@@ -233,7 +233,7 @@
     
     NSDate *dataRetorno=[infoUser ultimaverificacao];
     
-    return [RTUteis formataData:dataRetorno];
+    return dataRetorno;
 }
 
 +(void)atualizarDataVerificacao{
