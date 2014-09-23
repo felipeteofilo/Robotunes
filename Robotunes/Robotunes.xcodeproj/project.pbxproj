@@ -64,6 +64,7 @@
 		C5B85A5019CDDB0200446492 /* RTUteis.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4F19CDDB0200446492 /* RTUteis.m */; };
 		C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526B19CC82E800C6A0A4 /* Musica.m */; };
 		C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */; };
+		CDC6297619D20E3100A12E7A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297519D20E3100A12E7A /* logo.png */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -152,6 +153,7 @@
 		C5F8526B19CC82E800C6A0A4 /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musica.m; sourceTree = "<group>"; };
 		C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
 		C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBarraStatus.m; sourceTree = "<group>"; };
+		CDC6297519D20E3100A12E7A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				7534410A19D0C54000D8FD18 /* Notas */,
 				2356164719D0B6C700B44EE6 /* btnFace.png */,
 				2356164519D0B4F100B44EE6 /* Chao.png */,
+				CDC6297519D20E3100A12E7A /* logo.png */,
 				2356163D19D0A94C00B44EE6 /* RT_fundo1.png */,
 				2356163E19D0A94C00B44EE6 /* RT_fundo2.png */,
 				2356163F19D0A94C00B44EE6 /* RT_fundo3.png */,
@@ -471,6 +474,7 @@
 			files = (
 				2356164619D0B4F100B44EE6 /* Chao.png in Resources */,
 				2356164319D0A94C00B44EE6 /* RT_fundo3.png in Resources */,
+				CDC6297619D20E3100A12E7A /* logo.png in Resources */,
 				7534411B19D0C54100D8FD18 /* notinha2.png in Resources */,
 				7534411C19D0C54100D8FD18 /* notinha3.png in Resources */,
 				2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */,

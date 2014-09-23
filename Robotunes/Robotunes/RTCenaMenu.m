@@ -94,7 +94,7 @@
 
 -(void)criarTitulo
 {
-    self.titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logorobotunes"];
+    self.titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logo"];
     self.titulo.anchorPoint = CGPointZero;
     self.titulo.size = self.frame.size;
     self.titulo.zPosition = -10;
