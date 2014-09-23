@@ -193,7 +193,7 @@
     
     //Musica *musica = [RTBancoDeDadosController procurarMusica:1];
     
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:1];
+    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
     [self.view presentScene:jogo];
 }
 

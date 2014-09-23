@@ -12,6 +12,7 @@
 #import "RTMusica.h"
 #import "RTBancoDeDadosController.h"
 #import "Musica.h"
+#import <AVFoundation/AVFoundation.h>
 
 //Categorias do jogo (chão, nota e jogador)
 static const UInt32 NotaCategoria = 0x1 << 0;

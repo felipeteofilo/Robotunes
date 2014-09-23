@@ -17,7 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         //Define a gravidade da Cena
-        self.physicsWorld.gravity = CGVectorMake(0, -3);
+        self.physicsWorld.gravity = CGVectorMake(0,-2);
         
         //Determina que o delegate para colisão é a própria cena
         self.physicsWorld.contactDelegate = self;
@@ -40,15 +40,15 @@
         //Cria o jogador
         [self criarJogador];
         
-        Musica *musica = [RTBancoDeDadosController procurarMusica:1];
+        Musica *musicaEscolhida = [RTBancoDeDadosController procurarMusica:musica];
         
-        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
+//        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
+//        
+//        [musica setValue:@"musica" forKey:@"nome"];
+//        [musica setValue:@"eu" forKey:@"autor"];
+//        [musica setValue:array forKey:@"notas"];
         
-        [musica setValue:@"musica" forKey:@"nome"];
-        [musica setValue:@"eu" forKey:@"autor"];
-        [musica setValue:array forKey:@"notas"];
-        
-        self.musica = [[RTMusica alloc]initMusica:musica];
+        self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
         
         
         
@@ -115,12 +115,14 @@
 
 //Metodo para criar as notas na tela
 -(void)criarNotas{
-   
-    //TODO
+    
+      //TODO
     //Mudar para o tempo da musica
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
     }
+   
+    
     
     
    //pega a nota do tempo especifico e a faz cair pela tela
@@ -213,9 +215,11 @@
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
             NSLog(@"foi nota");
+            [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             NSLog(@"foi player");
+            [firstBody.node removeFromParent];
         }
     }
 }
