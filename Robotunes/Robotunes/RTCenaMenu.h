@@ -21,6 +21,8 @@
 @property int musicaEscolhida;
 
 @property SKSpriteNode *robotuneR1;
+@property SKSpriteNode *robotuneR1Cabeca;
+@property SKSpriteNode *robotuneR1Corpo;
 @property SKSpriteNode *robotuneB2;
 @property SKSpriteNode *robotuneY3;
 

@@ -11,7 +11,6 @@
 		2356164219D0A94C00B44EE6 /* RT_fundo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356163E19D0A94C00B44EE6 /* RT_fundo2.png */; };
 		2356164319D0A94C00B44EE6 /* RT_fundo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356163F19D0A94C00B44EE6 /* RT_fundo3.png */; };
 		2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */; };
-		2356164619D0B4F100B44EE6 /* Chao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356164519D0B4F100B44EE6 /* Chao.png */; };
 		2356164819D0B6C700B44EE6 /* btnFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356164719D0B6C700B44EE6 /* btnFace.png */; };
 		7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155019C8B55F00EC3955 /* Foundation.framework */; };
 		7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155419C8B55F00EC3955 /* UIKit.framework */; };
@@ -65,6 +64,10 @@
 		C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526B19CC82E800C6A0A4 /* Musica.m */; };
 		C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */; };
 		CDC6297619D20E3100A12E7A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297519D20E3100A12E7A /* logo.png */; };
+		CDC6297819D211DC00A12E7A /* R1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297719D211DC00A12E7A /* R1.atlas */; };
+		CDC6297B19D211E400A12E7A /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297919D211E400A12E7A /* R1_cabeca.png */; };
+		CDC6297C19D211E400A12E7A /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297A19D211E400A12E7A /* R1_corpo.png */; };
+		CDC6297E19D2120700A12E7A /* chao.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC6297D19D2120700A12E7A /* chao.png */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
 		CDEA606E19C8BBAF0099EEA7 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */; };
 		CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */; };
@@ -88,7 +91,6 @@
 		2356163E19D0A94C00B44EE6 /* RT_fundo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo2.png; sourceTree = "<group>"; };
 		2356163F19D0A94C00B44EE6 /* RT_fundo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo3.png; sourceTree = "<group>"; };
 		2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
-		2356164519D0B4F100B44EE6 /* Chao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chao.png; sourceTree = "<group>"; };
 		2356164719D0B6C700B44EE6 /* btnFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnFace.png; sourceTree = "<group>"; };
 		7531154D19C8B55F00EC3955 /* Robotunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robotunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531155019C8B55F00EC3955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +156,10 @@
 		C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
 		C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBarraStatus.m; sourceTree = "<group>"; };
 		CDC6297519D20E3100A12E7A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		CDC6297719D211DC00A12E7A /* R1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = R1.atlas; sourceTree = "<group>"; };
+		CDC6297919D211E400A12E7A /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
+		CDC6297A19D211E400A12E7A /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
+		CDC6297D19D2120700A12E7A /* chao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chao.png; sourceTree = "<group>"; };
 		CDEA606919C8B8340099EEA7 /* RTJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTJogador.h; sourceTree = "<group>"; };
 		CDEA606A19C8B8340099EEA7 /* RTJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTJogador.m; sourceTree = "<group>"; };
 		CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewController.h; sourceTree = "<group>"; };
@@ -349,15 +355,18 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				CDC6297719D211DC00A12E7A /* R1.atlas */,
 				7534410A19D0C54000D8FD18 /* Notas */,
 				2356164719D0B6C700B44EE6 /* btnFace.png */,
-				2356164519D0B4F100B44EE6 /* Chao.png */,
+				CDC6297D19D2120700A12E7A /* chao.png */,
 				CDC6297519D20E3100A12E7A /* logo.png */,
 				2356163D19D0A94C00B44EE6 /* RT_fundo1.png */,
 				2356163E19D0A94C00B44EE6 /* RT_fundo2.png */,
 				2356163F19D0A94C00B44EE6 /* RT_fundo3.png */,
 				2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */,
 				7598150619CB5B40003487E8 /* fundo.png */,
+				CDC6297919D211E400A12E7A /* R1_cabeca.png */,
+				CDC6297A19D211E400A12E7A /* R1_corpo.png */,
 				7598150719CB5B40003487E8 /* RobotuneB2.png */,
 				7598150819CB5B40003487E8 /* RobotuneR1.png */,
 				7598150919CB5B40003487E8 /* RobotuneY3.png */,
@@ -472,14 +481,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2356164619D0B4F100B44EE6 /* Chao.png in Resources */,
 				2356164319D0A94C00B44EE6 /* RT_fundo3.png in Resources */,
 				CDC6297619D20E3100A12E7A /* logo.png in Resources */,
 				7534411B19D0C54100D8FD18 /* notinha2.png in Resources */,
 				7534411C19D0C54100D8FD18 /* notinha3.png in Resources */,
 				2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */,
+				CDC6297819D211DC00A12E7A /* R1.atlas in Resources */,
 				7534411F19D0C54100D8FD18 /* notinha6.png in Resources */,
 				7534411E19D0C54100D8FD18 /* notinha5.png in Resources */,
+				CDC6297B19D211E400A12E7A /* R1_cabeca.png in Resources */,
 				7534412019D0C54100D8FD18 /* notinha7.png in Resources */,
 				7598150A19CB5B40003487E8 /* fundo.png in Resources */,
 				2356164819D0B6C700B44EE6 /* btnFace.png in Resources */,
@@ -492,10 +502,12 @@
 				7534411D19D0C54100D8FD18 /* notinha4.png in Resources */,
 				7534412419D0C54100D8FD18 /* quebrada3.png in Resources */,
 				2356164219D0A94C00B44EE6 /* RT_fundo2.png in Resources */,
+				CDC6297C19D211E400A12E7A /* R1_corpo.png in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7534412219D0C54100D8FD18 /* quebrada1.png in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,
+				CDC6297E19D2120700A12E7A /* chao.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				7534412619D0C54100D8FD18 /* quebrada5.png in Resources */,
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,

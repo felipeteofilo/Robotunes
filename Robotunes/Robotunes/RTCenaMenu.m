@@ -113,9 +113,9 @@
 
 -(void)criarChao
 {
-    self.chao = [[SKSpriteNode alloc]initWithImageNamed:@"Chao"];
+    self.chao = [[SKSpriteNode alloc]initWithImageNamed:@"chao"];
     self.chao.anchorPoint = CGPointZero;
-    self.chao.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.01);
+    self.chao.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.035);
     self.chao.position = CGPointZero;
     [self addChild:self.chao];
 }
@@ -141,11 +141,17 @@
 
 -(void)criarRobotuneR1
 {
-    self.robotuneR1 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneR1"];
-    self.robotuneR1.anchorPoint = CGPointZero;
-    self.robotuneR1.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.45);
-    self.robotuneR1.position = CGPointMake(self.frame.size.width * 0.7, 5);
-    [self addChild:self.robotuneR1];
+    self.robotuneR1Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"R1_corpo"];
+    self.robotuneR1Corpo.anchorPoint = CGPointZero;
+    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.42);
+    self.robotuneR1Corpo.position = CGPointMake(self.frame.size.width * 0.7, 5);
+    [self addChild:self.robotuneR1Corpo];
+    
+    self.robotuneR1Cabeca = [[SKSpriteNode alloc]initWithImageNamed:@"R1_cabeca"];
+    self.robotuneR1Cabeca.anchorPoint = CGPointZero;
+    self.robotuneR1Cabeca.size = CGSizeMake(self.frame.size.width * 0.28, self.frame.size.height * 0.28);
+    self.robotuneR1Cabeca.position = CGPointMake(self.frame.size.width * 0.68, self.frame.size.height * 0.35);
+    [self addChild:self.robotuneR1Cabeca];
 }
 
 -(void)criarRobotuneB2
