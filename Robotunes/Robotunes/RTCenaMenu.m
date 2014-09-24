@@ -47,7 +47,7 @@
         [self criarRobotuneY3];
         
         //Cria e inicia as animacões dos robos
-        [self criarAnimacoes];
+     //   [self criarAnimacoes];
     }
     return self;
 }
