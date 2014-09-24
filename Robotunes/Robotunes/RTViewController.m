@@ -27,15 +27,16 @@
     [self.view addSubview:skView];
     skView.showsNodeCount = YES;
     skView.showsFPS=YES;
+    skView.showsPhysics=YES;
     
     //RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size andMusica:[[RTMusica alloc]init]];
     // skView.showsPhysics =YES;
     
     //Cria a cena de menu
-//    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
     
     // RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
-    RTCenaGameOver *menu=[[RTCenaGameOver alloc]initWithSize:skView.bounds.size eGanhou:NO];
+
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
     

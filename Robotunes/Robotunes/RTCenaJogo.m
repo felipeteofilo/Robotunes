@@ -57,6 +57,11 @@
         //Comeca com 1 pq ao atribuir a pontuacao do jogador ele multiplica pelo combo
         self.combo=1;
         
+        //Adiciona o HUD
+        RTHUD *hud=[[RTHUD alloc]initHUD:self.frame];
+        
+        [self addChild:hud];
+        
     }
     return self;
 }

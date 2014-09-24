@@ -67,6 +67,8 @@
 		94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */; };
 		94F46EEB19D1EA370066BC33 /* logorobotunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F46EEA19D1EA370066BC33 /* logorobotunes.png */; };
 		94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94F46EEC19D1EA960066BC33 /* Nuvens.atlas */; };
+		94FA409B19D3596800D60E24 /* RTHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FA409A19D3596800D60E24 /* RTHUD.m */; };
+		94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FA409C19D35B6100D60E24 /* HUD_barrinha.png */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -161,6 +163,9 @@
 		94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		94F46EEA19D1EA370066BC33 /* logorobotunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logorobotunes.png; sourceTree = "<group>"; };
 		94F46EEC19D1EA960066BC33 /* Nuvens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nuvens.atlas; sourceTree = "<group>"; };
+		94FA409919D3596800D60E24 /* RTHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHUD.h; sourceTree = "<group>"; };
+		94FA409A19D3596800D60E24 /* RTHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHUD.m; sourceTree = "<group>"; };
+		94FA409C19D35B6100D60E24 /* HUD_barrinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_barrinha.png; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -272,8 +277,8 @@
 				C5B85A4A19CDDAC100446492 /* Conectividade */,
 				C5B85A5219CDDFE000446492 /* CoreData */,
 				94B2661E19D20EA8005BAEC9 /* SKScenes */,
-				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
+				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
 				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
 				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
@@ -289,6 +294,8 @@
 				C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */,
 				C5B85A4E19CDDB0200446492 /* RTUteis.h */,
 				C5B85A4F19CDDB0200446492 /* RTUteis.m */,
+				94FA409919D3596800D60E24 /* RTHUD.h */,
+				94FA409A19D3596800D60E24 /* RTHUD.m */,
 				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
 				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
@@ -307,7 +314,6 @@
 				7531155B19C8B55F00EC3955 /* InfoPlist.strings */,
 				7531155E19C8B55F00EC3955 /* main.m */,
 				7531156019C8B55F00EC3955 /* Robotunes-Prefix.pch */,
-				94EBA80919D1E64800D390C0 /* Notas */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				94EBA80919D1E64800D390C0 /* Notas */,
 				94F46EEC19D1EA960066BC33 /* Nuvens.atlas */,
 				94B2662419D2105E005BAEC9 /* Botoes */,
 				94F46EEA19D1EA370066BC33 /* logorobotunes.png */,
@@ -345,6 +352,7 @@
 				94EBA80319D1E5E100D390C0 /* Chao.png */,
 				94EBA80419D1E5E100D390C0 /* fundo.png */,
 				94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */,
+				94FA409C19D35B6100D60E24 /* HUD_barrinha.png */,
 			);
 			path = Imagens;
 			sourceTree = "<group>";
@@ -390,8 +398,7 @@
 				94EBA80A19D1E64800D390C0 /* Completas */,
 				94EBA81219D1E64800D390C0 /* Quebradas */,
 			);
-			name = Notas;
-			path = Imagens/Notas;
+			path = Notas;
 			sourceTree = "<group>";
 		};
 		94EBA80A19D1E64800D390C0 /* Completas */ = {
@@ -541,6 +548,7 @@
 				94EBA81C19D1E64800D390C0 /* notinha4.png in Resources */,
 				94EBA81B19D1E64800D390C0 /* notinha3.png in Resources */,
 				94B2663019D21BA8005BAEC9 /* botao_lose.png in Resources */,
+				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
 				94B2662819D2105E005BAEC9 /* botao_win.png in Resources */,
 				94EBA80019D1E5CB00D390C0 /* RT_fundo2.png in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
@@ -589,6 +597,7 @@
 				94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
 				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,
+				94FA409B19D3596800D60E24 /* RTHUD.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
 				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,

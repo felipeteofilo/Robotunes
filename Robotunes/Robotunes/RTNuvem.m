@@ -52,7 +52,7 @@
 -(void)movimentar{
     [self runAction:[SKAction moveToX:2000 duration:self.velocidade]completion:^{
         //Ficar mais lgal :P
-        [self runAction:[SKAction fadeOutWithDuration:0.5]completion:^{
+        [self runAction:[SKAction fadeOutWithDuration:0.1]completion:^{
             [self removeFromParent];
         }];
     }];
