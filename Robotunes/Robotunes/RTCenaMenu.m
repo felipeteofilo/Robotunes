@@ -159,6 +159,7 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    //COISAS PARA A NUVEM
     //Tempo desde ultimo update
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
     
@@ -176,6 +177,11 @@
         self.intervaloNuvens =currentTime;
     }
     
+    
+    
+    
+    
+    //COISAS PARA O FUNDO
     //primeira vez
     if(self.tempo == -80){
         self.tempo = currentTime + tempoParaMudar;
