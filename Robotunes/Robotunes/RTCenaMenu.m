@@ -151,6 +151,8 @@
     [self addChild:self.robotuneY3];
 }
 
+
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
@@ -167,18 +169,20 @@
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {
             //Cria a nuvem
-            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            RTNuvem *nuvem = [[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
             
-            //add na arvore de nodes
+            //Adiciona na árvore de nodes
             [self addChild:nuvem];
         }
         
         //Atualiza o contador
-        self.intervaloNuvens =currentTime;
+        self.intervaloNuvens = currentTime;
     }
-    
-    
-    
+ 
+        
+        //Atualiza o contador
+        self.intervaloNotinhas = currentTime;
+    }
     
     
     //COISAS PARA O FUNDO

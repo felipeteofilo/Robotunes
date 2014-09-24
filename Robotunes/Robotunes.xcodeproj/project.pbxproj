@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2356164419D0A94C00B44EE6 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */; };
+		23DE2C6A19D35FA400FE1896 /* notinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23DE2C6919D35FA400FE1896 /* notinhas.png */; };
+		23DE2C6F19D360F600FE1896 /* notinhas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23DE2C6E19D360F600FE1896 /* notinhas.atlas */; };
 		7505A38819D33BBA0001182C /* RTCenaGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505A38719D33BBA0001182C /* RTCenaGameOver.m */; };
 		7505A38C19D33C870001182C /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505A38B19D33C870001182C /* RTNuvem.m */; };
 		7505A38E19D33CAC0001182C /* Nuvens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7505A38D19D33CAC0001182C /* Nuvens.atlas */; };
@@ -136,6 +138,8 @@
 
 /* Begin PBXFileReference section */
 		2356164019D0A94C00B44EE6 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
+		23DE2C6919D35FA400FE1896 /* notinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notinhas.png; path = ../../notinhas.png; sourceTree = "<group>"; };
+		23DE2C6E19D360F600FE1896 /* notinhas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = notinhas.atlas; sourceTree = "<group>"; };
 		7505A38619D33BBA0001182C /* RTCenaGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaGameOver.h; sourceTree = "<group>"; };
 		7505A38719D33BBA0001182C /* RTCenaGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaGameOver.m; sourceTree = "<group>"; };
 		7505A38A19D33C870001182C /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 		7505A3A119D33D260001182C /* Notas */ = {
 			isa = PBXGroup;
 			children = (
+				23DE2C6919D35FA400FE1896 /* notinhas.png */,
 				7505A3A219D33D260001182C /* Completas */,
 				7505A3AA19D33D260001182C /* Quebradas */,
 			);
@@ -526,6 +531,7 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				23DE2C6E19D360F600FE1896 /* notinhas.atlas */,
 				7505A3A119D33D260001182C /* Notas */,
 				7505A39619D33CF70001182C /* Background */,
 				7505A38F19D33CB80001182C /* Botoes */,
@@ -741,6 +747,7 @@
 				7505A38E19D33CAC0001182C /* Nuvens.atlas in Resources */,
 				7534412119D0C54100D8FD18 /* quebrada0.png in Resources */,
 				7534411A19D0C54100D8FD18 /* notinha1.png in Resources */,
+				23DE2C6A19D35FA400FE1896 /* notinhas.png in Resources */,
 				7534412319D0C54100D8FD18 /* quebrada2.png in Resources */,
 				75D6082119D352CA000FF7B2 /* How it Begins.mp3 in Resources */,
 				7505A3B119D33D260001182C /* notinha1.png in Resources */,
@@ -769,6 +776,7 @@
 				CDC6297E19D2120700A12E7A /* chao.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				CD10F93519D2220C00D307CA /* 017.png in Resources */,
+				23DE2C6F19D360F600FE1896 /* notinhas.atlas in Resources */,
 				7534412619D0C54100D8FD18 /* quebrada5.png in Resources */,
 				CD10F92C19D2220C00D307CA /* 008.png in Resources */,
 				7505A3BD19D33D260001182C /* quebrada5.png in Resources */,
