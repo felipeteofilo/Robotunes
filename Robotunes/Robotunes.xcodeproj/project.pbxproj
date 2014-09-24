@@ -28,7 +28,12 @@
 		7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150719CB5B40003487E8 /* RobotuneB2.png */; };
 		7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150819CB5B40003487E8 /* RobotuneR1.png */; };
 		7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150919CB5B40003487E8 /* RobotuneY3.png */; };
-		94B2661D19D20E90005BAEC9 /* RTGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2661C19D20E90005BAEC9 /* RTGameOver.m */; };
+		94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */; };
+		94B2662219D2104E005BAEC9 /* RTGameOver_lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B2662019D2104E005BAEC9 /* RTGameOver_lose.png */; };
+		94B2662319D2104E005BAEC9 /* RTGameOver_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B2662119D2104E005BAEC9 /* RTGameOver_win.png */; };
+		94B2662819D2105E005BAEC9 /* botao_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B2662619D2105E005BAEC9 /* botao_win.png */; };
+		94B2662A19D2118A005BAEC9 /* btnFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B2662919D2118A005BAEC9 /* btnFace.png */; };
+		94B2663019D21BA8005BAEC9 /* botao_lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 94B2662F19D21BA8005BAEC9 /* botao_lose.png */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
 		94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8619CA04C600E2C5BC /* Parse.framework */; };
@@ -44,7 +49,6 @@
 		94EBA7FF19D1E5CB00D390C0 /* RT_fundo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA7FC19D1E5CB00D390C0 /* RT_fundo1.png */; };
 		94EBA80019D1E5CB00D390C0 /* RT_fundo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA7FD19D1E5CB00D390C0 /* RT_fundo2.png */; };
 		94EBA80119D1E5CB00D390C0 /* RT_fundo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA7FE19D1E5CB00D390C0 /* RT_fundo3.png */; };
-		94EBA80519D1E5E100D390C0 /* btnFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA80219D1E5E100D390C0 /* btnFace.png */; };
 		94EBA80619D1E5E100D390C0 /* Chao.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA80319D1E5E100D390C0 /* Chao.png */; };
 		94EBA80719D1E5E100D390C0 /* fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA80419D1E5E100D390C0 /* fundo.png */; };
 		94EBA81919D1E64800D390C0 /* notinha1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA80B19D1E64800D390C0 /* notinha1.png */; };
@@ -116,8 +120,13 @@
 		7598150719CB5B40003487E8 /* RobotuneB2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneB2.png; sourceTree = "<group>"; };
 		7598150819CB5B40003487E8 /* RobotuneR1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneR1.png; sourceTree = "<group>"; };
 		7598150919CB5B40003487E8 /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
-		94B2661B19D20E90005BAEC9 /* RTGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTGameOver.h; sourceTree = "<group>"; };
-		94B2661C19D20E90005BAEC9 /* RTGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTGameOver.m; sourceTree = "<group>"; };
+		94B2661B19D20E90005BAEC9 /* RTCenaGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaGameOver.h; sourceTree = "<group>"; };
+		94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaGameOver.m; sourceTree = "<group>"; };
+		94B2662019D2104E005BAEC9 /* RTGameOver_lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTGameOver_lose.png; sourceTree = "<group>"; };
+		94B2662119D2104E005BAEC9 /* RTGameOver_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTGameOver_win.png; sourceTree = "<group>"; };
+		94B2662619D2105E005BAEC9 /* botao_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botao_win.png; sourceTree = "<group>"; };
+		94B2662919D2118A005BAEC9 /* btnFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnFace.png; sourceTree = "<group>"; };
+		94B2662F19D21BA8005BAEC9 /* botao_lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botao_lose.png; sourceTree = "<group>"; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		94C0FB8619CA04C600E2C5BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
@@ -134,7 +143,6 @@
 		94EBA7FC19D1E5CB00D390C0 /* RT_fundo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo1.png; sourceTree = "<group>"; };
 		94EBA7FD19D1E5CB00D390C0 /* RT_fundo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo2.png; sourceTree = "<group>"; };
 		94EBA7FE19D1E5CB00D390C0 /* RT_fundo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_fundo3.png; sourceTree = "<group>"; };
-		94EBA80219D1E5E100D390C0 /* btnFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnFace.png; sourceTree = "<group>"; };
 		94EBA80319D1E5E100D390C0 /* Chao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chao.png; sourceTree = "<group>"; };
 		94EBA80419D1E5E100D390C0 /* fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundo.png; sourceTree = "<group>"; };
 		94EBA80B19D1E64800D390C0 /* notinha1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notinha1.png; sourceTree = "<group>"; };
@@ -152,7 +160,7 @@
 		94EBA81819D1E64800D390C0 /* quebrada5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quebrada5.png; sourceTree = "<group>"; };
 		94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		94F46EEA19D1EA370066BC33 /* logorobotunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logorobotunes.png; sourceTree = "<group>"; };
-		94F46EEC19D1EA960066BC33 /* Nuvens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Nuvens.atlas; path = Imagens/Nuvens.atlas; sourceTree = "<group>"; };
+		94F46EEC19D1EA960066BC33 /* Nuvens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nuvens.atlas; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -294,7 +302,6 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				94F46EEC19D1EA960066BC33 /* Nuvens.atlas */,
 				7598150519CB5B40003487E8 /* Imagens */,
 				7531155A19C8B55F00EC3955 /* Robotunes-Info.plist */,
 				7531155B19C8B55F00EC3955 /* InfoPlist.strings */,
@@ -326,6 +333,8 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				94F46EEC19D1EA960066BC33 /* Nuvens.atlas */,
+				94B2662419D2105E005BAEC9 /* Botoes */,
 				94F46EEA19D1EA370066BC33 /* logorobotunes.png */,
 				94EBA7FB19D1E5CB00D390C0 /* Background */,
 				C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */,
@@ -333,7 +342,6 @@
 				7598150719CB5B40003487E8 /* RobotuneB2.png */,
 				7598150819CB5B40003487E8 /* RobotuneR1.png */,
 				7598150919CB5B40003487E8 /* RobotuneY3.png */,
-				94EBA80219D1E5E100D390C0 /* btnFace.png */,
 				94EBA80319D1E5E100D390C0 /* Chao.png */,
 				94EBA80419D1E5E100D390C0 /* fundo.png */,
 				94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */,
@@ -348,10 +356,20 @@
 				CDEA607419C8BBD90099EEA7 /* RTCenaJogo.m */,
 				CDEA607019C8BBCA0099EEA7 /* RTCenaMenu.h */,
 				CDEA607119C8BBCA0099EEA7 /* RTCenaMenu.m */,
-				94B2661B19D20E90005BAEC9 /* RTGameOver.h */,
-				94B2661C19D20E90005BAEC9 /* RTGameOver.m */,
+				94B2661B19D20E90005BAEC9 /* RTCenaGameOver.h */,
+				94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */,
 			);
 			name = SKScenes;
+			sourceTree = "<group>";
+		};
+		94B2662419D2105E005BAEC9 /* Botoes */ = {
+			isa = PBXGroup;
+			children = (
+				94B2662F19D21BA8005BAEC9 /* botao_lose.png */,
+				94B2662619D2105E005BAEC9 /* botao_win.png */,
+				94B2662919D2118A005BAEC9 /* btnFace.png */,
+			);
+			path = Botoes;
 			sourceTree = "<group>";
 		};
 		94EBA7FB19D1E5CB00D390C0 /* Background */ = {
@@ -360,6 +378,8 @@
 				94EBA7FC19D1E5CB00D390C0 /* RT_fundo1.png */,
 				94EBA7FD19D1E5CB00D390C0 /* RT_fundo2.png */,
 				94EBA7FE19D1E5CB00D390C0 /* RT_fundo3.png */,
+				94B2662019D2104E005BAEC9 /* RTGameOver_lose.png */,
+				94B2662119D2104E005BAEC9 /* RTGameOver_win.png */,
 			);
 			path = Background;
 			sourceTree = "<group>";
@@ -514,19 +534,23 @@
 				94EBA80619D1E5E100D390C0 /* Chao.png in Resources */,
 				C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */,
 				94EBA82019D1E64800D390C0 /* quebrada0.png in Resources */,
+				94B2662A19D2118A005BAEC9 /* btnFace.png in Resources */,
 				94EBA82319D1E64800D390C0 /* quebrada3.png in Resources */,
 				7598150A19CB5B40003487E8 /* fundo.png in Resources */,
+				94B2662219D2104E005BAEC9 /* RTGameOver_lose.png in Resources */,
 				94EBA81C19D1E64800D390C0 /* notinha4.png in Resources */,
 				94EBA81B19D1E64800D390C0 /* notinha3.png in Resources */,
+				94B2663019D21BA8005BAEC9 /* botao_lose.png in Resources */,
+				94B2662819D2105E005BAEC9 /* botao_win.png in Resources */,
 				94EBA80019D1E5CB00D390C0 /* RT_fundo2.png in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
+				94B2662319D2104E005BAEC9 /* RTGameOver_win.png in Resources */,
 				94EBA7FF19D1E5CB00D390C0 /* RT_fundo1.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				94EBA81A19D1E64800D390C0 /* notinha2.png in Resources */,
 				94EBA80119D1E5CB00D390C0 /* RT_fundo3.png in Resources */,
 				94F46EEB19D1EA370066BC33 /* logorobotunes.png in Resources */,
-				94EBA80519D1E5E100D390C0 /* btnFace.png in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				94EBA81D19D1E64800D390C0 /* notinha5.png in Resources */,
@@ -562,7 +586,7 @@
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				C5B85A4919CDDABD00446492 /* Reachability.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
-				94B2661D19D20E90005BAEC9 /* RTGameOver.m in Sources */,
+				94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
 				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,

@@ -54,6 +54,9 @@ static const UInt32 NotaErradaCategoria = 0x1<<3;
 //Propriedade combo que aumentará os pontos
 @property int combo;
 
+//Criado propridade p guardar o back atual
+@property SKSpriteNode *background;
+
 -(id)initWithSize:(CGSize)size andMusica:(int)musica;
 
 @end

@@ -32,8 +32,10 @@
     // skView.showsPhysics =YES;
     
     //Cria a cena de menu
-    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+//    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+    
     // RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
+    RTCenaGameOver *menu=[[RTCenaGameOver alloc]initWithSize:skView.bounds.size eGanhou:NO];
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
     

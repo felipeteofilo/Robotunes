@@ -7,7 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "RTCenaMenu.h"
 
-@interface RTGameOver : SKScene
+@interface RTCenaGameOver : SKScene
 
+-(id)initWithSize:(CGSize)size eGanhou:(BOOL)ganhou eBackgournd:(SKSpriteNode*)background;
 @end

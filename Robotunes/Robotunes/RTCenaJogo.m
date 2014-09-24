@@ -50,9 +50,6 @@
         
         self.musica = [[RTMusica alloc]initMusica:musica];
         
-        
-        
-        
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];
         
@@ -67,14 +64,16 @@
 -(void)criarImagemFundo
 {
     //Cria a imagem de fundo e define atributos
-    SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
-    imagemFundo.anchorPoint = CGPointZero;
-    imagemFundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
-    imagemFundo.zPosition = -10;
-    imagemFundo.alpha = 0.5f;
+    //Adicionardo proriedade
+    //SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
+    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
+    self.background.anchorPoint = CGPointZero;
+    self.background.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.background.zPosition = -10;
+    self.background.alpha = 0.5f;
     
     //Adiciona a imagem de fundo
-    [self addChild:imagemFundo];
+    [self addChild:self.background];
 }
 
 -(void)criarChao
@@ -246,7 +245,7 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
-    
+    //Verifcas
     [self criarNotas];
     
     //Chama a verificação do combo
@@ -294,4 +293,29 @@
     }
 }
 
+-(void)fimJogo{
+    
+    //Acabou musica e esta vivo ganhou
+    if ([self.musica acabou] && [self.jogador vida] > 0 ) {
+        
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:YES eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+        
+    
+    }else if([self.jogador vida]<=0){
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+    }else{
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+    }
+    
+    //Nao acabou musica e .
+    {
+        
+    }
+}
 @end
