@@ -26,11 +26,11 @@
     SKSpriteNode *botao;
     
     if (ganhou) {
-        mensagem=[SKSpriteNode spriteNodeWithImageNamed:@"RTGameOver_win"];
-        botao=[SKSpriteNode spriteNodeWithImageNamed:@"botao_win"];
+        mensagem = [SKSpriteNode spriteNodeWithImageNamed:@"RTGameOver_win"];
+        botao = [SKSpriteNode spriteNodeWithImageNamed:@"botao_win"];
     }else{
-        mensagem=[SKSpriteNode spriteNodeWithImageNamed:@"RTGameOver_lose"];
-        botao=[SKSpriteNode spriteNodeWithImageNamed:@"botao_lose"];
+        mensagem = [SKSpriteNode spriteNodeWithImageNamed:@"RTGameOver_lose"];
+        botao = [SKSpriteNode spriteNodeWithImageNamed:@"botao_lose"];
     }
     
     [mensagem setScale:0.3];
@@ -51,7 +51,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    SKNode *nodeTocado=[self nodeAtPoint:[[touches anyObject]locationInNode:self]];
+    SKNode *nodeTocado = [self nodeAtPoint:[[touches anyObject]locationInNode:self]];
     
     if ([nodeTocado.name isEqualToString:@"botao"]) {
         [self voltarMenuInical];
@@ -59,8 +59,7 @@
 }
 
 -(void)voltarMenuInical{
-    RTCenaMenu *menuInicial=[RTCenaMenu sceneWithSize:self.size];
-    
+    RTCenaMenu *menuInicial = [RTCenaMenu sceneWithSize:self.size];
     [self.view presentScene:menuInicial];
 }
 @end
