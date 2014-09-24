@@ -17,8 +17,7 @@
         self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
         self.musicaEscolhida = 1;
         
-        
-        
+        //Variaveis para controle da mudança no menu
         self.tempo = -80;
         self.fundoAtual = 1;
     
@@ -34,9 +33,6 @@
         //Cria e adiciona o chão
         [self criarChao];
         
-        //Criar nuvens
-        //[self criarNuvens];
-        
         //Cria e adiciona o robo de venda
         [self criarRobotuneR1];
         
@@ -45,9 +41,6 @@
         
         //Cria e adiciona o robo principal - só a imagem
         [self criarRobotuneY3];
-        
-        //Cria e inicia as animacões dos robos
-     //   [self criarAnimacoes];
     }
     return self;
 }
@@ -125,25 +118,6 @@
     [self addChild:self.chao];
 }
 
--(void)criarNuvens
-{
-    //Nuvem 1
-    self.nuvem1 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_nuvenzinhas"];
-    self.nuvem1.anchorPoint = CGPointZero;
-    self.nuvem1.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.5);
-    self.nuvem1.zPosition = -15;
-    self.nuvem1.position = CGPointMake(self.frame.size.width * 0.0, self.frame.size.height * 0.4);
-    [self addChild:self.nuvem1];
-    
-    //Nuvem 2
-    self.nuvem2 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_nuvenzinhas"];
-    self.nuvem2.anchorPoint = CGPointZero;
-    self.nuvem2.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.5);
-    self.nuvem2.zPosition = -15;
-    self.nuvem2.position = CGPointMake(self.frame.size.width * 0.0, self.frame.size.height * 0.4);
-    [self addChild:self.nuvem2];
-}
-
 -(void)criarRobotuneR1
 {
     self.robotuneR1Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"R1_corpo"];
@@ -177,71 +151,8 @@
     [self addChild:self.robotuneY3];
 }
 
--(void)criarAnimacoes
-{
-    //TESTAR QUANDO XCODE FOR ATUALIZADO
-//    //frames da animacao
-//    SKTextureAtlas *atlasR1 = [SKTextureAtlas atlasNamed:@"R1"];
-//    NSArray *nomesFramesR1 = [NSArray arrayWithArray:[atlasR1 textureNames]];
-//    NSMutableArray *framesR1 = [[NSMutableArray alloc]init];
-//    
-//    for(int i = 0; i < [nomesFramesR1 count]; i++){
-//        SKTexture *texturaTemp = [SKTexture textureWithImageNamed:[nomesFramesR1 objectAtIndex:i]];
-//        NSLog(@"%i - %@ ", i, [nomesFramesR1 objectAtIndex:i]);
-//        [framesR1 addObject:texturaTemp];
-//    }
-    
-    //ENQUANTO O XCODE NÃO É ATUALIZADO
-    //frames da animacao
-    SKTexture *a1 = [SKTexture textureWithImageNamed:@"001"];
-    SKTexture *a2 = [SKTexture textureWithImageNamed:@"002"];
-    SKTexture *a3 = [SKTexture textureWithImageNamed:@"003"];
-    SKTexture *a4 = [SKTexture textureWithImageNamed:@"004"];
-    SKTexture *a5 = [SKTexture textureWithImageNamed:@"005"];
-    SKTexture *a6 = [SKTexture textureWithImageNamed:@"006"];
-    SKTexture *a7 = [SKTexture textureWithImageNamed:@"007"];
-    SKTexture *a8 = [SKTexture textureWithImageNamed:@"008"];
-    SKTexture *a9 = [SKTexture textureWithImageNamed:@"009"];
-    SKTexture *a10 = [SKTexture textureWithImageNamed:@"010"];
-    SKTexture *a11 = [SKTexture textureWithImageNamed:@"011"];
-    SKTexture *a12 = [SKTexture textureWithImageNamed:@"012"];
-    SKTexture *a13 = [SKTexture textureWithImageNamed:@"013"];
-    SKTexture *a14 = [SKTexture textureWithImageNamed:@"014"];
-    SKTexture *a15 = [SKTexture textureWithImageNamed:@"015"];
-    SKTexture *a16 = [SKTexture textureWithImageNamed:@"016"];
-    SKTexture *a17 = [SKTexture textureWithImageNamed:@"017"];
-    SKTexture *a18 = [SKTexture textureWithImageNamed:@"018"];
-    SKTexture *a19 = [SKTexture textureWithImageNamed:@"019"];
-    SKTexture *a20 = [SKTexture textureWithImageNamed:@"020"];
-    SKTexture *a21 = [SKTexture textureWithImageNamed:@"021"];
-    
-    //adiciona-as a um array
-    NSArray *frames = @[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21];
-    
-    //cria a animação
-    self.acaoDancaR1 = [SKAction animateWithTextures:frames timePerFrame:0.065];
-    
-    //inicia a animação
-    [self.robotuneR1Cabeca runAction:[SKAction repeatActionForever:self.acaoDancaR1]];
-}
-
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.musicaEscolhida >= self.numeroDeMusicas) {
-        self.musicaEscolhida = 0;
-        
-    }
-    self.musicaEscolhida++;
-    
-    NSArray *notas = [NSArray arrayWithObjects:@"do",@"0.0",@"re",@"1.0", nil];
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-    
-    [dictionary setValue:@"Musica" forKey:@"nome"];
-    [dictionary setValue:[NSNumber numberWithFloat:10.5] forKey:@"tempoTotal"];
-    [dictionary setValue:notas forKey:@"notas"];
-    
-    //Musica *musica = [RTBancoDeDadosController procurarMusica:1];
-    
     RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
     [self.view presentScene:jogo];
 }
@@ -249,8 +160,8 @@
 -(void)update:(NSTimeInterval)currentTime
 {
     //Tempo desde ultimo update
-    
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
+    
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {
