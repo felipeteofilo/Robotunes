@@ -17,7 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         //Define a gravidade da Cena
-        //self.physicsWorld.gravity = CGVectorMake(0,-2);
+        self.physicsWorld.gravity = CGVectorMake(0,-2);
         
         //Determina que o delegate para colisão é a própria cena
         self.physicsWorld.contactDelegate = self;
@@ -42,11 +42,11 @@
         
         Musica *musicaEscolhida = [RTBancoDeDadosController procurarMusica:musica];
         
-        //        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
-        //
-        //        [musica setValue:@"musica" forKey:@"nome"];
-        //        [musica setValue:@"eu" forKey:@"autor"];
-        //        [musica setValue:array forKey:@"notas"];
+//        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
+//        
+//        [musica setValue:@"musica" forKey:@"nome"];
+//        [musica setValue:@"eu" forKey:@"autor"];
+//        [musica setValue:array forKey:@"notas"];
         
         self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
         
@@ -60,13 +60,6 @@
     }
     return self;
 }
-
--(SKAction*)descer{
-    
-    SKAction *descer = [SKAction moveToY:0 duration:2];
-    return descer;
-}
-
 
 -(void)criarImagemFundo
 {
@@ -123,56 +116,53 @@
     [self addChild:self.jogador];
 }
 
-
-
-
 //Metodo para criar as notas na tela
 -(void)criarNotas{
     
-    //TODO
+      //TODO
     //Mudar para o tempo da musica
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
         self.tempoNotaQuebrada = CACurrentMediaTime();
         [self.musica.som play];
     }
-    
+   
     NSLog(@"Tempo %f",CACurrentMediaTime()- self.tempoInicial);
     
     
-    //pega a nota do tempo especifico e a faz cair pela tela
-    RTNota* nota = [self.musica nota:(CACurrentMediaTime()- self.tempoInicial)+2.2];
-    if (nota != nil) {
+   //pega a nota do tempo especifico e a faz cair pela tela
+   RTNota* nota = [self.musica nota:(CACurrentMediaTime()- self.tempoInicial)+2.2];
+   if (nota != nil) {
         
         
         nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
         nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
-        
+       
         [nota criarCorpoFisico];
+       
+       nota.physicsBody.categoryBitMask = NotaCategoria;
+       nota.physicsBody.contactTestBitMask = JogadorCategoria;
         
-        nota.physicsBody.categoryBitMask = NotaCategoria;
-        nota.physicsBody.contactTestBitMask = JogadorCategoria;
-        [nota runAction:[self descer]];
         [self addChild:nota];
     }
-    else if (CACurrentMediaTime()- self.tempoNotaQuebrada > 3){
-        
-        self.tempoNotaQuebrada = CACurrentMediaTime();
-        
-        int posicao = arc4random() %4;
-        nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
-        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
-        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
-        
-        [nota criarCorpoFisico];
-        
-        nota.physicsBody.categoryBitMask = NotaErradaCategoria;
-        nota.physicsBody.contactTestBitMask = ChaoCategoria;
-        
-        [nota runAction:[self descer]];
-        [self addChild:nota];
-        
-    }
+   else if (CACurrentMediaTime()- self.tempoNotaQuebrada > 3){
+       
+       self.tempoNotaQuebrada = CACurrentMediaTime();
+       
+       int posicao = arc4random() %4;
+       nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
+       nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+       nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
+       
+       [nota criarCorpoFisico];
+     
+       nota.physicsBody.categoryBitMask = NotaErradaCategoria;
+       nota.physicsBody.contactTestBitMask = ChaoCategoria;
+       
+       
+       [self addChild:nota];
+
+   }
 }
 
 
@@ -247,9 +237,9 @@
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             NSLog(@"foi player");
-            
+
             [firstBody.node removeFromParent];
-            
+
             
             [self.jogador atualizarPontos:10*[self combo]];
             
@@ -273,7 +263,7 @@
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
-            [firstBody.node removeFromParent];
+             [firstBody.node removeFromParent];
         }
     }
 }
@@ -338,7 +328,7 @@
         
         [self.view presentScene:gameOver];
         
-        
+    
     }else if([self.jogador vida]<=0){
         RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
         
