@@ -47,7 +47,7 @@
 //Metodo que cria o corpo fisico da nota
 -(void)criarCorpoFisico{
     [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:self.size withAnchorPoint:self.anchorPoint]]];
-    
+    self.physicsBody.affectedByGravity = NO;
     self.physicsBody.restitution = 0;
 }
 
