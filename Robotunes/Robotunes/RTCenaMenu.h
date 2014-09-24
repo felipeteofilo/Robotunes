@@ -27,7 +27,7 @@
 @property SKSpriteNode *robotuneB2;
 @property SKSpriteNode *robotuneY3;
 
-//Timer para criação das nuvens
+//Timer p criacao das nuvens
 @property (nonatomic) NSTimeInterval intervaloNuvens;
 
 @property SKSpriteNode *fundo1;
@@ -41,6 +41,12 @@
 @property SKSpriteNode *titulo;
 @property SKSpriteNode *btnFace;
 @property SKSpriteNode *chao;
+
+@property SKSpriteNode *nuvem1;
+@property SKSpriteNode *nuvem2;
+
+
+@property SKAction *acaoDancaR1;
 
 
 @end
