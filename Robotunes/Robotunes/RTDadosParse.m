@@ -23,15 +23,14 @@
     }
 }
 
-//Baixa novas musicas
-
 //Aguarda um seg requisisão excedeu o limite
 +(void)aguardarTempo:(SEL)seletorMetodoRetorno{
-    //Cria uma thread
-    
-    //da sleep de 1 seg
-    
-    //Executa metodo
+    //Timer para refazer a acao
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:seletorMetodoRetorno
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 +(int)ultimoIDMusica{
@@ -85,8 +84,12 @@
     }
     
     //Verifica se está no prazo de att
-    if ([RTUteis diasEntreDataInicial:[RTBancoDeDadosController ultimaDataVerificacao] andDate:[RTUteis formataData:[NSDate date]]] < 1) {
-        return;
+    NSDate *ultimaDataVerificacao=[RTBancoDeDadosController ultimaDataVerificacao];
+    
+    if (ultimaDataVerificacao) {
+        if ([RTUteis diasEntreDataInicial:ultimaDataVerificacao andDate:[RTUteis formataData:[NSDate date]]] < 1) {
+            return;
+        }
     }
     
     //Pega o ID da ultima musica
@@ -106,7 +109,6 @@
             //Código de erro para quanto excede qtde n de requisições
             if (error.code == 155) {
                 [RTDadosParse aguardarTempo:@selector(atualizaMusicasCoreData)];
-                
             }else{
                 if (![retorno count]==0) {
                     //Faz um for each e monta o array

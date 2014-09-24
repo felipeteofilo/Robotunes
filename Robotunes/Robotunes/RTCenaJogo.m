@@ -50,12 +50,12 @@
         
         self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
         
-        
-        
-        
         //Cria o sistema do Acelerometro - NÃO USADO
         //[self criarAcelerometro];
         
+        //Inicia propriedade p controle dos combos
+        //Comeca com 1 pq ao atribuir a pontuacao do jogador ele multiplica pelo combo
+        self.combo=1;
         
     }
     return self;
@@ -64,14 +64,16 @@
 -(void)criarImagemFundo
 {
     //Cria a imagem de fundo e define atributos
-    SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
-    imagemFundo.anchorPoint = CGPointZero;
-    imagemFundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
-    imagemFundo.zPosition = -10;
-    imagemFundo.alpha = 0.5f;
+    //Adicionardo proriedade
+    //SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
+    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
+    self.background.anchorPoint = CGPointZero;
+    self.background.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.background.zPosition = -10;
+    self.background.alpha = 0.5f;
     
     //Adiciona a imagem de fundo
-    [self addChild:imagemFundo];
+    [self addChild:self.background];
 }
 
 -(void)criarChao
@@ -107,7 +109,8 @@
     
     //Com quais categorias ele colide
     self.jogador.physicsBody.categoryBitMask = JogadorCategoria;
-    self.jogador.physicsBody.contactTestBitMask = NotaCategoria;
+    self.jogador.physicsBody.contactTestBitMask = NotaErradaCategoria;
+    
     
     //Adiciona o jogador na cena
     [self addChild:self.jogador];
@@ -120,6 +123,7 @@
     //Mudar para o tempo da musica
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
+        self.tempoNotaQuebrada = CACurrentMediaTime();
     }
    
     
@@ -134,18 +138,30 @@
         nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
        
         [nota criarCorpoFisico];
-//       if ([nota.nome isEqualToString:@"nota"]) {
-//           nota.physicsBody.categoryBitMask = NotaCategoria;
-//       }
-//       else{
-//           //TODO mudar para categoria de quebrada
-//           nota.physicsBody.categoryBitMask = NotaCategoria;
-//       }
+       
        nota.physicsBody.categoryBitMask = NotaCategoria;
-       nota.physicsBody.contactTestBitMask = ChaoCategoria;
+       nota.physicsBody.contactTestBitMask = JogadorCategoria;
         
         [self addChild:nota];
     }
+   else if (CACurrentMediaTime()- self.tempoNotaQuebrada > 3){
+       
+       self.tempoNotaQuebrada = CACurrentMediaTime();
+       
+       int posicao = arc4random() %4;
+       nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
+       nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+       nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
+       
+       [nota criarCorpoFisico];
+     
+       nota.physicsBody.categoryBitMask = NotaErradaCategoria;
+       nota.physicsBody.contactTestBitMask = ChaoCategoria;
+       
+       
+       [self addChild:nota];
+
+   }
 }
 
 
@@ -212,6 +228,7 @@
     
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & NotaCategoria)!=0) {
+        
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
             NSLog(@"foi nota");
@@ -219,7 +236,33 @@
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             NSLog(@"foi player");
+
             [firstBody.node removeFromParent];
+
+            
+            [self.jogador atualizarPontos:10*[self combo]];
+            
+            self.notasCertasSeq++;
+        }
+    }
+    
+    //A categoria nota errada esta com um numero maior que o jogador
+    if ((firstBody.categoryBitMask & NotaErradaCategoria )!=0) {
+        
+        //Verifica se colidiu com uma nota errada
+        if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
+            //TODO: tocar som errado
+            
+            [self.jogador atualizarVida:-10];
+            //zerar contador de notas certas
+            self.notasCertasSeq=0;
+            
+            //Volta p o primeito combo
+            self.combo=1;
+            [firstBody.node removeFromParent];
+        }
+        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
+             [firstBody.node removeFromParent];
         }
     }
 }
@@ -227,9 +270,11 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
-    
+    //Verifcas
     [self criarNotas];
     
+    //Chama a verificação do combo
+    [self atualizarCombo];
     
     //    //ACELEROMETRO! NÃO USADO
     //    //VERIFICAÇÃO DE MOVIMENTO
@@ -264,6 +309,38 @@
     //    NSLog(@"inclinado? %hhd", self.inclinado);
 }
 
+//Verifica se o jogador ja acertou N notas e atualiza o multiplicador dos pontos
+-(void)atualizarCombo{
+    //Aumenta a qtde de notas p gerar o combo
+    if (self.notasCertasSeq >= (2 + self.combo)) {
+        self.combo++;
+        self.notasCertasSeq =0;
+    }
+}
 
-
+-(void)fimJogo{
+    
+    //Acabou musica e esta vivo ganhou
+    if ([self.musica acabou] && [self.jogador vida] > 0 ) {
+        
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:YES eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+        
+    
+    }else if([self.jogador vida]<=0){
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+    }else{
+        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
+        
+        [self.view presentScene:gameOver];
+    }
+    
+    //Nao acabou musica e .
+    {
+        
+    }
+}
 @end

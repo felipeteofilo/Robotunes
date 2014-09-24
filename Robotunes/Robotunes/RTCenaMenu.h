@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "RTDadosParse.h"
 #import "RTBancoDeDadosController.h"
+#import "RTNuvem.h"
 
 @interface RTCenaMenu : SKScene
 
@@ -26,6 +27,9 @@
 @property SKSpriteNode *robotuneB2;
 @property SKSpriteNode *robotuneY3;
 
+//Timer p criacao das nuvens
+@property (nonatomic) NSTimeInterval intervaloNuvens;
+
 @property SKSpriteNode *fundo1;
 @property SKSpriteNode *fundo2;
 @property SKSpriteNode *fundo3;
@@ -40,6 +44,7 @@
 
 @property SKSpriteNode *nuvem1;
 @property SKSpriteNode *nuvem2;
+
 
 @property SKAction *acaoDancaR1;
 

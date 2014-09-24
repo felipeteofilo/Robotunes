@@ -17,6 +17,8 @@
         self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
         self.musicaEscolhida = 1;
         
+        
+        
         self.tempo = -80;
         self.fundoAtual = 1;
     
@@ -33,7 +35,7 @@
         [self criarChao];
         
         //Criar nuvens
-        [self criarNuvens];
+        //[self criarNuvens];
         
         //Cria e adiciona o robo de venda
         [self criarRobotuneR1];
@@ -246,6 +248,23 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    //Tempo desde ultimo update
+    
+    CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
+    //A cada meio segundo tenta criar uma nuvem
+    if (ultimoUpdate > 0.4) {
+        if ([RTUteis sortearChanceSim:15]) {
+            //Cria a nuvem
+            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            
+            //add na arvore de nodes
+            [self addChild:nuvem];
+        }
+        
+        //Atualiza o contador
+        self.intervaloNuvens =currentTime;
+    }
+    
     //primeira vez
     if(self.tempo == -80){
         self.tempo = currentTime + tempoParaMudar;

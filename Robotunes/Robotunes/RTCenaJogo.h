@@ -15,9 +15,12 @@
 #import <AVFoundation/AVFoundation.h>
 
 //Categorias do jogo (chão, nota e jogador)
-static const UInt32 NotaCategoria = 0x1 << 0;
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria = 0x1 << 2;
+static const UInt32 NotaErradaCategoria = 0x1<<0;
+static const UInt32 NotaCategoria = 0x1 << 1;
+static const UInt32 JogadorCategoria = 0x1 << 2;
+static const UInt32 ChaoCategoria = 0x1 << 3;
+
+
 
 @interface RTCenaJogo : SKScene <SKPhysicsContactDelegate>
 
@@ -34,6 +37,8 @@ static const UInt32 ChaoCategoria = 0x1 << 2;
 //Float tempo inicial da musica
 @property float tempoInicial;
 
+@property float tempoNotaQuebrada;
+
 //Booleano que armazena se o device já foi inclinado ou não
 @property BOOL inclinado;
 
@@ -45,6 +50,15 @@ static const UInt32 ChaoCategoria = 0x1 << 2;
 
 //inteiro que armazena os pontos feitos nessa música
 @property int pontos;
+
+//Armazena qntas notas ele acertou em sequencia
+@property int notasCertasSeq;
+
+//Propriedade combo que aumentará os pontos
+@property int combo;
+
+//Criado propridade p guardar o back atual
+@property SKSpriteNode *background;
 
 -(id)initWithSize:(CGSize)size andMusica:(int)musica;
 

@@ -11,8 +11,11 @@
 
 @interface RTUteis : NSObject
 
+//Classe usada para métodos genericos e de utilidade geral;
 +(NSDate*)formataData:(NSDate*)data;
 +(BOOL)possuiConexao;
 +(BOOL)possuiConexaoServidor:(NSString*)urlServidor;
 +(int)diasEntreDataInicial:(NSDate*)dataInicial andDate:(NSDate*)dataFinal;
++(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum;
++(BOOL)sortearChanceSim:(float)chanceSim;
 @end

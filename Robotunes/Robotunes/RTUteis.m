@@ -70,4 +70,19 @@
     
     return abs((int)[difference day]);
 }
++(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum{
+    //O -1 é para que o numero passado como minimo possa ser sorteado
+    int rndValue = (menorNum-1) + arc4random() % (maiorNum - menorNum);
+    
+    return rndValue;
+}
++(BOOL)sortearChanceSim:(float)chanceSim{
+    float valorSorteardo=(float)(arc4random()%100)/100;
+    
+    if (valorSorteardo < (chanceSim/100)) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 @end
