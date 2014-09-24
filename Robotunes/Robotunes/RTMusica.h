@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "RTNota.h"
 #import "Musica.h"
 
@@ -29,6 +28,9 @@
 
 //Int que armazena a nota atual
 @property int notaAtual;
+
+
+@property AVAudioPlayer *som;
 
 //Método que indica se a música acabou ou não
 -(BOOL)acabou;

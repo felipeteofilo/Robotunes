@@ -21,6 +21,11 @@
         
         self.nome = [musica valueForKey:@"nome"];
         self.autor =[musica valueForKey:@"autor"];
+        NSURL *urlSom = [[NSBundle mainBundle]URLForResource:self.nome withExtension:@"mp3"];
+        NSError *error;
+        self.som = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&error];
+        
+        [self.som prepareToPlay];
         
         
         [self criarNotas:[musica valueForKey:@"notas"]];

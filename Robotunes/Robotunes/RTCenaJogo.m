@@ -124,13 +124,14 @@
     if (self.tempoInicial == 0) {
         self.tempoInicial = CACurrentMediaTime();
         self.tempoNotaQuebrada = CACurrentMediaTime();
+        [self.musica.som play];
     }
    
-    
+    NSLog(@"Tempo %f",CACurrentMediaTime()- self.tempoInicial);
     
     
    //pega a nota do tempo especifico e a faz cair pela tela
-   RTNota* nota = [self.musica nota:CACurrentMediaTime()- self.tempoInicial];
+   RTNota* nota = [self.musica nota:(CACurrentMediaTime()- self.tempoInicial)+2.2];
    if (nota != nil) {
         
         
