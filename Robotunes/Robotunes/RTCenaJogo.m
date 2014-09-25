@@ -17,7 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         //Define a gravidade da Cena
-        self.physicsWorld.gravity = CGVectorMake(0,-2);
+       // self.physicsWorld.gravity = CGVectorMake(0,-2);
         
         //Determina que o delegate para colisão é a própria cena
         self.physicsWorld.contactDelegate = self;
@@ -116,53 +116,63 @@
     [self addChild:self.jogador];
 }
 
+
+-(SKAction*)acaoDescer{
+    SKAction *descer = [SKAction moveToY:0 duration:1.2];
+    
+    return descer;
+}
+
 //Metodo para criar as notas na tela
 -(void)criarNotas{
     
-      //TODO
-    //Mudar para o tempo da musica
-    if (self.tempoInicial == 0) {
-        self.tempoInicial = CACurrentMediaTime();
-        self.tempoNotaQuebrada = CACurrentMediaTime();
+    
+    if (!self.tocandoMusica) {
+        
         [self.musica.som play];
     }
-   
-    NSLog(@"Tempo %f",CACurrentMediaTime()- self.tempoInicial);
     
+    //pega a nota do tempo especifico e a faz cair pela tela
+    RTNota* nota = [self.musica nota:[self.musica.som currentTime]];
     
-   //pega a nota do tempo especifico e a faz cair pela tela
-   RTNota* nota = [self.musica nota:(CACurrentMediaTime()- self.tempoInicial)+2.2];
-   if (nota != nil) {
+    if (nota != nil) {
         
         
         nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
         nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
-       
+        
         [nota criarCorpoFisico];
-       
-       nota.physicsBody.categoryBitMask = NotaCategoria;
-       nota.physicsBody.contactTestBitMask = JogadorCategoria;
+        
+        nota.physicsBody.categoryBitMask = NotaCategoria;
+        nota.physicsBody.contactTestBitMask = JogadorCategoria;
+        
+        [nota runAction:[self acaoDescer]];
         
         [self addChild:nota];
     }
-   else if (CACurrentMediaTime()- self.tempoNotaQuebrada > 3){
-       
-       self.tempoNotaQuebrada = CACurrentMediaTime();
-       
-       int posicao = arc4random() %4;
-       nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
-       nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
-       nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
-       
-       [nota criarCorpoFisico];
-     
-       nota.physicsBody.categoryBitMask = NotaErradaCategoria;
-       nota.physicsBody.contactTestBitMask = ChaoCategoria;
-       
-       
-       [self addChild:nota];
+    
+    if ([self.musica podeNotaQuebrada] && CACurrentMediaTime()-self.tempoNotaQuebrada > 2){
+        
+        self.tempoNotaQuebrada = CACurrentMediaTime();
+        
+        int posicao = arc4random() %4;
+        nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
+        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
+        
+        [nota criarCorpoFisico];
+        
+        nota.physicsBody.categoryBitMask = NotaErradaCategoria;
+        nota.physicsBody.contactTestBitMask = ChaoCategoria;
+        
+        [nota runAction:[self acaoDescer]];
+        
+        [self addChild:nota];
+        
+    }
 
-   }
+   
+   
 }
 
 
@@ -234,6 +244,7 @@
             
             NSLog(@"foi nota");
             [firstBody.node removeFromParent];
+          
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             NSLog(@"foi player");
@@ -264,6 +275,7 @@
         }
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
              [firstBody.node removeFromParent];
+            
         }
     }
 }

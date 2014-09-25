@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Reachability.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface RTUteis : NSObject
 
@@ -18,4 +19,6 @@
 +(int)diasEntreDataInicial:(NSDate*)dataInicial andDate:(NSDate*)dataFinal;
 +(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum;
 +(BOOL)sortearChanceSim:(float)chanceSim;
+
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
 @end

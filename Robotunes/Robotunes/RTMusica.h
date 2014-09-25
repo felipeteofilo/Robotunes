@@ -38,6 +38,8 @@
 //Método que retorna a música atual de acordo com o tempo passado
 -(RTNota *)nota: (float)tempo;
 
+//Metodo que retorna se pode criar uma nota quebrada ou nao
+-(Boolean)podeNotaQuebrada;
 
 //Método init da musica que recebe o objeto do banco de dados
 -(id)initMusica :(Musica*)musica;

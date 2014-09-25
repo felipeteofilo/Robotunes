@@ -22,7 +22,7 @@
         self.fundoAtual = 1;
     
         //Cria e adiciona o fundo
-       // [self criarFundos];
+        [self criarFundos];
         
         //Cria e adiciona o título
         [self criarTitulo];
@@ -47,47 +47,35 @@
 
 -(void)criarFundos
 {
-    //Fundo 1
-    self.fundo1 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
-    self.fundo1.anchorPoint = CGPointZero;
-    self.fundo1.size = self.frame.size;
-    self.fundo1.zPosition = -18;
-    self.fundo1.position = CGPointZero;
-    [self addChild:self.fundo1];
+    SKTextureAtlas * fundos = [SKTextureAtlas atlasNamed:@"Fundos"];
     
-    //Fundo 2
+    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
+    self.fundo.anchorPoint = CGPointZero;
+    self.fundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.fundo.zPosition = -17;
+    
     self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo2"];
     self.fundo2.anchorPoint = CGPointZero;
-    self.fundo2.size = self.frame.size;
-    self.fundo2.zPosition = -20;
-    self.fundo2.position = CGPointZero;
-    [self addChild:self.fundo2];
+    self.fundo2.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.fundo2.zPosition = -17;
     
-    //Fundo 3
-    self.fundo3 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo3"];
-    self.fundo3.anchorPoint = CGPointZero;
-    self.fundo3.size = self.frame.size;
-    self.fundo3.zPosition = -20;
-    self.fundo3.position = CGPointZero;
-    [self addChild:self.fundo3];
-    
-    //Fundo 4
-    self.fundo4 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo2"];
-    self.fundo4.anchorPoint = CGPointZero;
-    self.fundo4.size = self.frame.size;
-    self.fundo4.zPosition = -20;
-    self.fundo4.position = CGPointZero;
-    [self addChild:self.fundo4];
-    
-    //Alphas de cada um - Começa com o fundo 1, portanto...
-    self.fundo1.alpha = 1;
     self.fundo2.alpha = 0;
-    self.fundo3.alpha = 0;
-    self.fundo4.alpha = 0;
+
+    [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:[RTUteis lerFrames:fundos] timePerFrame:7.5 resize:NO restore:YES]]];
     
-    //Animações que serão aplicadas aos fundos
-    self.acaoFundoFadeIn = [SKAction fadeInWithDuration:15];
-    self.acaoFundoFadeOut = [SKAction fadeOutWithDuration:15];
+    
+    SKAction *acaoFadeOut = [SKAction fadeOutWithDuration:8.5];
+    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:1];
+    
+    
+    [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
+    
+    
+    
+    
+    [self addChild:self.fundo];
+    [self addChild:self.fundo2];
+   
 }
 
 -(void)criarTitulo
@@ -163,108 +151,26 @@
 {
     //COISAS PARA A NUVEM
     //Tempo desde ultimo update
-   // CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
+    CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
     
 
-//    //A cada meio segundo tenta criar uma nuvem
-//    if (ultimoUpdate > 0.4) {
-//        if ([RTUteis sortearChanceSim:15]) {
-//            //Cria a nuvem
-//            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
-//            
-//            //add na arvore de nodes
-//            [self addChild:nuvem];
-//        }
-//        
-//        //Atualiza o contador
-//        self.intervaloNuvens =currentTime;
-//    }
+    //A cada meio segundo tenta criar uma nuvem
+    if (ultimoUpdate > 0.4) {
+        if ([RTUteis sortearChanceSim:15]) {
+            //Cria a nuvem
+            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            
+            //add na arvore de nodes
+            [self addChild:nuvem];
+        }
+        
+        //Atualiza o contador
+        self.intervaloNuvens =currentTime;
+    }
 
     
-//    //primeira vez
-//    if(self.tempo == -80){
-//        self.tempo = currentTime + tempoParaMudar;
-//    }
-//    
-//    if(self.tempo - currentTime <= 0){
-//        NSLog(@"Olha o tempo!");
-//        self.tempo = currentTime + tempoParaMudar;
-//        
-//        //Aplica os efeitos ao fundo que se deve
-//        switch (self.fundoAtual) {
-//            case 1:
-//                //Vai para o 2
-//                self.fundoAtual = 2;
-//                
-//                //Faz o fundo anterior ir para -20 em z
-//                self.fundo1.zPosition = -20;
-//                
-//                //Faz o fundo atual ir para -18 em z
-//                self.fundo2.zPosition = -18;
-//                
-//                //Anima fundo anterior - fadeOut
-//                [self.fundo1 runAction:self.acaoFundoFadeOut];
-//                
-//                //anima fundo Atual - fadeIn
-//                [self.fundo2 runAction:self.acaoFundoFadeIn];
-//                
-//                break;
-//            case 2:
-//                //Vai para o 3
-//                self.fundoAtual = 3;
-//                
-//                //Faz o fundo anterior ir para -20 em z
-//                self.fundo2.zPosition = -20;
-//                
-//                //Faz o fundo atual ir para -18 em z
-//                self.fundo3.zPosition = -18;
-//                
-//                //Anima fundo anterior - fadeOut
-//                [self.fundo2 runAction:self.acaoFundoFadeOut];
-//                
-//                //anima fundo Atual - fadeIn
-//                [self.fundo3 runAction:self.acaoFundoFadeIn];
-//                
-//                break;
-//            case 3:
-//                //Vai para o 4
-//                self.fundoAtual = 4;
-//                
-//                //Faz o fundo anterior ir para -20 em z
-//                self.fundo3.zPosition = -20;
-//                
-//                //Faz o fundo atual ir para -18 em z
-//                self.fundo4.zPosition = -18;
-//                
-//                //Anima fundo anterior - fadeOut
-//                [self.fundo3 runAction:self.acaoFundoFadeOut];
-//                
-//                //anima fundo Atual - fadeIn
-//                [self.fundo4 runAction:self.acaoFundoFadeIn];
-//                
-//                break;
-//            case 4:
-//                //Vai para o 1
-//                self.fundoAtual = 1;
-//                
-//                //Faz o fundo anterior ir para -20 em z
-//                self.fundo4.zPosition = -20;
-//                
-//                //Faz o fundo atual ir para -18 em z
-//                self.fundo1.zPosition = -18;
-//                
-//                //Anima fundo anterior - fadeOut
-//                [self.fundo4 runAction:self.acaoFundoFadeOut];
-//                
-//                //anima fundo Atual - fadeIn
-//                [self.fundo1 runAction:self.acaoFundoFadeIn];
-//                
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//    }
+  
+
 }
 
 @end

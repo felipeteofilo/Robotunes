@@ -35,7 +35,7 @@ static const UInt32 ChaoCategoria = 0x1 << 3;
 
 
 //Float tempo inicial da musica
-@property float tempoInicial;
+@property Boolean tocandoMusica;
 
 @property float tempoNotaQuebrada;
 

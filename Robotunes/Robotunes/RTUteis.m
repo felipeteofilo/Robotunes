@@ -85,4 +85,17 @@
         return NO;
     }
 }
+
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
+    NSInteger numImagens = pastaFrames.textureNames.count;
+    NSMutableArray *frames =[[NSMutableArray alloc]init];
+    
+    for (int i=1; i <= numImagens; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%d", i];
+        SKTexture *temp = [pastaFrames textureNamed:textureName];
+        [frames addObject:temp];
+    }
+    
+    return frames;
+}
 @end

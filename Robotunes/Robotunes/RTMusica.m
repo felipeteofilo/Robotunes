@@ -45,12 +45,26 @@
         float tempoNota = [[notas objectAtIndex:i]floatValue];
         int posicaoNota = [[notas objectAtIndex:i+1]intValue];
         
-       RTNota *nota = [[RTNota alloc]initComNome:@"nota" tempo:tempoNota posicao:posicaoNota];
+        RTNota *nota = [[RTNota alloc]initComNome:@"nota" tempo:tempoNota posicao:posicaoNota];
         
         [self.arrayDeNotas addObject:nota];
         
     }
     
+}
+
+-(Boolean)podeNotaQuebrada{
+    if (self.notaAtual !=0 && self.notaAtual < self.arrayDeNotas.count) {
+        RTNota * notaAnterior = [self.arrayDeNotas objectAtIndex:self.notaAtual-1];
+        RTNota * proximaNota = [self.arrayDeNotas objectAtIndex:self.notaAtual];
+        
+        
+        if (proximaNota.tempo - notaAnterior.tempo > 1.3) {
+            return true;
+        }
+    }
+    
+    return false;
 }
 
 -(BOOL)acabou
