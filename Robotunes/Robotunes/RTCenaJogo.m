@@ -222,11 +222,11 @@
             NSLog(@"foi nota");
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
-            NSLog(@"foi player");
             
             [self.jogador atualizarPontos:10*[self combo]];
             
             self.notasCertasSeq++;
+            [self.jogador atualizarVida:-1];
         }
     }
     
@@ -242,7 +242,7 @@
             self.notasCertasSeq=0;
             
             //Volta p o primeito combo
-            self.combo=1;
+            [self atualizarCombo:1];
         }
     }
 }
@@ -295,7 +295,16 @@
     if (self.notasCertasSeq >= (2 + self.combo)) {
         self.combo++;
         self.notasCertasSeq =0;
+        
+        //Dispara notificacao p att a HUD
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaCombo" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.combo] forKey:@"combo"]];
     }
+}
+-(void)atualizarCombo:(int)valor{
+    self.combo=valor;
+    
+    //Dispara notificacao p att a HUD
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaCombo" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.combo] forKey:@"combo"]];
 }
 
 -(void)fimJogo{

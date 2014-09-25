@@ -12,8 +12,14 @@
 
 //Array q conterá as barrinhas com cores diferentes
 @property NSMutableArray *barrinhas;
+//Padroniza o espaco entre as barrinhas
+@property float espacoBarrinha;
+
+//Mostra pontuacao e combo
+@property SKLabelNode *pontuacao;
+@property SKLabelNode *combo;
+
+
 
 -(id)initHUD:(CGRect)frame;
--(void)atualizarBarraSangue;
--(void)atualizarPontos;
 @end

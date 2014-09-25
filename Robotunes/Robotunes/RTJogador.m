@@ -10,6 +10,7 @@
 
 @implementation RTJogador
 
+
 -(id)initWithSize :(CGSize)size
 {
     if(self = [super initWithImageNamed:@"RobotuneY3"]){
@@ -71,11 +72,16 @@
     if(valor > 0){
         self.pontos = self.pontos + valor;
     }
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaPontos" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.pontos] forKey:@"pontos"]];
 }
 
 -(void)atualizarVida:(int)valor
 {
     self.vida = self.vida + valor;
+    
+    //Posta uma notificacao p HUD atualizar
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaSangue" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:valor] forKey:@"valor"]];
 }
 
 
