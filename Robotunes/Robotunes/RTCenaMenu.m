@@ -20,7 +20,7 @@
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
         self.fundoAtual = 1;
-    
+        
         //Cria e adiciona o fundo
         [self criarFundos];
         
@@ -48,6 +48,7 @@
 -(void)criarFundos
 {
     SKTextureAtlas * fundos = [SKTextureAtlas atlasNamed:@"Fundos"];
+    SKTextureAtlas * fundos2 = [SKTextureAtlas atlasNamed:@"Fundos1"];
     
     self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
     self.fundo.anchorPoint = CGPointZero;
@@ -60,22 +61,38 @@
     self.fundo2.zPosition = -17;
     
     self.fundo2.alpha = 0;
-
-    [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:[RTUteis lerFrames:fundos] timePerFrame:7.5 resize:NO restore:YES]]];
+    
+    NSArray *framesFundo1 = [RTUteis lerFrames:fundos];
+    
+   
+    
+    
+    NSMutableArray *framesFundo2 = [RTUteis lerFrames:fundos2];
+    
+    NSMutableArray *framesPrimeiraParte = (NSMutableArray*)framesFundo1;
+    framesFundo1 = [[framesFundo1 reverseObjectEnumerator] allObjects];
+   
+    [framesPrimeiraParte removeObjectAtIndex:1];
+    [self.fundo runAction:[SKAction animateWithTextures:framesPrimeiraParte timePerFrame:9]completion:^{
+        [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo1 timePerFrame:18 resize:NO restore:YES]]];
+    }];
+    
+    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo2 timePerFrame:18 resize:NO restore:YES]]];
     
     
     SKAction *acaoFadeOut = [SKAction fadeOutWithDuration:8.5];
-    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:1];
+    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:8.5];
     
     
     [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
+    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeIn,acaoFadeOut]]]];
     
     
     
     
     [self addChild:self.fundo];
     [self addChild:self.fundo2];
-   
+    
 }
 
 -(void)criarTitulo
@@ -153,7 +170,7 @@
     //Tempo desde ultimo update
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
     
-
+    
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {
@@ -167,10 +184,10 @@
         //Atualiza o contador
         self.intervaloNuvens =currentTime;
     }
-
     
-  
-
+    
+    
+    
 }
 
 @end

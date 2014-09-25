@@ -78,6 +78,7 @@
 		75D6088719D36FB8000FF7B2 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D6085B19D36FB8000FF7B2 /* RT_nuvenzinhas.png */; };
 		75D6088819D36FB8000FF7B2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D6085C19D36FB8000FF7B2 /* RTNuvenzinhas.png */; };
 		75E7780319D49DE4009ECCED /* Fundos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75E7780219D49DE4009ECCED /* Fundos.atlas */; };
+		75E7780519D4B23C009ECCED /* Fundos1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75E7780419D4B23C009ECCED /* Fundos1.atlas */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
 		94C0FB8819CA04C600E2C5BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8619CA04C600E2C5BC /* Parse.framework */; };
@@ -193,6 +194,7 @@
 		75D6085B19D36FB8000FF7B2 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		75D6085C19D36FB8000FF7B2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
 		75E7780219D49DE4009ECCED /* Fundos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos.atlas; sourceTree = "<group>"; };
+		75E7780419D4B23C009ECCED /* Fundos1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos1.atlas; sourceTree = "<group>"; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Robotunes/Frameworks/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		94C0FB8619CA04C600E2C5BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Robotunes/Frameworks/Parse/Parse.framework; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 		75D6082D19D36FB8000FF7B2 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				75E7780419D4B23C009ECCED /* Fundos1.atlas */,
 				75E7780219D49DE4009ECCED /* Fundos.atlas */,
 				75D6082E19D36FB8000FF7B2 /* animacaoR1 */,
 				75D6084419D36FB8000FF7B2 /* Background.atlas */,
@@ -609,6 +612,7 @@
 				75D6082219D352CA000FF7B2 /* Licensas Musicas.txt in Resources */,
 				75D6087219D36FB8000FF7B2 /* Background.atlas in Resources */,
 				75D6087A19D36FB8000FF7B2 /* How it Begins.mp3 in Resources */,
+				75E7780519D4B23C009ECCED /* Fundos1.atlas in Resources */,
 				75D6087D19D36FB8000FF7B2 /* Wallpaper.mp3 in Resources */,
 				75D6087119D36FB8000FF7B2 /* 021.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
@@ -806,7 +810,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -828,7 +832,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Robotunes/Robotunes-Prefix.pch";
 				INFOPLIST_FILE = "Robotunes/Robotunes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

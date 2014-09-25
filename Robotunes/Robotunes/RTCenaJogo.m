@@ -133,7 +133,7 @@
     }
     
     //pega a nota do tempo especifico e a faz cair pela tela
-    RTNota* nota = [self.musica nota:[self.musica.som currentTime]];
+    RTNota* nota = [self.musica nota:[self.musica.som currentTime]+1];
     
     if (nota != nil) {
         
