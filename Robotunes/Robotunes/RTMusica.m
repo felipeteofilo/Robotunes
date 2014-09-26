@@ -59,7 +59,7 @@
         RTNota * proximaNota = [self.arrayDeNotas objectAtIndex:self.notaAtual];
         
         
-        if (proximaNota.tempo - notaAnterior.tempo > 1.3) {
+        if (proximaNota.tempo - notaAnterior.tempo > 0.9) {
             return true;
         }
     }
@@ -70,7 +70,9 @@
 //TODO: Implementar metodo
 -(BOOL)acabou
 {
-
+    if (![self.som isPlaying]) {
+        return YES;
+    }
     return NO;
 }
 

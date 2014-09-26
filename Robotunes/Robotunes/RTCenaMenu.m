@@ -160,7 +160,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
+    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:3];
     [self.view presentScene:jogo];
 }
 
