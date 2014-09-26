@@ -20,6 +20,5 @@
 @property SKLabelNode *combo;
 
 
-
 -(id)initHUD:(CGRect)frame;
 @end
