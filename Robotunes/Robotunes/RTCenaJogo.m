@@ -235,6 +235,11 @@
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
             [self tocarSomErrado];
+            
+            //Perde pontos e vida
+            [self.jogador atualizarPontos:-10];
+            [self.jogador atualizarVida:-1];
+            
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
@@ -250,15 +255,18 @@
         
         //Verifica se colidiu com uma nota errada
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
-            //TODO: tocar som errado
             [self tocarSomErrado];
             
-            [self.jogador atualizarVida:-1];
+            //Perde pontos e vida
+            [self.jogador atualizarVida:-3];
+            [self.jogador atualizarPontos:-30];
+            
             //zerar contador de notas certas
             self.notasCertasSeq=0;
             
             //Volta p o primeito combo
             [self atualizarCombo:1];
+            
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {

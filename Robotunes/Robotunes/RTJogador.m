@@ -28,8 +28,6 @@
         //Iniciar as animaçõess
         [self iniciarAnimacoes];
         
-        //Criar corpo físico do jogador e todas as suas características
-        
     }
     return self;
 }
@@ -37,7 +35,7 @@
 -(void)iniciarPontosVida
 {
     self.pontos = 0;
-    self.vida = 16;
+    self.vida = 8;
 }
 
 //TODO
@@ -51,9 +49,6 @@
                                                       size.width,   size.height), nil);
     return path;
 }
-
-
-
 
 -(BOOL)morreu
 {
