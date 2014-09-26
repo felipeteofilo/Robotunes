@@ -17,15 +17,10 @@
         self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
         self.musicaEscolhida = 1;
         
-        //Adiciona o fundo
-        SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundoMenu"];
-        imagemFundo.anchorPoint = CGPointZero;
-        imagemFundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
-        imagemFundo.zPosition = -100;
-        
+        //Variaveis para controle da mudança no menu
         self.tempo = -80;
         self.fundoAtual = 1;
-    
+        
         //Cria e adiciona o fundo
         [self criarFundos];
         
@@ -37,9 +32,6 @@
         
         //Cria e adiciona o chão
         [self criarChao];
-        
-        //Criar nuvens
-        //[self criarNuvens];
         
         //Cria e adiciona o robo de venda
         [self criarRobotuneR1];
@@ -55,52 +47,57 @@
 
 -(void)criarFundos
 {
-    //Fundo 1
-    self.fundo1 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
-    self.fundo1.anchorPoint = CGPointZero;
-    self.fundo1.size = self.frame.size;
-    self.fundo1.zPosition = -18;
-    self.fundo1.position = CGPointZero;
-    [self addChild:self.fundo1];
+    SKTextureAtlas * fundos = [SKTextureAtlas atlasNamed:@"Fundos"];
+    SKTextureAtlas * fundos2 = [SKTextureAtlas atlasNamed:@"Fundos1"];
     
-    //Fundo 2
-    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo2"];
+    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
+    self.fundo.anchorPoint = CGPointZero;
+    self.fundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.fundo.zPosition = -17;
+    
+    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
     self.fundo2.anchorPoint = CGPointZero;
-    self.fundo2.size = self.frame.size;
-    self.fundo2.zPosition = -20;
-    self.fundo2.position = CGPointZero;
+    self.fundo2.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
+    self.fundo2.zPosition = -17;
+    
+    self.fundo2.alpha = 0;
+    
+    NSArray *framesFundo1 = [RTUteis lerFrames:fundos];
+    
+   
+    
+    
+    NSMutableArray *framesFundo2 = [RTUteis lerFrames:fundos2];
+    
+    NSMutableArray *framesPrimeiraParte = (NSMutableArray*)framesFundo1;
+    framesFundo1 = [[framesFundo1 reverseObjectEnumerator] allObjects];
+   
+    [framesPrimeiraParte removeObjectAtIndex:1];
+    [self.fundo runAction:[SKAction animateWithTextures:framesPrimeiraParte timePerFrame:15]completion:^{
+        [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo1 timePerFrame:30 resize:NO restore:YES]]];
+    }];
+    
+    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo2 timePerFrame:30 resize:NO restore:YES]]];
+    
+    
+    SKAction *acaoFadeOut = [SKAction fadeOutWithDuration:15];
+    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:15];
+    
+    
+    [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
+    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeIn,acaoFadeOut]]]];
+    
+    
+    
+    
+    [self addChild:self.fundo];
     [self addChild:self.fundo2];
     
-    //Fundo 3
-    self.fundo3 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo3"];
-    self.fundo3.anchorPoint = CGPointZero;
-    self.fundo3.size = self.frame.size;
-    self.fundo3.zPosition = -20;
-    self.fundo3.position = CGPointZero;
-    [self addChild:self.fundo3];
-    
-    //Fundo 4
-    self.fundo4 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo2"];
-    self.fundo4.anchorPoint = CGPointZero;
-    self.fundo4.size = self.frame.size;
-    self.fundo4.zPosition = -20;
-    self.fundo4.position = CGPointZero;
-    [self addChild:self.fundo4];
-    
-    //Alphas de cada um - Começa com o fundo 1, portanto...
-    self.fundo1.alpha = 1;
-    self.fundo2.alpha = 0;
-    self.fundo3.alpha = 0;
-    self.fundo4.alpha = 0;
-    
-    //Animações que serão aplicadas aos fundos
-    self.acaoFundoFadeIn = [SKAction fadeInWithDuration:15];
-    self.acaoFundoFadeOut = [SKAction fadeOutWithDuration:15];
 }
 
 -(void)criarTitulo
 {
-    self.titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logorobotunes"];
+    self.titulo = [[SKSpriteNode alloc]initWithImageNamed:@"logo"];
     self.titulo.anchorPoint = CGPointZero;
     self.titulo.size = self.frame.size;
     self.titulo.zPosition = -10;
@@ -119,39 +116,26 @@
 
 -(void)criarChao
 {
-    self.chao = [[SKSpriteNode alloc]initWithImageNamed:@"Chao"];
+    self.chao = [[SKSpriteNode alloc]initWithImageNamed:@"chao"];
     self.chao.anchorPoint = CGPointZero;
-    self.chao.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.01);
+    self.chao.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.035);
     self.chao.position = CGPointZero;
     [self addChild:self.chao];
 }
 
--(void)criarNuvens
-{
-    //Nuvem 1
-    self.nuvem1 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_nuvenzinhas"];
-    self.nuvem1.anchorPoint = CGPointZero;
-    self.nuvem1.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.5);
-    self.nuvem1.zPosition = -15;
-    self.nuvem1.position = CGPointMake(self.frame.size.width * 0.0, self.frame.size.height * 0.4);
-    [self addChild:self.nuvem1];
-    
-    //Nuvem 2
-    self.nuvem2 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_nuvenzinhas"];
-    self.nuvem2.anchorPoint = CGPointZero;
-    self.nuvem2.size = CGSizeMake(self.frame.size.width, self.frame.size.height * 0.5);
-    self.nuvem2.zPosition = -15;
-    self.nuvem2.position = CGPointMake(self.frame.size.width * 0.0, self.frame.size.height * 0.4);
-    [self addChild:self.nuvem2];
-}
-
 -(void)criarRobotuneR1
 {
-    self.robotuneR1 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneR1"];
-    self.robotuneR1.anchorPoint = CGPointZero;
-    self.robotuneR1.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.45);
-    self.robotuneR1.position = CGPointMake(self.frame.size.width * 0.7, 5);
-    [self addChild:self.robotuneR1];
+    self.robotuneR1Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"R1_corpo"];
+    self.robotuneR1Corpo.anchorPoint = CGPointZero;
+    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.42);
+    self.robotuneR1Corpo.position = CGPointMake(self.frame.size.width * 0.7, 5);
+    [self addChild:self.robotuneR1Corpo];
+    
+    self.robotuneR1Cabeca = [[SKSpriteNode alloc]initWithImageNamed:@"R1_cabeca"];
+    self.robotuneR1Cabeca.anchorPoint = CGPointZero;
+    self.robotuneR1Cabeca.size = CGSizeMake(self.frame.size.width * 0.32, self.frame.size.height * 0.32);
+    self.robotuneR1Cabeca.position = CGPointMake(self.frame.size.width * 0.66, self.frame.size.height * 0.33);
+    [self addChild:self.robotuneR1Cabeca];
 }
 
 -(void)criarRobotuneB2
@@ -172,36 +156,21 @@
     [self addChild:self.robotuneY3];
 }
 
+
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.musicaEscolhida >= self.numeroDeMusicas) {
-        self.musicaEscolhida = 0;
-        
-    }
-    self.musicaEscolhida++;
-    
-    NSArray *notas = [NSArray arrayWithObjects:@"do",@"0.0",@"re",@"1.0", nil];
-    
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-    
-    
-    
-    [dictionary setValue:@"Musica" forKey:@"nome"];
-    [dictionary setValue:[NSNumber numberWithFloat:10.5] forKey:@"tempoTotal"];
-    [dictionary setValue:notas forKey:@"notas"];
-    
-    
-    //Musica *musica = [RTBancoDeDadosController procurarMusica:1];
-    
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:1];
+    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
     [self.view presentScene:jogo];
 }
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    //COISAS PARA A NUVEM
     //Tempo desde ultimo update
-    
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
+    
+    
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {
@@ -214,91 +183,6 @@
         
         //Atualiza o contador
         self.intervaloNuvens =currentTime;
-    }
-    
-    //primeira vez
-    if(self.tempo == -80){
-        self.tempo = currentTime + tempoParaMudar;
-    }
-    
-    if(self.tempo - currentTime <= 0){
-        NSLog(@"Olha o tempo!");
-        self.tempo = currentTime + tempoParaMudar;
-        
-        //Aplica os efeitos ao fundo que se deve
-        switch (self.fundoAtual) {
-            case 1:
-                //Vai para o 2
-                self.fundoAtual = 2;
-                
-                //Faz o fundo anterior ir para -20 em z
-                self.fundo1.zPosition = -20;
-                
-                //Faz o fundo atual ir para -18 em z
-                self.fundo2.zPosition = -18;
-                
-                //Anima fundo anterior - fadeOut
-                [self.fundo1 runAction:self.acaoFundoFadeOut];
-                
-                //anima fundo Atual - fadeIn
-                [self.fundo2 runAction:self.acaoFundoFadeIn];
-                
-                break;
-            case 2:
-                //Vai para o 3
-                self.fundoAtual = 3;
-                
-                //Faz o fundo anterior ir para -20 em z
-                self.fundo2.zPosition = -20;
-                
-                //Faz o fundo atual ir para -18 em z
-                self.fundo3.zPosition = -18;
-                
-                //Anima fundo anterior - fadeOut
-                [self.fundo2 runAction:self.acaoFundoFadeOut];
-                
-                //anima fundo Atual - fadeIn
-                [self.fundo3 runAction:self.acaoFundoFadeIn];
-                
-                break;
-            case 3:
-                //Vai para o 4
-                self.fundoAtual = 4;
-                
-                //Faz o fundo anterior ir para -20 em z
-                self.fundo3.zPosition = -20;
-                
-                //Faz o fundo atual ir para -18 em z
-                self.fundo4.zPosition = -18;
-                
-                //Anima fundo anterior - fadeOut
-                [self.fundo3 runAction:self.acaoFundoFadeOut];
-                
-                //anima fundo Atual - fadeIn
-                [self.fundo4 runAction:self.acaoFundoFadeIn];
-                
-                break;
-            case 4:
-                //Vai para o 1
-                self.fundoAtual = 1;
-                
-                //Faz o fundo anterior ir para -20 em z
-                self.fundo4.zPosition = -20;
-                
-                //Faz o fundo atual ir para -18 em z
-                self.fundo1.zPosition = -18;
-                
-                //Anima fundo anterior - fadeOut
-                [self.fundo4 runAction:self.acaoFundoFadeOut];
-                
-                //anima fundo Atual - fadeIn
-                [self.fundo1 runAction:self.acaoFundoFadeIn];
-                
-                break;
-                
-            default:
-                break;
-        }
     }
 }
 

@@ -12,6 +12,7 @@
 #import "RTDadosParse.h"
 #import "RTBancoDeDadosController.h"
 #import "RTNuvem.h"
+#import "RTUteis.h"
 
 @interface RTCenaMenu : SKScene
 
@@ -22,13 +23,15 @@
 @property int musicaEscolhida;
 
 @property SKSpriteNode *robotuneR1;
+@property SKSpriteNode *robotuneR1Cabeca;
+@property SKSpriteNode *robotuneR1Corpo;
 @property SKSpriteNode *robotuneB2;
 @property SKSpriteNode *robotuneY3;
 
-//Timer p criacao das nuvens
+//Timer para criação das nuvens
 @property (nonatomic) NSTimeInterval intervaloNuvens;
 
-@property SKSpriteNode *fundo1;
+@property SKSpriteNode *fundo;
 @property SKSpriteNode *fundo2;
 @property SKSpriteNode *fundo3;
 @property SKSpriteNode *fundo4;
@@ -40,7 +43,5 @@
 @property SKSpriteNode *btnFace;
 @property SKSpriteNode *chao;
 
-@property SKSpriteNode *nuvem1;
-@property SKSpriteNode *nuvem2;
 
 @end

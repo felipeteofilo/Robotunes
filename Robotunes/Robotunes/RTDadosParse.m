@@ -86,7 +86,7 @@
     //Verifica se está no prazo de att
     NSDate *ultimaDataVerificacao=[RTBancoDeDadosController ultimaDataVerificacao];
     
-    if (!ultimaDataVerificacao) {
+    if (ultimaDataVerificacao) {
         if ([RTUteis diasEntreDataInicial:ultimaDataVerificacao andDate:[RTUteis formataData:[NSDate date]]] < 1) {
             return;
         }

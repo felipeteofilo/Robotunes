@@ -10,6 +10,8 @@
 #import "RTNota.h"
 #import "Musica.h"
 
+
+
 @interface RTMusica : NSObject
 
 //NSMutableArray que armazena as notas da música
@@ -27,12 +29,17 @@
 //Int que armazena a nota atual
 @property int notaAtual;
 
+
+@property AVAudioPlayer *som;
+
 //Método que indica se a música acabou ou não
 -(BOOL)acabou;
 
 //Método que retorna a música atual de acordo com o tempo passado
 -(RTNota *)nota: (float)tempo;
 
+//Metodo que retorna se pode criar uma nota quebrada ou nao
+-(Boolean)podeNotaQuebrada;
 
 //Método init da musica que recebe o objeto do banco de dados
 -(id)initMusica :(Musica*)musica;

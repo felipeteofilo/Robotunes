@@ -13,14 +13,15 @@
 #import "RTBancoDeDadosController.h"
 #import "Musica.h"
 #import "RTHUD.h"
+#import <AVFoundation/AVFoundation.h>
 
 //Categorias do jogo (chão, nota e jogador)
-static const UInt32 NotaCategoria = 0x1 << 0;
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria = 0x1 << 2;
+static const UInt32 NotaErradaCategoria = 0x1<<0;
+static const UInt32 NotaCategoria = 0x1 << 1;
+static const UInt32 JogadorCategoria = 0x1 << 2;
+static const UInt32 ChaoCategoria = 0x1 << 3;
 
-//Criado categoria nota errada
-static const UInt32 NotaErradaCategoria = 0x1<<3;
+
 
 @interface RTCenaJogo : SKScene <SKPhysicsContactDelegate>
 
@@ -35,7 +36,9 @@ static const UInt32 NotaErradaCategoria = 0x1<<3;
 
 
 //Float tempo inicial da musica
-@property float tempoInicial;
+@property Boolean tocandoMusica;
+
+@property float tempoNotaQuebrada;
 
 //Booleano que armazena se o device já foi inclinado ou não
 @property BOOL inclinado;

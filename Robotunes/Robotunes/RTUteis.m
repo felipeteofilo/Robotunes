@@ -85,10 +85,21 @@
         return NO;
     }
 }
-
 + (CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor {
     CGPathRef path = CGPathCreateWithRect( CGRectMake(-size.width * anchor.x, -size.height * anchor.y,
                                                       size.width,   size.height), nil);
     return path;
+}
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
+    NSInteger numImagens = pastaFrames.textureNames.count;
+    NSMutableArray *frames =[[NSMutableArray alloc]init];
+    
+    for (int i=1; i <= numImagens; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%d", i];
+        SKTexture *temp = [pastaFrames textureNamed:textureName];
+        [frames addObject:temp];
+    }
+    
+    return frames;
 }
 @end

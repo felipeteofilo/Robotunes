@@ -12,6 +12,8 @@
 	<dict>
 		<key>9FD211AA4801199937681ACB69238CA3847BA212</key>
 		<string>https://github.com/felipeteofilo/Robotunes.git</string>
+		<key>FF6EAA754658DB65606D047CFF5A32A8DB116A1E</key>
+		<string>https://bitbucket.org/felipeteofilo/tutorial.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Robotunes/Robotunes.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>9FD211AA4801199937681ACB69238CA3847BA212</key>
 		<string>../../..</string>
+		<key>FF6EAA754658DB65606D047CFF5A32A8DB116A1E</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/felipeteofilo/Robotunes.git</string>
@@ -28,6 +32,14 @@
 	<string>9FD211AA4801199937681ACB69238CA3847BA212</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FF6EAA754658DB65606D047CFF5A32A8DB116A1E</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
