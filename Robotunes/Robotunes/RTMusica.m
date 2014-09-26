@@ -25,7 +25,7 @@
         NSError *error;
         self.som = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&error];
         
-        [self.som prepareToPlay];
+        
         
         
         [self criarNotas:[musica valueForKey:@"notas"]];
@@ -59,7 +59,7 @@
         RTNota * proximaNota = [self.arrayDeNotas objectAtIndex:self.notaAtual];
         
         
-        if (proximaNota.tempo - notaAnterior.tempo > 0.9) {
+        if (proximaNota.tempo - notaAnterior.tempo > 1.3) {
             return true;
         }
     }

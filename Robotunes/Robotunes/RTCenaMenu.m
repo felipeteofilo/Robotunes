@@ -160,8 +160,26 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:3];
-    [self.view presentScene:jogo];
+    
+    __weak RTCenaMenu *weakself = self;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        //Background thread
+        //Load scene here
+        [self load];
+        RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:3];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            //Main thread
+            //Call your callback method here
+            [weakself.view presentScene:jogo];
+        });
+    });
+   
+}
+-(void)load{
+    SKSpriteNode * node = [[SKSpriteNode alloc]initWithImageNamed:@"2"];
+    node.size = self.size ;
+    node.anchorPoint =CGPointZero;
+    [self addChild:node];
 }
 
 -(void)update:(NSTimeInterval)currentTime

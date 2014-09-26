@@ -30,12 +30,31 @@
     skView.showsFPS=YES;
     skView.showsPhysics=YES;
     
-    //Cria a cena de menu
-    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
-    menu.scaleMode = SKSceneScaleModeAspectFill;
     
+    __weak RTViewController *weakself = self;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        //Background thread
+        //Load scene here
+        
+        SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
+        [weakself.view addSubview:skView];
+        skView.showsNodeCount = YES;
+        skView.showsFPS=YES;
+        skView.showsPhysics=YES;
+        [self load];
+        RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
+        menu.scaleMode = SKSceneScaleModeAspectFill;
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [skView presentScene:menu];
+            
+        });
+    });
+}
+
+-(void)load{
+    UIImageView *imagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo"]];
+    [imagem setFrame:self.view.frame];
     
-    //Mostra a cena de menu
-    [skView presentScene:menu];
+    [self.view addSubview:imagem];
 }
 @end

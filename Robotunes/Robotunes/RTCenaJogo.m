@@ -10,6 +10,8 @@
 
 @implementation RTCenaJogo
 
+
+
 -(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
@@ -94,9 +96,9 @@
 -(void)criarJogador
 {
     //propriedades
-    self.jogador = [[RTJogador alloc]initWithSize:CGSizeMake(self.frame.size.width * 0.2, self.frame.size.width * 0.2)];
+    self.jogador = [[RTJogador alloc]initWithSize:CGSizeMake(self.frame.size.width * 0.12, self.frame.size.width * 0.12)];
     
-    self.jogador.position = CGPointMake([[self.arrayPosicoes objectAtIndex:self.posicaoAtual] floatValue], self.frame.size.height * 0.01);
+    self.jogador.position = CGPointMake([[self.arrayPosicoes objectAtIndex:self.posicaoAtual] floatValue]+(self.jogador.size.width/3), self.frame.size.height * 0.01);
     self.jogador.zPosition = 10;
     
     //Com quais categorias ele colide
@@ -122,6 +124,9 @@
     if (!self.tocandoMusica) {
         
         [self.musica.som play];
+        [self.musica.som prepareToPlay];
+        [self.musica.som setNumberOfLoops:0];
+        self.tocandoMusica = YES;
     }
     
     //pega a nota do tempo especifico e a faz cair pela tela
@@ -130,8 +135,8 @@
     if (nota != nil) {
         
         
-        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
-        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+nota.size.width, self.frame.size.height * 1);
+        nota.size = CGSizeMake(self.frame.size.width * 0.06, self.frame.size.width * 0.06);
+        nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:nota.posicao ]floatValue]+(nota.size.width*2/1.7), self.frame.size.height * 1);
         
         [nota criarCorpoFisico];
         
@@ -149,7 +154,7 @@
         
         int posicao = arc4random() %4;
         nota =[[RTNota alloc]initComNome:@"notaQuebrada" tempo:0 posicao:0];
-        nota.size = CGSizeMake(self.frame.size.width * 0.08, self.frame.size.width * 0.08);
+        nota.size = CGSizeMake(self.frame.size.width * 0.06, self.frame.size.width * 0.06);
         nota.position = CGPointMake([[self.arrayPosicoes objectAtIndex:posicao]floatValue]+nota.size.width, self.frame.size.height * 1);
         
         [nota criarCorpoFisico];
@@ -189,7 +194,20 @@
     NSNumber *posicao4 = [[NSNumber alloc] initWithFloat:self.frame.size.width * 0.6];
     NSNumber *posicao5 = [[NSNumber alloc] initWithFloat:self.frame.size.width * 0.8];
     
+    
+    
     self.arrayPosicoes = [[NSMutableArray alloc]initWithObjects:posicao1, posicao2, posicao3, posicao4, posicao5, nil];
+    
+    //Desenha as linhas na tela 
+//    for (int i = 1; i < self.arrayPosicoes.count; i++) {
+//        float altura = [[self.arrayPosicoes objectAtIndex:i]floatValue];
+//        SKSpriteNode * sprite = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(2,self.frame.size.width)];
+//        [sprite setAnchorPoint:CGPointZero];
+//        [sprite setPosition:CGPointMake(altura, 0)];
+//        [sprite setAlpha:0.5];
+//        [sprite setZPosition:-10];
+//        [self addChild:sprite];
+//    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -199,6 +217,7 @@
         //Se não estiver na posição 4, anda para a direita
         if(self.posicaoAtual != 4){
             self.posicaoAtual++;
+            
             [self.jogador movimentarPara:@"Direita" naPosicao:[self.arrayPosicoes objectAtIndex:self.posicaoAtual]];
         }
     }
@@ -361,9 +380,9 @@
     
     if ([self.musica acabou]) {
         if ([self.jogador morreu]) {
-            [self transicaoGanhou];
-        }else{
             [self transicaoPerdeu];
+        }else{
+            [self transicaoGanhou];
         }
     }else{
         if ([self.jogador morreu]) {
