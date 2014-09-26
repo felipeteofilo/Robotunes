@@ -173,9 +173,9 @@
     
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
-        if ([RTUteis sortearChanceSim:15]) {
+        if ([RTUteis sortearChanceSim:150]) {
             //Cria a nuvem
-            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50 frameTela:self.frame];
             
             //add na arvore de nodes
             [self addChild:nuvem];
