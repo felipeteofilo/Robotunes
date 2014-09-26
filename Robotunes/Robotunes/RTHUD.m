@@ -105,29 +105,8 @@
 
 -(void)atualizarBarraSangue:(NSNotification*)noticacao{
     NSNumber *valor=[noticacao.userInfo objectForKey:@"vida"];
-    //CGSize tamanhoBarrinha=CGSizeMake(self.size.width*0.041f, self.size.height*0.683);
-    
-    /*
-    //Verifica se cria ou remove uma barrinha de sangue
-    if (([valor intValue] > 0) &&([self.barrinhas count] < 16)) {
-        //Cria barrinha
-        SKSpriteNode *ultimaBarrinha=[self.barrinhas lastObject];
-        
-        SKSpriteNode *novaBarrinha=[self novaBarrinha];
-        [novaBarrinha setPosition:CGPointMake(ultimaBarrinha.position.x +self.espacoBarrinha, ultimaBarrinha.position.y)];
-        [novaBarrinha setSize:tamanhoBarrinha];
-        
-        //Add no array
-        [self.barrinhas addObject:novaBarrinha];
-        
-        //add na arvore de nodes
-        [self addChild:novaBarrinha];
-    }else if([valor intValue] < 0){
-        //Verifica a qtde de sangue
-        SKNode *barra=[self.barrinhas lastObject];
-        [self.barrinhas removeLastObject];
-        [barra removeFromParent];
-    }*/
+
+    //Limpa barrinhas
     for (SKNode *node in self.barrinhas) {
         [node removeFromParent];
     }
