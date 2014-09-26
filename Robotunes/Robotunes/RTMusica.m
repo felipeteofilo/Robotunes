@@ -51,7 +51,7 @@
 -(BOOL)acabou
 {
     //TODO
-    return NO;
+    return YES;
 }
 
 //Método que retorna a nota pelo tempo

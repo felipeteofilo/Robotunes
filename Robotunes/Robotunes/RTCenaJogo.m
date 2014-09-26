@@ -226,7 +226,6 @@
             [self.jogador atualizarPontos:10*[self combo]];
             
             self.notasCertasSeq++;
-            [self.jogador atualizarVida:-1];
         }
     }
     
@@ -255,6 +254,9 @@
     
     //Chama a verificação do combo
     [self atualizarCombo];
+    
+    //Validade se acabou o jogo
+    [self fimJogo];
     
     //    //ACELEROMETRO! NÃO USADO
     //    //VERIFICAÇÃO DE MOVIMENTO
@@ -306,30 +308,35 @@
     //Dispara notificacao p att a HUD
     [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaCombo" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.combo] forKey:@"combo"]];
 }
-
+//Transicao Ganhou
+-(void)transicaoGanhou{
+    SKSpriteNode *background=self.background;
+    [background removeFromParent];
+    
+    RTCenaGameOver *ganhou=[[RTCenaGameOver alloc]initWithSize:self.view.bounds.size eGanhou:YES eBackgournd:background];
+    
+    [self.view presentScene:ganhou];
+}
+-(void)transicaoPerdeu{
+    SKSpriteNode *background=self.background;
+    [background removeFromParent];
+    
+    RTCenaGameOver *perdeu=[[RTCenaGameOver alloc]initWithSize:self.view.bounds.size eGanhou:NO eBackgournd:background];
+    
+    [self.view presentScene:perdeu];
+}
 -(void)fimJogo{
     
-    //Acabou musica e esta vivo ganhou
-    if ([self.musica acabou] && [self.jogador vida] > 0 ) {
-        
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:YES eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
-        
-    
-    }else if([self.jogador vida]<=0){
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
+    if ([self.musica acabou]) {
+        if (self.jogador.vida > 0) {
+            [self transicaoGanhou];
+        }else{
+            [self transicaoPerdeu];
+        }
     }else{
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
-    }
-    
-    //Nao acabou musica e .
-    {
-        
+        if (self.jogador.vida <=0) {
+            [self transicaoPerdeu];
+        }
     }
 }
 @end

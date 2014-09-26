@@ -37,7 +37,7 @@
 -(void)iniciarPontosVida
 {
     self.pontos = 0;
-    self.vida = 100; //TODO - vida vai ser essa mesmo?
+    self.vida = 16;
 }
 
 //TODO
