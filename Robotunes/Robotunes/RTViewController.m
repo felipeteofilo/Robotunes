@@ -28,7 +28,6 @@
     [self.view addSubview:skView];
     skView.showsNodeCount = YES;
     skView.showsFPS=YES;
-    skView.showsPhysics=YES;
     
     //Cria a cena de menu
     RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];

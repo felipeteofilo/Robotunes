@@ -25,7 +25,8 @@
 @property SKSpriteNode *robotuneR1;
 @property SKSpriteNode *robotuneR1Cabeca;
 @property SKSpriteNode *robotuneR1Corpo;
-@property SKSpriteNode *robotuneB2;
+@property SKSpriteNode *robotuneB2Cabeca;
+@property SKSpriteNode *robotuneB2Corpo;
 @property SKSpriteNode *robotuneY3;
 
 //Timer para criação das nuvens
@@ -33,8 +34,6 @@
 
 @property SKSpriteNode *fundo;
 @property SKSpriteNode *fundo2;
-@property SKSpriteNode *fundo3;
-@property SKSpriteNode *fundo4;
 
 @property SKAction *acaoFundoFadeIn;
 @property SKAction *acaoFundoFadeOut;

@@ -127,7 +127,7 @@
 {
     self.robotuneR1Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"R1_corpo"];
     self.robotuneR1Corpo.anchorPoint = CGPointZero;
-    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.42);
+    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.39);
     self.robotuneR1Corpo.position = CGPointMake(self.frame.size.width * 0.7, 5);
     [self addChild:self.robotuneR1Corpo];
     
@@ -140,11 +140,19 @@
 
 -(void)criarRobotuneB2
 {
-    self.robotuneB2 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneB2"];
-    self.robotuneB2.anchorPoint = CGPointZero;
-    self.robotuneB2.size = CGSizeMake(self.frame.size.width * 0.372, self.frame.size.height*0.767);
-    self.robotuneB2.position = CGPointMake(self.frame.size.width * 0.299, 5);
-    [self addChild:self.robotuneB2];
+    self.robotuneB2Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"B2_Body"];
+    self.robotuneB2Corpo.anchorPoint = CGPointZero;
+    self.robotuneB2Corpo.size = CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.58);
+    self.robotuneB2Corpo.position = CGPointMake(self.frame.size.width * 0.299, 5);
+    [self addChild:self.robotuneB2Corpo];
+    
+    //Configura cabeca
+    self.robotuneB2Cabeca =[SKSpriteNode spriteNodeWithImageNamed:@"RobotuneB2_1"];
+    [self.robotuneB2Cabeca setPosition:CGPointMake(CGRectGetMidX(self.robotuneB2Corpo.frame), CGRectGetHeight(self.robotuneB2Corpo.frame)*1.13f
+                                                   )];
+    [self.robotuneB2Cabeca setSize:CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.18)];
+    
+    [self addChild:self.robotuneB2Cabeca];
 }
 
 -(void)criarRobotuneY3
@@ -173,7 +181,7 @@
     
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
-        if ([RTUteis sortearChanceSim:150]) {
+        if ([RTUteis sortearChanceSim:15]) {
             //Cria a nuvem
             RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50 frameTela:self.frame];
             
