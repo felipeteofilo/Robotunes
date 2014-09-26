@@ -22,24 +22,16 @@
 -(void)viewDidLayoutSubviews{
     //Chama a classe mãe
     [super viewDidLayoutSubviews];
-    
 
-    
-    
     //Inicia a view
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:skView];
     skView.showsNodeCount = YES;
     skView.showsFPS=YES;
-    
-    //RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size andMusica:[[RTMusica alloc]init]];
-    // skView.showsPhysics =YES;
+    skView.showsPhysics=YES;
     
     //Cria a cena de menu
-   RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
-    
-    // RTCenaJogo *menu =[[RTCenaJogo alloc]initWithSize:skView.bounds.size];
-   // RTCenaGameOver *menu=[[RTCenaGameOver alloc]initWithSize:skView.bounds.size eGanhou:NO ];
+    RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
     

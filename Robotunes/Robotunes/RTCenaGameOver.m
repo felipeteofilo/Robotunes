@@ -19,7 +19,6 @@
 }
 
 -(void)configuraTela:(BOOL)ganhou{
-    [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]];
     
     //Cria o node do background
     SKSpriteNode *mensagem;
@@ -33,14 +32,15 @@
         botao = [SKSpriteNode spriteNodeWithImageNamed:@"botao_lose"];
     }
     
-    [mensagem setScale:0.3];
-    [mensagem setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+50)];
+    [mensagem setAnchorPoint:CGPointMake(0.5, 0)];
+    [mensagem setScale:0.8];
+    [mensagem setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.002f)];
     [self addChild:mensagem];
     
     //Configura o botao
     [botao setScale:0.3];
     [botao setAnchorPoint:CGPointMake(0.5, 0)];
-    [botao setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)+50)];
+    [botao setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.015f)];
     [botao setName:@"botao"];
     [self addChild:botao];
 }

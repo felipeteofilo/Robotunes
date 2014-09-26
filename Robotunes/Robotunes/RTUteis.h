@@ -19,6 +19,6 @@
 +(int)diasEntreDataInicial:(NSDate*)dataInicial andDate:(NSDate*)dataFinal;
 +(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum;
 +(BOOL)sortearChanceSim:(float)chanceSim;
-
++(CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor;
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
 @end

@@ -17,7 +17,6 @@
 @property int pontos;
 
 
-
 //SKActions de todas as ações do personagem
 @property SKAction *acaoDancarDireita; //Ao andar para a direita - Dancinha de quem anda
 @property SKAction *acaoDancarEsquerda; //Ao andar para a esperda - Dancinha de quem anda

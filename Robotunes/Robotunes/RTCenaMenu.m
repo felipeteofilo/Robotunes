@@ -50,12 +50,12 @@
     SKTextureAtlas * fundos = [SKTextureAtlas atlasNamed:@"Fundos"];
     SKTextureAtlas * fundos2 = [SKTextureAtlas atlasNamed:@"Fundos1"];
     
-    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo1"];
+    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
     self.fundo.anchorPoint = CGPointZero;
     self.fundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.fundo.zPosition = -17;
     
-    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"RT_fundo2"];
+    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
     self.fundo2.anchorPoint = CGPointZero;
     self.fundo2.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.fundo2.zPosition = -17;

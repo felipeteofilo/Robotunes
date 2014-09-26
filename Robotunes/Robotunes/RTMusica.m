@@ -67,9 +67,10 @@
     return false;
 }
 
+//TODO: Implementar metodo
 -(BOOL)acabou
 {
-    //TODO
+
     return NO;
 }
 

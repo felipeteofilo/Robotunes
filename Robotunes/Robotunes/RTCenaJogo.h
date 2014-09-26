@@ -12,6 +12,7 @@
 #import "RTMusica.h"
 #import "RTBancoDeDadosController.h"
 #import "Musica.h"
+#import "RTHUD.h"
 #import <AVFoundation/AVFoundation.h>
 
 //Categorias do jogo (chão, nota e jogador)
@@ -59,6 +60,9 @@ static const UInt32 ChaoCategoria = 0x1 << 3;
 
 //Criado propridade p guardar o back atual
 @property SKSpriteNode *background;
+
+
+//Propriedade que conterá o HUD
 
 -(id)initWithSize:(CGSize)size andMusica:(int)musica;
 

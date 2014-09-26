@@ -85,7 +85,11 @@
         return NO;
     }
 }
-
++ (CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor {
+    CGPathRef path = CGPathCreateWithRect( CGRectMake(-size.width * anchor.x, -size.height * anchor.y,
+                                                      size.width,   size.height), nil);
+    return path;
+}
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
     NSInteger numImagens = pastaFrames.textureNames.count;
     NSMutableArray *frames =[[NSMutableArray alloc]init];

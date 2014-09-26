@@ -42,20 +42,13 @@
         
         Musica *musicaEscolhida = [RTBancoDeDadosController procurarMusica:musica];
         
-//        NSArray * array = [NSArray arrayWithObjects:@"nota",@"0.5",@"0",@"nota",@"1.5",@"1",@"notaQuebrada",@"2.5",@"3", nil];
-//        
-//        [musica setValue:@"musica" forKey:@"nome"];
-//        [musica setValue:@"eu" forKey:@"autor"];
-//        [musica setValue:array forKey:@"notas"];
-        
         self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
-        
-        //Cria o sistema do Acelerometro - NÃO USADO
-        //[self criarAcelerometro];
-        
-        //Inicia propriedade p controle dos combos
-        //Comeca com 1 pq ao atribuir a pontuacao do jogador ele multiplica pelo combo
         self.combo=1;
+        
+        //Adiciona o HUD
+        RTHUD *hud=[[RTHUD alloc]initHUD:self.frame];
+        
+        [self addChild:hud];
         
     }
     return self;
@@ -65,8 +58,7 @@
 {
     //Cria a imagem de fundo e define atributos
     //Adicionardo proriedade
-    //SKSpriteNode *imagemFundo = [[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
-    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"fundo"];
+    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"1"];
     self.background.anchorPoint = CGPointZero;
     self.background.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.background.zPosition = -10;
@@ -242,18 +234,13 @@
         
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
-            NSLog(@"foi nota");
+            [self tocarSomErrado];
             [firstBody.node removeFromParent];
-          
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
-            NSLog(@"foi player");
-
             [firstBody.node removeFromParent];
 
-            
             [self.jogador atualizarPontos:10*[self combo]];
-            
             self.notasCertasSeq++;
         }
     }
@@ -264,23 +251,26 @@
         //Verifica se colidiu com uma nota errada
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             //TODO: tocar som errado
+            [self tocarSomErrado];
             
-            [self.jogador atualizarVida:-10];
+            [self.jogador atualizarVida:-1];
             //zerar contador de notas certas
             self.notasCertasSeq=0;
             
             //Volta p o primeito combo
-            self.combo=1;
+            [self atualizarCombo:1];
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
              [firstBody.node removeFromParent];
-            
         }
     }
 }
 
-
+//TODO: Implementar metodo
+-(void)tocarSomErrado{
+    
+}
 -(void)update:(NSTimeInterval)currentTime
 {
     //Verifcas
@@ -288,6 +278,9 @@
     
     //Chama a verificação do combo
     [self atualizarCombo];
+    
+    //Validade se acabou o jogo
+    [self fimJogo];
     
     //    //ACELEROMETRO! NÃO USADO
     //    //VERIFICAÇÃO DE MOVIMENTO
@@ -328,32 +321,46 @@
     if (self.notasCertasSeq >= (2 + self.combo)) {
         self.combo++;
         self.notasCertasSeq =0;
+        
+        //Dispara notificacao p att a HUD
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaCombo" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.combo] forKey:@"combo"]];
     }
 }
-
+-(void)atualizarCombo:(int)valor{
+    self.combo=valor;
+    
+    //Dispara notificacao p att a HUD
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaCombo" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.combo] forKey:@"combo"]];
+}
+//Transicao Ganhou
+-(void)transicaoGanhou{
+    SKSpriteNode *background=self.background;
+    [background removeFromParent];
+    
+    RTCenaGameOver *ganhou=[[RTCenaGameOver alloc]initWithSize:self.view.bounds.size eGanhou:YES eBackgournd:background];
+    
+    [self.view presentScene:ganhou];
+}
+-(void)transicaoPerdeu{
+    SKSpriteNode *background=self.background;
+    [background removeFromParent];
+    
+    RTCenaGameOver *perdeu=[[RTCenaGameOver alloc]initWithSize:self.view.bounds.size eGanhou:NO eBackgournd:background];
+    
+    [self.view presentScene:perdeu];
+}
 -(void)fimJogo{
     
-    //Acabou musica e esta vivo ganhou
-    if ([self.musica acabou] && [self.jogador vida] > 0 ) {
-        
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:YES eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
-        
-    
-    }else if([self.jogador vida]<=0){
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
+    if ([self.musica acabou]) {
+        if ([self.jogador morreu]) {
+            [self transicaoGanhou];
+        }else{
+            [self transicaoPerdeu];
+        }
     }else{
-        RTCenaGameOver *gameOver=[[RTCenaGameOver alloc]initWithSize:self.size eGanhou:NO eBackgournd:self.background];
-        
-        [self.view presentScene:gameOver];
-    }
-    
-    //Nao acabou musica e .
-    {
-        
+        if ([self.jogador morreu]) {
+            [self transicaoPerdeu];
+        }
     }
 }
 @end
