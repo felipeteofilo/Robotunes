@@ -33,12 +33,12 @@
     }
     
     [mensagem setAnchorPoint:CGPointMake(0.5, 0)];
-    [mensagem setScale:0.8];
-    [mensagem setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.002f)];
+    [mensagem setSize:CGSizeMake(CGRectGetWidth(self.frame)*0.5f, CGRectGetHeight(self.frame)*0.95f)];
+    [mensagem setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.015f)];
     [self addChild:mensagem];
     
     //Configura o botao
-    [botao setScale:0.3];
+    [botao setSize:CGSizeMake(CGRectGetWidth(self.frame)*0.3f, CGRectGetHeight(self.frame)*0.15f)];
     [botao setAnchorPoint:CGPointMake(0.5, 0)];
     [botao setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.015f)];
     [botao setName:@"botao"];

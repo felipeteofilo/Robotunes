@@ -105,14 +105,14 @@
 
 -(void)atualizarBarraSangue:(NSNotification*)noticacao{
     NSNumber *valor=[noticacao.userInfo objectForKey:@"vida"];
-
-    //Limpa barrinhas
-    for (SKNode *node in self.barrinhas) {
-        [node removeFromParent];
+    if ([self.barrinhas count]<=16) {
+        //Limpa barrinhas
+        for (SKNode *node in self.barrinhas) {
+            [node removeFromParent];
+        }
+        
+        [self criaBarrinhasSangue:[valor intValue]];
     }
-    
-    [self criaBarrinhasSangue:[valor intValue]];
-
 }
 -(void)pintarHUD{
     

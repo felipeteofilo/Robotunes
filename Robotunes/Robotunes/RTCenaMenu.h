@@ -43,5 +43,7 @@
 @property SKSpriteNode *btnFace;
 @property SKSpriteNode *chao;
 
-
+//Botoes p navegação
+@property SKSpriteNode *musicaAnterior;
+@property SKSpriteNode *musicaSeguinte;
 @end
