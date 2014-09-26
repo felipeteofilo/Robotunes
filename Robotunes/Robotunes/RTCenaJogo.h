@@ -63,6 +63,7 @@ static const UInt32 ChaoCategoria = 0x1 << 3;
 
 
 //Propriedade que conterá o HUD
+@property RTHUD *hud;
 
 -(id)initWithSize:(CGSize)size andMusica:(int)musica;
 

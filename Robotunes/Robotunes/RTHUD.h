@@ -15,10 +15,15 @@
 //Padroniza o espaco entre as barrinhas
 @property float espacoBarrinha;
 
+//Guarda a posicao que deve gerar a prox barrinha
+@property CGPoint proxBarrinha;
+
 //Mostra pontuacao e combo
 @property SKLabelNode *pontuacao;
 @property SKLabelNode *combo;
 
 
 -(id)initHUD:(CGRect)frame;
+-(void)atualizarBarraSangue:(NSNumber*)valor;
+-(void)atualizarPontos;
 @end
