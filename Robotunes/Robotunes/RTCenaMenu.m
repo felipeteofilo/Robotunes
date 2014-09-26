@@ -73,15 +73,15 @@
     framesFundo1 = [[framesFundo1 reverseObjectEnumerator] allObjects];
    
     [framesPrimeiraParte removeObjectAtIndex:1];
-    [self.fundo runAction:[SKAction animateWithTextures:framesPrimeiraParte timePerFrame:9]completion:^{
-        [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo1 timePerFrame:18 resize:NO restore:YES]]];
+    [self.fundo runAction:[SKAction animateWithTextures:framesPrimeiraParte timePerFrame:15]completion:^{
+        [self.fundo runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo1 timePerFrame:30 resize:NO restore:YES]]];
     }];
     
-    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo2 timePerFrame:18 resize:NO restore:YES]]];
+    [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesFundo2 timePerFrame:30 resize:NO restore:YES]]];
     
     
-    SKAction *acaoFadeOut = [SKAction fadeOutWithDuration:8.5];
-    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:8.5];
+    SKAction *acaoFadeOut = [SKAction fadeOutWithDuration:15];
+    SKAction *acaoFadeIn = [SKAction fadeInWithDuration:15];
     
     
     [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
@@ -184,10 +184,6 @@
         //Atualiza o contador
         self.intervaloNuvens =currentTime;
     }
-    
-    
-    
-    
 }
 
 @end
