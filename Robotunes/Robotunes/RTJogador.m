@@ -36,6 +36,8 @@
 {
     self.pontos = 0;
     self.vida = 8;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaSangue" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.vida] forKey:@"vida"]];
 }
 
 //TODO
@@ -67,16 +69,15 @@
     if(valor > 0){
         self.pontos = self.pontos + valor;
     }
-    
+
     [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaPontos" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.pontos] forKey:@"pontos"]];
 }
 
 -(void)atualizarVida:(int)valor
 {
     self.vida = self.vida + valor;
-    
-    //Posta uma notificacao p HUD atualizar
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaSangue" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:valor] forKey:@"valor"]];
+
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaSangue" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.vida] forKey:@"vida"]];
 }
 
 

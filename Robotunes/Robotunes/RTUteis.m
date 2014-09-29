@@ -90,6 +90,9 @@
                                                       size.width,   size.height), nil);
     return path;
 }
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
+    return [RTUteis lerFrames:pastaFrames nome:@""];
+}
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames nome:(NSString*)imagens{
     NSInteger numImagens = pastaFrames.textureNames.count;
     NSMutableArray *frames =[[NSMutableArray alloc]init];

@@ -15,8 +15,9 @@
 -(id)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size]){
-        self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
-        self.musicaEscolhida = 1;
+        //Alimenta array com os nomes da musica
+        
+        //Seta como musica escolhida a primeira
         
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
@@ -88,9 +89,7 @@
     [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
     [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeIn,acaoFadeOut]]]];
     
-    
-    
-    
+
     [self addChild:self.fundo];
     [self addChild:self.fundo2];
     
@@ -128,7 +127,7 @@
 {
     self.robotuneR1Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"R1_corpo"];
     self.robotuneR1Corpo.anchorPoint = CGPointZero;
-    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.42);
+    self.robotuneR1Corpo.size = CGSizeMake(self.frame.size.width * 0.24, self.frame.size.height * 0.39);
     self.robotuneR1Corpo.position = CGPointMake(self.frame.size.width * 0.7, 5);
     [self addChild:self.robotuneR1Corpo];
     
@@ -141,11 +140,42 @@
 
 -(void)criarRobotuneB2
 {
-    self.robotuneB2 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneB2"];
-    self.robotuneB2.anchorPoint = CGPointZero;
-    self.robotuneB2.size = CGSizeMake(self.frame.size.width * 0.372, self.frame.size.height*0.767);
-    self.robotuneB2.position = CGPointMake(self.frame.size.width * 0.299, 5);
-    [self addChild:self.robotuneB2];
+    self.robotuneB2Corpo = [[SKSpriteNode alloc]initWithImageNamed:@"B2_Body"];
+    self.robotuneB2Corpo.anchorPoint = CGPointZero;
+    self.robotuneB2Corpo.size = CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.58);
+    self.robotuneB2Corpo.position = CGPointMake(self.frame.size.width * 0.299, 5);
+    [self addChild:self.robotuneB2Corpo];
+    
+    //Configura cabeca
+    self.robotuneB2Cabeca =[SKSpriteNode node];
+    [self.robotuneB2Cabeca setTexture:[[SKTextureAtlas atlasNamed:@"B2_Animacao"]textureNamed:@"0"]];
+    
+    [self.robotuneB2Cabeca setPosition:CGPointMake(CGRectGetMidX(self.robotuneB2Corpo.frame), CGRectGetHeight(self.robotuneB2Corpo.frame)*1.12f
+                                                   )];
+    [self.robotuneB2Cabeca setSize:CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.18)];
+    
+    [self addChild:self.robotuneB2Cabeca];
+    
+    //Anima cabeça B2
+    NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"B2_Animacao"]];
+    
+    [self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
+    
+    //Define tamanho do botao play
+    CGSize tamanhoPlay=CGSizeMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45, CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45);
+    
+    //Cria o botao
+    self.botaoPlay=[[RTBotao alloc]initBotao:@"botaoPlay" comSel:@selector(playMusica) eDelegate:self eTamanho:tamanhoPlay];
+    
+    //Posiciona o botao
+    [self.botaoPlay setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.486, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.29)];
+    [self.botaoPlay setZPosition:100];
+    
+    //Add na arvore
+    [self.robotuneB2Corpo addChild:self.botaoPlay];
+}
+-(void)criaBotaoPlay:(CGSize)tamanho{
+
 }
 
 -(void)criarRobotuneY3
@@ -157,13 +187,20 @@
     [self addChild:self.robotuneY3];
 }
 
-
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+//Metodo para dar play na musica
+-(void)playMusica{
+    NSLog(@"Musica tocando");
     
     [self carregarJogo:3];
-   
+}
+//Metodo p navegacao entre musicas
+-(void)musicaSeguinte{
+    NSLog(@"Musica Proxima tocando");
+}
+
+-(void)musicaAnterior{
+    NSLog(@"Musica Anterior tocando");
+
 }
 //Faz o load do jogo passado a musica que ira tocar
 -(void)carregarJogo :(int)musica{
@@ -208,7 +245,7 @@
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {
             //Cria a nuvem
-            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50];
+            RTNuvem *nuvem=[[RTNuvem alloc]initNuvem:CGRectGetMidY(self.frame) :CGRectGetMaxY(self.frame)+50 frameTela:self.frame];
             
             //add na arvore de nodes
             [self addChild:nuvem];

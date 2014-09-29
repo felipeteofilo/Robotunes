@@ -30,10 +30,9 @@
             fonteLabel=25.0f;
         }
         
-        [self criaBarrinhasSangue];
         [self configuraLabelPontos:fonteLabel];
         [self configuraLabelCombo:fonteLabel];
-        [self pintarBarrinha];
+        [self pintarHUD];
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(atualizarBarraSangue:) name:@"NotificacaoMudancaSangue" object:nil];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(atualizarPontos:) name:@"NotificacaoMudancaPontos" object:nil];
@@ -59,36 +58,36 @@
     
 }
 -(void)configuraLabelPontos:(float)fonte{
-
-    
     //Configura pontuacao
     self.pontuacao=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
-
+    
     [self.pontuacao setFontSize:fonte];
     [self.pontuacao setText:@"0"];
     [self.pontuacao setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
     [self.pontuacao setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     [self.pontuacao setName:@"pontos"];
     [self.pontuacao setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.02f, CGRectGetHeight(self.frame)* -1.1f) ];
-
+    
     [self addChild:self.pontuacao];
 }
--(void)criaBarrinhasSangue{
+-(void)criaBarrinhasSangue:(int)nBarrinhas{
     CGPoint posicaoBarra=CGPointMake(CGRectGetWidth(self.frame)*0.095f,CGRectGetHeight(self.frame)* -0.126f);
     
     //Aloca array barrinha
     self.barrinhas=[NSMutableArray array];
     
     //TODO: melhorar integracao entre sangue e HUD
-    for (int i=0; i<8; i++) {
-        //Cria um spritenoteåß
+    for (int i=0; i<nBarrinhas; i++) {
+        //Cria um spritenote
         SKSpriteNode *barra=[self novaBarrinha];
         
+        [barra setName:@"barrinha"];
         [barra setPosition:posicaoBarra];
         posicaoBarra=CGPointMake(posicaoBarra.x + self.espacoBarrinha, posicaoBarra.y);
         
         [self addChild:barra];
     }
+    [self pintarHUD];
 }
 
 -(SKSpriteNode*)novaBarrinha{
@@ -103,43 +102,24 @@
     
     return novaBarrinha;
 }
--(void)atualizarBarraSangue:(NSNotification*)notificacao{
-    //Pega o valor que atualizou o sangue
-    NSDictionary *userInfo=notificacao.userInfo;
-    NSNumber *valor=[userInfo valueForKey:@"valor"];
-    
-    for (int i=0; i < abs([valor intValue]); i++) {
-        //Verifica se cria ou remove uma barrinha de sangue
-        if (([valor intValue]  > 0)&&([self.barrinhas count] < 16)) {
-            //Cria barrinha
-            SKSpriteNode *ultimaBarrinha=[self.barrinhas lastObject];
-            
-            SKSpriteNode *novaBarrinha=[self novaBarrinha];
-            [novaBarrinha setPosition:CGPointMake( ultimaBarrinha.position.x +self.espacoBarrinha, ultimaBarrinha.position.y)];
-            [novaBarrinha setScale:2.5];
-            
-            //Add no array
-            [self.barrinhas addObject:novaBarrinha];
-            
-            //add na arvore de nodes
-            [self addChild:novaBarrinha];
-        }else if([valor intValue]< 0){
-            //Verifica a qtde de sangue
-            SKNode *barra=[self.barrinhas lastObject];
-            [barra removeFromParent];
-            [self.barrinhas removeLastObject];
+
+-(void)atualizarBarraSangue:(NSNotification*)noticacao{
+    NSNumber *valor=[noticacao.userInfo objectForKey:@"vida"];
+    if ([self.barrinhas count]<=16) {
+        //Limpa barrinhas
+        for (SKNode *node in self.barrinhas) {
+            [node removeFromParent];
         }
+        
+        [self criaBarrinhasSangue:[valor intValue]];
     }
-
-    [self pintarBarrinha];
-
 }
--(void)pintarBarrinha{
+-(void)pintarHUD{
     
     if ([self.barrinhas count] <=6) {
         [self pintaBarrinhasCor:[UIColor colorWithRed:209/255.0f green:51/255.0f blue:51/255.0f alpha:1]];
     }else if ([self.barrinhas count] <=10){
-            [self pintaBarrinhasCor:[UIColor colorWithRed:233/255.0f green:120/255.0f blue:24/255.0f alpha:1]];
+        [self pintaBarrinhasCor:[UIColor colorWithRed:233/255.0f green:120/255.0f blue:24/255.0f alpha:1]];
     }else if ([self.barrinhas count] <=13){
         [self pintaBarrinhasCor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
     }else if ([self.barrinhas count] <=15){
@@ -147,7 +127,7 @@
     }else{
         [self pintaBarrinhasCor:[UIColor colorWithRed:185/255.0f green:93/255.0f blue:219/255.0f alpha:1.0]];
     }
-
+    
 }
 
 -(void)pintaBarrinhasCor:(UIColor*)novaCor{

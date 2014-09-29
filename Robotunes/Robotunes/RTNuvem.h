@@ -14,5 +14,5 @@
 @property float alturaY;
 @property float velocidade;
 
--(id)initNuvem:(float)alturaMinima :(float)alturaMaxima;
+-(id)initNuvem:(float)alturaMinima :(float)alturaMaxima frameTela:(CGRect)frame;
 @end

@@ -17,7 +17,13 @@
 -(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
-        self.tempoTotal = CACurrentMediaTime();
+
+        //Cria e configura HUD
+        //Adiciona o HUD
+        self.hud=[[RTHUD alloc]initHUD:self.frame];
+        [self addChild:self.hud];
+        
+
         //Acrescenta um fundo branco
         self.backgroundColor = [UIColor whiteColor];
         
@@ -49,11 +55,6 @@
         
         self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
         self.combo=1;
-        
-        //Adiciona o HUD
-        RTHUD *hud=[[RTHUD alloc]initHUD:self.frame];
-        
-        [self addChild:hud];
         
     }
     return self;
@@ -266,7 +267,8 @@
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
             [firstBody.node removeFromParent];
-
+            
+            [self.jogador atualizarVida:1];
             [self.jogador atualizarPontos:10*[self combo]];
             self.notasCertasSeq++;
         }

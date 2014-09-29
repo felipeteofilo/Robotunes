@@ -21,4 +21,5 @@
 +(BOOL)sortearChanceSim:(float)chanceSim;
 +(CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor;
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames nome:(NSString*)imagens;
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
 @end

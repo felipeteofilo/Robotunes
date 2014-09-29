@@ -10,11 +10,14 @@
 
 @implementation RTNuvem
 
--(id)initNuvem:(float)alturaMinima :(float)alturaMaxima{
+-(id)initNuvem:(float)alturaMinima :(float)alturaMaxima frameTela:(CGRect)frame{
     if ([self init]) {
         
         //Sorteia a imagem que será da nuvem
         [self defineImagem];
+        
+        
+        [self setScale:CGRectGetWidth(frame)*0.0003f];
         
         //sorteia a altura da nuvem
         [self sorteiaAltura:alturaMinima :alturaMaxima];
@@ -31,7 +34,6 @@
 -(void)sorteiaAltura:(float)alturaMinima :(float)alturaMaxima{
     //define posicao Z para ficar a frente do fundo da tela e atras dos robos
     [self setZPosition:-17.0];
-    [self setScale:0.4];
     
     [self setPosition:CGPointMake(-500, [RTUteis sorteioIntEntre:(int)alturaMinima eMaiorNum:(int)alturaMaxima])];
 }
@@ -47,6 +49,8 @@
     
     //Atualiza o tamanho do node
     [self setSize:self.texture.size];
+    
+    [self setAlpha:0.2f];
 }
 
 -(void)movimentar{
