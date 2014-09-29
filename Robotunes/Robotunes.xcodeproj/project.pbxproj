@@ -62,9 +62,9 @@
 		94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FA409C19D35B6100D60E24 /* HUD_barrinha.png */; };
 		94FB762019D9CB2700135ACB /* RTBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FB761F19D9CB2700135ACB /* RTBotao.m */; };
 		94FB762419D9D13200135ACB /* B2_Animacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB762219D9D13200135ACB /* B2_Animacao.atlas */; };
-		94FB762A19D9D22300135ACB /* botaoDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB762719D9D22300135ACB /* botaoDireita.atlas */; };
-		94FB762B19D9D22300135ACB /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB762819D9D22300135ACB /* botaoEsquerda.atlas */; };
-		94FB762C19D9D22300135ACB /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB762919D9D22300135ACB /* botaoPlay.atlas */; };
+		94FB763619D9E48800135ACB /* botaoDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763319D9E48800135ACB /* botaoDireita.atlas */; };
+		94FB763719D9E48800135ACB /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763419D9E48800135ACB /* botaoEsquerda.atlas */; };
+		94FB763819D9E48800135ACB /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763519D9E48800135ACB /* botaoPlay.atlas */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -156,9 +156,9 @@
 		94FB761E19D9CB2700135ACB /* RTBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBotao.h; sourceTree = "<group>"; };
 		94FB761F19D9CB2700135ACB /* RTBotao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBotao.m; sourceTree = "<group>"; };
 		94FB762219D9D13200135ACB /* B2_Animacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = B2_Animacao.atlas; path = "Robo B2/B2_Animacao.atlas"; sourceTree = "<group>"; };
-		94FB762719D9D22300135ACB /* botaoDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoDireita.atlas; sourceTree = "<group>"; };
-		94FB762819D9D22300135ACB /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
-		94FB762919D9D22300135ACB /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
+		94FB763319D9E48800135ACB /* botaoDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoDireita.atlas; sourceTree = "<group>"; };
+		94FB763419D9E48800135ACB /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
+		94FB763519D9E48800135ACB /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -403,9 +403,9 @@
 		94FB762619D9D22300135ACB /* BotoesB2 */ = {
 			isa = PBXGroup;
 			children = (
-				94FB762719D9D22300135ACB /* botaoDireita.atlas */,
-				94FB762819D9D22300135ACB /* botaoEsquerda.atlas */,
-				94FB762919D9D22300135ACB /* botaoPlay.atlas */,
+				94FB763319D9E48800135ACB /* botaoDireita.atlas */,
+				94FB763419D9E48800135ACB /* botaoEsquerda.atlas */,
+				94FB763519D9E48800135ACB /* botaoPlay.atlas */,
 			);
 			path = BotoesB2;
 			sourceTree = "<group>";
@@ -525,24 +525,24 @@
 				9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */,
 				9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */,
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
-				94FB762A19D9D22300135ACB /* botaoDireita.atlas in Resources */,
 				94FB762419D9D13200135ACB /* B2_Animacao.atlas in Resources */,
 				9495974519D5E01000226DF3 /* How it Begins.mp3 in Resources */,
 				9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */,
 				9495974819D5E01000226DF3 /* Wallpaper.mp3 in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
 				9495974419D5E01000226DF3 /* Carefree.mp3 in Resources */,
-				94FB762C19D9D22300135ACB /* botaoPlay.atlas in Resources */,
 				94C5B6B019D60D3200316AFE /* B2_Body.png in Resources */,
+				94FB763819D9E48800135ACB /* botaoPlay.atlas in Resources */,
 				9495975919D5E1FC00226DF3 /* R1_corpo.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				9495974F19D5E03800226DF3 /* Quebradas.atlas in Resources */,
+				94FB763619D9E48800135ACB /* botaoDireita.atlas in Resources */,
 				9495975819D5E1FC00226DF3 /* R1_cabeca.png in Resources */,
 				9495974E19D5E03800226DF3 /* Completas.atlas in Resources */,
 				9495974719D5E01000226DF3 /* New Friendly.mp3 in Resources */,
-				94FB762B19D9D22300135ACB /* botaoEsquerda.atlas in Resources */,
+				94FB763719D9E48800135ACB /* botaoEsquerda.atlas in Resources */,
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
