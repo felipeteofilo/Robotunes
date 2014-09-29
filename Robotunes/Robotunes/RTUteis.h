@@ -20,5 +20,7 @@
 +(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum;
 +(BOOL)sortearChanceSim:(float)chanceSim;
 +(CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor;
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames nome:(NSString*)imagens;
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
++(float)tamanhoFonteoIPad:(float)fonteIpad fonteIPhone:(float)fonteIphone;
 @end

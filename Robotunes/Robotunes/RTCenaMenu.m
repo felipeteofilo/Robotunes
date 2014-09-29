@@ -11,6 +11,7 @@
 
 @implementation RTCenaMenu
 
+
 -(id)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size]){
@@ -51,24 +52,24 @@
     SKTextureAtlas * fundos = [SKTextureAtlas atlasNamed:@"Fundos"];
     SKTextureAtlas * fundos2 = [SKTextureAtlas atlasNamed:@"Fundos1"];
     
-    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
+    self.fundo = [[SKSpriteNode alloc]initWithImageNamed:@"1fundos"];
     self.fundo.anchorPoint = CGPointZero;
     self.fundo.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.fundo.zPosition = -17;
     
-    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"1"];
+    self.fundo2 = [[SKSpriteNode alloc]initWithImageNamed:@"1fundos1"];
     self.fundo2.anchorPoint = CGPointZero;
     self.fundo2.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.fundo2.zPosition = -17;
     
     self.fundo2.alpha = 0;
     
-    NSArray *framesFundo1 = [RTUteis lerFrames:fundos];
+    NSArray *framesFundo1 = [RTUteis lerFrames:fundos nome:@"fundos"];
     
    
     
     
-    NSMutableArray *framesFundo2 = [RTUteis lerFrames:fundos2];
+    NSMutableArray *framesFundo2 = [RTUteis lerFrames:fundos2 nome:@"fundos1"];
     
     NSMutableArray *framesPrimeiraParte = (NSMutableArray*)framesFundo1;
     framesFundo1 = [[framesFundo1 reverseObjectEnumerator] allObjects];
@@ -166,6 +167,8 @@
     ;
     [self criaBotoesNavegacao];
     
+    [self criaLabelNomeMusica];
+    
 }
 -(void)criaBotaoPlay{
     //Cria o botao
@@ -201,17 +204,64 @@
 -(void)playMusica{
     NSLog(@"Musica tocando");
     
-    //    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
-    //    [self.view presentScene:jogo];
-}
+    [self carregarJogo:3];
 
+}
 //Metodo p navegacao entre musicas
 -(void)musicaSeguinte{
     NSLog(@"Musica Proxima tocando");
 }
+
 -(void)musicaAnterior{
     NSLog(@"Musica Anterior tocando");
+
 }
+
+-(void)criaLabelNomeMusica{
+    self.nomeMusica=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    [self.nomeMusica setText:@"Noteworthy-Bold"];
+    [self.nomeMusica setFontSize:[RTUteis tamanhoFonteoIPad:30.0f fonteIPhone:14.0f]];
+    
+    [self.nomeMusica setZPosition:100];
+    
+    [self.nomeMusica setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
+    [self.nomeMusica setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    
+    [self.nomeMusica setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.5, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.675)];
+    
+    [self.robotuneB2Corpo addChild:self.nomeMusica];
+}
+//Faz o load do jogo passado a musica que ira tocar
+-(void)carregarJogo :(int)musica{
+    
+    //Faz a animacao de load na thread secundaria
+    __weak RTCenaMenu *weakself = self;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        //Background thread
+        //Load scene here
+        [weakself removeAllChildren];
+        NSArray * frames =[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"Loading"] nome:@"loading"];
+        SKSpriteNode * node = [[SKSpriteNode alloc]initWithTexture:[frames objectAtIndex:0]];
+        
+        
+        node.size = weakself.size ;
+        node.anchorPoint =CGPointZero;
+        node.name = @"load";
+        [weakself addChild:node];
+        RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:weakself.size andMusica:musica];
+        
+        SKAction *loading = [SKAction repeatAction:[SKAction animateWithTextures:frames timePerFrame:0.25] count:2];
+       
+        //assim que ele terminar de executar a animacao ele ira carregar o jogo na thread principal
+        [node runAction:loading completion:^{
+            
+            [weakself runAction:[SKAction runBlock:^{
+                [weakself.view presentScene:jogo];
+            } queue:(dispatch_get_main_queue())]];
+        }];
+    });
+}
+
 
 
 -(void)criarRobotuneY3

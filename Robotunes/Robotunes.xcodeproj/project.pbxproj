@@ -42,6 +42,7 @@
 		9495975819D5E1FC00226DF3 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975619D5E1FC00226DF3 /* R1_cabeca.png */; };
 		9495975919D5E1FC00226DF3 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975719D5E1FC00226DF3 /* R1_corpo.png */; };
 		9495975B19D5E29900226DF3 /* chao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975A19D5E29900226DF3 /* chao.png */; };
+		94AA49AC19D9F83E00750475 /* Loading.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94AA49AB19D9F83E00750475 /* Loading.atlas */; };
 		94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
@@ -132,6 +133,7 @@
 		9495975619D5E1FC00226DF3 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
 		9495975719D5E1FC00226DF3 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
 		9495975A19D5E29900226DF3 /* chao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chao.png; sourceTree = "<group>"; };
+		94AA49AB19D9F83E00750475 /* Loading.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Loading.atlas; sourceTree = "<group>"; };
 		94B2661B19D20E90005BAEC9 /* RTCenaGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaGameOver.h; sourceTree = "<group>"; };
 		94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaGameOver.m; sourceTree = "<group>"; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				94AA49AB19D9F83E00750475 /* Loading.atlas */,
 				9495975A19D5E29900226DF3 /* chao.png */,
 				9495975619D5E1FC00226DF3 /* R1_cabeca.png */,
 				9495975719D5E1FC00226DF3 /* R1_corpo.png */,
@@ -522,6 +525,7 @@
 				9495975B19D5E29900226DF3 /* chao.png in Resources */,
 				C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */,
 				9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */,
+				94AA49AC19D9F83E00750475 /* Loading.atlas in Resources */,
 				9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */,
 				9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */,
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,

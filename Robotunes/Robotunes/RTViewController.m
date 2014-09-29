@@ -22,19 +22,26 @@
 -(void)viewDidLayoutSubviews{
     //Chama a classe mãe
     [super viewDidLayoutSubviews];
-
+    
     //Inicia a view
+    
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:skView];
     skView.showsNodeCount = YES;
     skView.showsFPS=YES;
+    skView.showsPhysics=YES;
+    [self.view addSubview:skView];
     
-    //Cria a cena de menu
     RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
     menu.scaleMode = SKSceneScaleModeAspectFill;
     
-    
-    //Mostra a cena de menu
     [skView presentScene:menu];
+    
+}
+
+-(void)load{
+    UIImageView *imagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1"]];
+    [imagem setFrame:self.view.frame];
+    
+    [self.view addSubview:imagem];
 }
 @end

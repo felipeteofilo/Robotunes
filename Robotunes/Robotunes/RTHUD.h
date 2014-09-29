@@ -25,5 +25,4 @@
 
 -(id)initHUD:(CGRect)frame;
 -(void)atualizarBarraSangue:(NSNumber*)valor;
--(void)atualizarPontos;
 @end

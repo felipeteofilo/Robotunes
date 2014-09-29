@@ -21,14 +21,8 @@
         self.espacoBarrinha=(CGRectGetWidth(self.frame)*0.0512f);
         
         //Verifica despositivo que esta rodando
-        NSString *device=[[UIDevice currentDevice]model];
-        float fonteLabel;
-        
-        if([device hasPrefix:@"iPad"]){
-            fonteLabel=50.0f;
-        }else{
-            fonteLabel=25.0f;
-        }
+
+        float fonteLabel=[RTUteis tamanhoFonteoIPad:50.0f fonteIPhone:25.0f];
         
         [self configuraLabelPontos:fonteLabel];
         [self configuraLabelCombo:fonteLabel];

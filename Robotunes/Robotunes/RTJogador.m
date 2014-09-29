@@ -89,7 +89,7 @@
         [self runAction:self.acaoDancarDireita];
         
         //Movimenta o personagem
-        [self runAction:[SKAction moveToX:[posicao floatValue] duration:0.2]];
+        [self runAction:[SKAction moveToX:[posicao floatValue]+(self.size.width/3) duration:0.2]];
     }
     
     //Se estiver indo para o lado esquerdo...
@@ -98,7 +98,7 @@
         [self runAction:self.acaoDancarEsquerda];
         
         //Movimenta o personagem
-        [self runAction:[SKAction moveToX:[posicao floatValue] duration:0.2]];
+        [self runAction:[SKAction moveToX:[posicao floatValue]+(self.size.width/3) duration:0.2]];
     }
 }
 
