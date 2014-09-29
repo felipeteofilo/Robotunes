@@ -14,6 +14,7 @@
 		7503FFED19D9F616004A4078 /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFEA19D9F616004A4078 /* botaoEsquerda.atlas */; };
 		7503FFEE19D9F616004A4078 /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFEB19D9F616004A4078 /* botaoPlay.atlas */; };
 		7503FFF119D9F66B004A4078 /* B2_Body.png in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFF019D9F66B004A4078 /* B2_Body.png */; };
+		7503FFF419D9F95C004A4078 /* RTFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7503FFF319D9F95C004A4078 /* RTFacebook.m */; };
 		7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155019C8B55F00EC3955 /* Foundation.framework */; };
 		7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155419C8B55F00EC3955 /* UIKit.framework */; };
 		7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
@@ -101,6 +102,8 @@
 		7503FFEA19D9F616004A4078 /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
 		7503FFEB19D9F616004A4078 /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
 		7503FFF019D9F66B004A4078 /* B2_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B2_Body.png; sourceTree = "<group>"; };
+		7503FFF219D9F95C004A4078 /* RTFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFacebook.h; sourceTree = "<group>"; };
+		7503FFF319D9F95C004A4078 /* RTFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFacebook.m; sourceTree = "<group>"; };
 		7531154D19C8B55F00EC3955 /* Robotunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robotunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531155019C8B55F00EC3955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7531155219C8B55F00EC3955 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -304,6 +307,8 @@
 				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
 				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
 				CDEA607919C8BC160099EEA7 /* RTMusica.h */,
+				7503FFF219D9F95C004A4078 /* RTFacebook.h */,
+				7503FFF319D9F95C004A4078 /* RTFacebook.m */,
 				CDEA607A19C8BC160099EEA7 /* RTMusica.m */,
 				CDEA607C19C8BC240099EEA7 /* RTNota.h */,
 				CDEA607D19C8BC240099EEA7 /* RTNota.m */,
@@ -579,6 +584,7 @@
 				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				C5B85A4919CDDABD00446492 /* Reachability.m in Sources */,
+				7503FFF419D9F95C004A4078 /* RTFacebook.m in Sources */,
 				7503FFE519D9F585004A4078 /* RTBotao.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
 				94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */,
