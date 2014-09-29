@@ -14,8 +14,9 @@
 -(id)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size]){
-        self.numeroDeMusicas = [RTBancoDeDadosController ultimaMusica];
-        self.musicaEscolhida = 1;
+        //Alimenta array com os nomes da musica
+        
+        //Seta como musica escolhida a primeira
         
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
@@ -87,9 +88,7 @@
     [self.fundo runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeOut,acaoFadeIn]]]];
     [self.fundo2 runAction:[SKAction repeatActionForever:[SKAction sequence:@[acaoFadeIn,acaoFadeOut]]]];
     
-    
-    
-    
+
     [self addChild:self.fundo];
     [self addChild:self.fundo2];
     
@@ -147,8 +146,10 @@
     [self addChild:self.robotuneB2Corpo];
     
     //Configura cabeca
-    self.robotuneB2Cabeca =[SKSpriteNode spriteNodeWithImageNamed:@"RobotuneB2_1"];
-    [self.robotuneB2Cabeca setPosition:CGPointMake(CGRectGetMidX(self.robotuneB2Corpo.frame), CGRectGetHeight(self.robotuneB2Corpo.frame)*1.13f
+    self.robotuneB2Cabeca =[SKSpriteNode node];
+    [self.robotuneB2Cabeca setTexture:[[SKTextureAtlas atlasNamed:@"B2_Animacao"]textureNamed:@"0"]];
+    
+    [self.robotuneB2Cabeca setPosition:CGPointMake(CGRectGetMidX(self.robotuneB2Corpo.frame), CGRectGetHeight(self.robotuneB2Corpo.frame)*1.12f
                                                    )];
     [self.robotuneB2Cabeca setSize:CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.18)];
     
@@ -158,6 +159,22 @@
     NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"B2_Animacao"]];
     
     [self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
+    
+    //Define tamanho do botao play
+    CGSize tamanhoPlay=CGSizeMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45, CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45);
+    
+    //Cria o botao
+    self.botaoPlay=[[RTBotao alloc]initBotao:@"botaoPlay" comSel:@selector(playMusica) eDelegate:self eTamanho:tamanhoPlay];
+    
+    //Posiciona o botao
+    [self.botaoPlay setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.486, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.29)];
+    [self.botaoPlay setZPosition:100];
+    
+    //Add na arvore
+    [self.robotuneB2Corpo addChild:self.botaoPlay];
+}
+-(void)criaBotaoPlay:(CGSize)tamanho{
+
 }
 
 -(void)criarRobotuneY3
@@ -169,12 +186,20 @@
     [self addChild:self.robotuneY3];
 }
 
+//Metodo para dar play na musica
+-(void)playMusica{
+    NSLog(@"Musica tocando");
+    
+//    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
+//    [self.view presentScene:jogo];
+}
 
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    RTCenaJogo *jogo = [[RTCenaJogo alloc]initWithSize:self.size andMusica:2];
-    [self.view presentScene:jogo];
+//Metodo p navegacao entre musicas
+-(void)musicaSeguinte{
+    NSLog(@"Musica Proxima tocando");
+}
+-(void)musicaAnterior{
+    NSLog(@"Musica Anterior tocando");
 }
 
 -(void)update:(NSTimeInterval)currentTime

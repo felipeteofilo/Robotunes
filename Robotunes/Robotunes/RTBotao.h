@@ -15,5 +15,5 @@
 @property id delegateBotao;
 @property NSString *atlasAnimacao;
 
--(id)initBotao:(NSString*)iconeBotao comSel:(SEL)seletor eDelegate:(id)delegate eAnimacao:(NSString*)atlasAnimacao;
+-(id)initBotao:(NSString*)atlasAnimacao comSel:(SEL)seletor eDelegate:(id)delegate eTamanho:(CGSize)size;
 @end

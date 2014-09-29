@@ -10,12 +10,20 @@
 
 @implementation RTBotao
 
--(id)initBotao:(NSString*)iconeBotao comSel:(SEL)seletor eDelegate:(id)delegate eAnimacao:(NSString*)atlasAnimacao{
-    if (self=[super initWithImageNamed:iconeBotao]) {
+-(id)initBotao:(NSString*)atlasAnimacao comSel:(SEL)seletor eDelegate:(id)delegate eTamanho:(CGSize)size{
+    if (self=[super init]) {
+
+        
         [self setAcaoRealizar:seletor];
         [self setDelegateBotao:delegate];
         
         [self setAtlasAnimacao:atlasAnimacao];
+        
+       //Define como imagem o 1 frame da animacao
+        [self setTexture:[[SKTextureAtlas atlasNamed:self.atlasAnimacao]textureNamed:@"0"]];
+        
+        [self setSize:size];
+    
     }
     return self;
 }
