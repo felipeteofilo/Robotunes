@@ -12,9 +12,12 @@
 
 
 
+    
+
 -(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
+        self.tempoTotal = CACurrentMediaTime();
         //Acrescenta um fundo branco
         self.backgroundColor = [UIColor whiteColor];
         
@@ -60,7 +63,7 @@
 {
     //Cria a imagem de fundo e define atributos
     //Adicionardo proriedade
-    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"1"];
+    self.background =[[SKSpriteNode alloc]initWithImageNamed:@"1fundos"];
     self.background.anchorPoint = CGPointZero;
     self.background.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     self.background.zPosition = -10;

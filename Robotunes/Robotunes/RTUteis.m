@@ -90,12 +90,12 @@
                                                       size.width,   size.height), nil);
     return path;
 }
-+(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames nome:(NSString*)imagens{
     NSInteger numImagens = pastaFrames.textureNames.count;
     NSMutableArray *frames =[[NSMutableArray alloc]init];
     
     for (int i=1; i <= numImagens; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"%d", i];
+        NSString *textureName = [NSString stringWithFormat:@"%d%@", i,imagens];
         SKTexture *temp = [pastaFrames textureNamed:textureName];
         [frames addObject:temp];
     }

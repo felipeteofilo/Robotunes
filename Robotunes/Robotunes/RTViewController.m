@@ -24,35 +24,29 @@
     [super viewDidLayoutSubviews];
 
     //Inicia a view
-    SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:skView];
-    skView.showsNodeCount = YES;
-    skView.showsFPS=YES;
-    skView.showsPhysics=YES;
+//    SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
+//    [self.view addSubview:skView];
+//    skView.showsNodeCount = YES;
+//    skView.showsFPS=YES;
+//    skView.showsPhysics=YES;
     
     
-    __weak RTViewController *weakself = self;
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        //Background thread
-        //Load scene here
-        
+    
         SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
-        [weakself.view addSubview:skView];
         skView.showsNodeCount = YES;
         skView.showsFPS=YES;
         skView.showsPhysics=YES;
-        [self load];
+        [self.view addSubview:skView];
+    
         RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
         menu.scaleMode = SKSceneScaleModeAspectFill;
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-            [skView presentScene:menu];
-            
-        });
-    });
+    
+        [skView presentScene:menu];
+    
 }
 
 -(void)load{
-    UIImageView *imagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo"]];
+    UIImageView *imagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1"]];
     [imagem setFrame:self.view.frame];
     
     [self.view addSubview:imagem];
