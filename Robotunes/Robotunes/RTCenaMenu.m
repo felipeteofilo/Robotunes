@@ -153,6 +153,11 @@
     [self.robotuneB2Cabeca setSize:CGSizeMake(self.frame.size.width * 0.36, self.frame.size.height*0.18)];
     
     [self addChild:self.robotuneB2Cabeca];
+    
+    //Anima cabeça B2
+    NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"B2_Animacao"]];
+    
+    [self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
 }
 
 -(void)criarRobotuneY3

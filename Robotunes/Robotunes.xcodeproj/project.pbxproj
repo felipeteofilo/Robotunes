@@ -58,11 +58,12 @@
 		94C5B6B019D60D3200316AFE /* B2_Body.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C5B6AD19D60D3200316AFE /* B2_Body.png */; };
 		94C5B6B119D60D3200316AFE /* BotoesNavegacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94C5B6AE19D60D3200316AFE /* BotoesNavegacao.atlas */; };
 		94C5B6B219D60D3200316AFE /* BotaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94C5B6AF19D60D3200316AFE /* BotaoPlay.atlas */; };
-		94C5B6B419D60EF800316AFE /* B2_Animacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94C5B6B319D60EF800316AFE /* B2_Animacao.atlas */; };
 		94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */; };
 		94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94F46EEC19D1EA960066BC33 /* Nuvens.atlas */; };
 		94FA409B19D3596800D60E24 /* RTHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FA409A19D3596800D60E24 /* RTHUD.m */; };
 		94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FA409C19D35B6100D60E24 /* HUD_barrinha.png */; };
+		94FB761A19D9CAC000135ACB /* B2_Animacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB761919D9CAC000135ACB /* B2_Animacao.atlas */; };
+		94FB762019D9CB2700135ACB /* RTBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FB761F19D9CB2700135ACB /* RTBotao.m */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -148,12 +149,14 @@
 		94C5B6AD19D60D3200316AFE /* B2_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B2_Body.png; sourceTree = "<group>"; };
 		94C5B6AE19D60D3200316AFE /* BotoesNavegacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BotoesNavegacao.atlas; sourceTree = "<group>"; };
 		94C5B6AF19D60D3200316AFE /* BotaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BotaoPlay.atlas; sourceTree = "<group>"; };
-		94C5B6B319D60EF800316AFE /* B2_Animacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = B2_Animacao.atlas; sourceTree = "<group>"; };
 		94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		94F46EEC19D1EA960066BC33 /* Nuvens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nuvens.atlas; sourceTree = "<group>"; };
 		94FA409919D3596800D60E24 /* RTHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHUD.h; sourceTree = "<group>"; };
 		94FA409A19D3596800D60E24 /* RTHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHUD.m; sourceTree = "<group>"; };
 		94FA409C19D35B6100D60E24 /* HUD_barrinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_barrinha.png; sourceTree = "<group>"; };
+		94FB761919D9CAC000135ACB /* B2_Animacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = B2_Animacao.atlas; sourceTree = "<group>"; };
+		94FB761E19D9CB2700135ACB /* RTBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBotao.h; sourceTree = "<group>"; };
+		94FB761F19D9CB2700135ACB /* RTBotao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBotao.m; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				94B2661E19D20EA8005BAEC9 /* SKScenes */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
+				94FB761E19D9CB2700135ACB /* RTBotao.h */,
+				94FB761F19D9CB2700135ACB /* RTBotao.m */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
 				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
 				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
@@ -386,7 +391,7 @@
 		94C5B6AC19D60BC300316AFE /* B2 */ = {
 			isa = PBXGroup;
 			children = (
-				94C5B6B319D60EF800316AFE /* B2_Animacao.atlas */,
+				94FB761919D9CAC000135ACB /* B2_Animacao.atlas */,
 				94C5B6AD19D60D3200316AFE /* B2_Body.png */,
 				94C5B6AE19D60D3200316AFE /* BotoesNavegacao.atlas */,
 				94C5B6AF19D60D3200316AFE /* BotaoPlay.atlas */,
@@ -515,7 +520,7 @@
 				9495974819D5E01000226DF3 /* Wallpaper.mp3 in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
 				94C5B6B219D60D3200316AFE /* BotaoPlay.atlas in Resources */,
-				94C5B6B419D60EF800316AFE /* B2_Animacao.atlas in Resources */,
+				94FB761A19D9CAC000135ACB /* B2_Animacao.atlas in Resources */,
 				9495974419D5E01000226DF3 /* Carefree.mp3 in Resources */,
 				94C5B6B019D60D3200316AFE /* B2_Body.png in Resources */,
 				9495975919D5E1FC00226DF3 /* R1_corpo.png in Resources */,
@@ -553,6 +558,7 @@
 				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				C5B85A4919CDDABD00446492 /* Reachability.m in Sources */,
+				94FB762019D9CB2700135ACB /* RTBotao.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
 				94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
