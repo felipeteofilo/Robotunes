@@ -223,14 +223,24 @@
 }
 
 -(void)atualizarLabelMusica{
-    [self.nomeMusica setText:[[self.musicasDisponiveis objectAtIndex:self.idMusicaAtual]objectForKey:@"nomeMusica"]];
+    if (self.musicasDisponiveis) {
+        
+        [self.nomeMusica setText:[[self.musicasDisponiveis objectAtIndex:self.idMusicaAtual]objectForKey:@"nomeMusica"]];
         [self tocaMusicaSelecionada];
+    }
 }
 //Metodo para dar play na musica
 -(void)playMusica{
     
     [self carregarJogo:self.idMusicaAtual+1];
     
+}
+
+-(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
+    if (!self.musicasDisponiveis) {
+        [RTDadosParse atualizaMusicasCoreData];
+    }
 }
 //Metodo p navegacao entre musicas
 -(void)musicaSeguinte{
