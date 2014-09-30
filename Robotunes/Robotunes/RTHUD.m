@@ -21,14 +21,8 @@
         self.espacoBarrinha=(CGRectGetWidth(self.frame)*0.0512f);
         
         //Verifica despositivo que esta rodando
-        NSString *device=[[UIDevice currentDevice]model];
-        float fonteLabel;
         
-        if([device hasPrefix:@"iPad"]){
-            fonteLabel=50.0f;
-        }else{
-            fonteLabel=25.0f;
-        }
+        float fonteLabel=[RTUteis tamanhoFonteoIPad:50.0f fonteIPhone:25.0f];
         
         [self configuraLabelPontos:fonteLabel];
         [self configuraLabelCombo:fonteLabel];
@@ -105,14 +99,13 @@
 
 -(void)atualizarBarraSangue:(NSNotification*)noticacao{
     NSNumber *valor=[noticacao.userInfo objectForKey:@"vida"];
-    if ([self.barrinhas count]<=16) {
-        //Limpa barrinhas
-        for (SKNode *node in self.barrinhas) {
-            [node removeFromParent];
-        }
-        
-        [self criaBarrinhasSangue:[valor intValue]];
+
+    //Limpa barrinhas
+    for (SKNode *node in self.barrinhas) {
+        [node removeFromParent];
     }
+    
+    [self criaBarrinhasSangue:[valor intValue]];
 }
 -(void)pintarHUD{
     

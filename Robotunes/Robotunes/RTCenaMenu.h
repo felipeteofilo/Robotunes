@@ -31,6 +31,7 @@
 @property RTBotao *botaoPlay;
 @property RTBotao *navegacaoDir;
 @property RTBotao *navegacaoEsq;
+@property SKLabelNode *nomeMusica;
 
 //Transicao entre musicas
 @property NSArray *musicasDisponiveis;

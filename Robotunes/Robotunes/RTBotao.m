@@ -20,21 +20,25 @@
         [self setAtlasAnimacao:atlasAnimacao];
         
        //Define como imagem o 1 frame da animacao
-        [self setTexture:[[SKTextureAtlas atlasNamed:self.atlasAnimacao]textureNamed:@"0"]];
+        [self setTexture:[[SKTextureAtlas atlasNamed:self.atlasAnimacao]textureNamed:@"1"]];
         
         [self setSize:size];
-    
+        
+        //Ativa a interacao do User
+        [self setUserInteractionEnabled:YES];
     }
     return self;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     //Faz a animacao do botao
-    [self runAction:[SKAction animateWithTextures:[RTUteis lerFrames:[SKTextureAtlas atlasNamed:self.atlasAnimacao]] timePerFrame:0.05]];
+    [self runAction:[SKAction animateWithTextures:[RTUteis lerFrames:[SKTextureAtlas atlasNamed:self.atlasAnimacao]] timePerFrame:0.07 resize:NO restore:YES]completion:^{
+        
+        if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
+            [self.delegateBotao performSelector:self.acaoRealizar];
+        }
+    }];
     
-    if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
-        [self.delegateBotao performSelector:self.acaoRealizar];
-    }
     
 }
 @end

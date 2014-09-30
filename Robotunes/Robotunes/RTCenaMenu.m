@@ -18,6 +18,7 @@
         //Alimenta array com os nomes da musica
         
         //Seta como musica escolhida a primeira
+        self.musicaAtual=1;
         
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
@@ -149,7 +150,7 @@
     
     //Configura cabeca
     self.robotuneB2Cabeca =[SKSpriteNode node];
-    [self.robotuneB2Cabeca setTexture:[[SKTextureAtlas atlasNamed:@"B2_Animacao"]textureNamed:@"0"]];
+    [self.robotuneB2Cabeca setTexture:[[SKTextureAtlas atlasNamed:@"B2_Animacao"]textureNamed:@"1"]];
     
     [self.robotuneB2Cabeca setPosition:CGPointMake(CGRectGetMidX(self.robotuneB2Corpo.frame), CGRectGetHeight(self.robotuneB2Corpo.frame)*1.12f
                                                    )];
@@ -163,10 +164,17 @@
     [self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
     
     //Define tamanho do botao play
-    CGSize tamanhoPlay=CGSizeMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45, CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45);
+    [self criaBotaoPlay];
     
+    ;
+    [self criaBotoesNavegacao];
+    
+    [self criaLabelNomeMusica];
+    
+}
+-(void)criaBotaoPlay{
     //Cria o botao
-    self.botaoPlay=[[RTBotao alloc]initBotao:@"botaoPlay" comSel:@selector(playMusica) eDelegate:self eTamanho:tamanhoPlay];
+    self.botaoPlay=[[RTBotao alloc]initBotao:@"botaoPlay" comSel:@selector(playMusica) eDelegate:self eTamanho:CGSizeMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45, CGRectGetWidth(self.robotuneB2Corpo.frame)*0.45)];
     
     //Posiciona o botao
     [self.botaoPlay setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.486, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.29)];
@@ -175,24 +183,30 @@
     //Add na arvore
     [self.robotuneB2Corpo addChild:self.botaoPlay];
 }
--(void)criaBotaoPlay:(CGSize)tamanho{
 
-}
+-(void)criaBotoesNavegacao{
+    CGSize tamanho=CGSizeMake(CGRectGetHeight(self.robotuneB2Corpo.frame)*0.1, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.1);
+    
+    self.navegacaoDir=[[RTBotao alloc]initBotao:@"botaoDireita" comSel:@selector(musicaSeguinte) eDelegate:self eTamanho:tamanho];
+    
+    [self.navegacaoDir setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.865,CGRectGetHeight(self.robotuneB2Corpo.frame)*0.688)];
+    [self.navegacaoDir setZPosition:100];
+    
+    [self.robotuneB2Corpo addChild:self.navegacaoDir];
+    
 
--(void)criarRobotuneY3
-{
-    self.robotuneY3 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneY3"];
-    self.robotuneY3.anchorPoint = CGPointZero;
-    self.robotuneY3.size = CGSizeMake(self.frame.size.width * 0.176, self.frame.size.height * 0.25);
-    self.robotuneY3.position = CGPointMake(self.frame.size.width * 0.056, 5);
-    [self addChild:self.robotuneY3];
+    self.navegacaoEsq=[[RTBotao alloc]initBotao:@"botaoEsquerda" comSel:@selector(musicaAnterior) eDelegate:self eTamanho:tamanho];
+    
+    [self.navegacaoEsq setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.138,CGRectGetHeight(self.robotuneB2Corpo.frame)*0.688)];
+    [self.navegacaoEsq setZPosition:100];
+    [self.robotuneB2Corpo addChild:self.navegacaoEsq];
 }
 
 //Metodo para dar play na musica
 -(void)playMusica{
-    NSLog(@"Musica tocando");
     
-    [self carregarJogo:3];
+    [self carregarJogo:self.musicaAtual];
+
 }
 //Metodo p navegacao entre musicas
 -(void)musicaSeguinte{
@@ -202,6 +216,21 @@
 -(void)musicaAnterior{
     NSLog(@"Musica Anterior tocando");
 
+}
+
+-(void)criaLabelNomeMusica{
+    self.nomeMusica=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    [self.nomeMusica setText:@"Noteworthy-Bold"];
+    [self.nomeMusica setFontSize:[RTUteis tamanhoFonteoIPad:30.0f fonteIPhone:14.0f]];
+    
+    [self.nomeMusica setZPosition:100];
+    
+    [self.nomeMusica setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
+    [self.nomeMusica setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    
+    [self.nomeMusica setPosition:CGPointMake(CGRectGetWidth(self.robotuneB2Corpo.frame)*0.5, CGRectGetHeight(self.robotuneB2Corpo.frame)*0.675)];
+    
+    [self.robotuneB2Corpo addChild:self.nomeMusica];
 }
 //Faz o load do jogo passado a musica que ira tocar
 -(void)carregarJogo :(int)musica{
@@ -246,6 +275,16 @@
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
         [RTDadosParse logarParse];
     }
+}
+
+
+-(void)criarRobotuneY3
+{
+    self.robotuneY3 = [[SKSpriteNode alloc]initWithImageNamed:@"RobotuneY3"];
+    self.robotuneY3.anchorPoint = CGPointZero;
+    self.robotuneY3.size = CGSizeMake(self.frame.size.width * 0.176, self.frame.size.height * 0.25);
+    self.robotuneY3.position = CGPointMake(self.frame.size.width * 0.056, 5);
+    [self addChild:self.robotuneY3];
 }
 
 -(void)update:(NSTimeInterval)currentTime

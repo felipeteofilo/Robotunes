@@ -105,4 +105,14 @@
     
     return frames;
 }
+
++(float)tamanhoFonteoIPad:(float)fonteIpad fonteIPhone:(float)fonteIphone{
+    NSString *device=[[UIDevice currentDevice]model];
+    
+    if([device hasPrefix:@"iPad"]){
+        return fonteIpad;
+    }else{
+        return fonteIphone;
+    }
+}
 @end
