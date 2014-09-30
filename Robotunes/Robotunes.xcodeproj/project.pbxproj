@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7503FFE219D9D294004A4078 /* Loading.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFE119D9D294004A4078 /* Loading.atlas */; };
+		7503FFE519D9F585004A4078 /* RTBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7503FFE419D9F585004A4078 /* RTBotao.m */; };
+		7503FFE719D9F5FD004A4078 /* B2_Animacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFE619D9F5FD004A4078 /* B2_Animacao.atlas */; };
+		7503FFEC19D9F616004A4078 /* botaoDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFE919D9F616004A4078 /* botaoDireita.atlas */; };
+		7503FFED19D9F616004A4078 /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFEA19D9F616004A4078 /* botaoEsquerda.atlas */; };
+		7503FFEE19D9F616004A4078 /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFEB19D9F616004A4078 /* botaoPlay.atlas */; };
+		7503FFF119D9F66B004A4078 /* B2_Body.png in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFF019D9F66B004A4078 /* B2_Body.png */; };
+		7503FFF419D9F95C004A4078 /* RTFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7503FFF319D9F95C004A4078 /* RTFacebook.m */; };
 		7531155119C8B55F00EC3955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155019C8B55F00EC3955 /* Foundation.framework */; };
 		7531155519C8B55F00EC3955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155419C8B55F00EC3955 /* UIKit.framework */; };
 		7531155719C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
@@ -24,8 +32,13 @@
 		7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */; };
 		7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531159119C8CCA200EC3955 /* Storyboard.storyboard */; };
 		755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */; };
+		7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150719CB5B40003487E8 /* RobotuneB2.png */; };
 		7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150819CB5B40003487E8 /* RobotuneR1.png */; };
 		7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150919CB5B40003487E8 /* RobotuneY3.png */; };
+		75F1603919DB2B7E00223506 /* RTRankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1603819DB2B7E00223506 /* RTRankingViewController.m */; };
+		75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603B19DB474F00223506 /* animacaoR1.atlas */; };
+		75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603C19DB474F00223506 /* R1_cabeca.png */; };
+		75F1604019DB474F00223506 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603D19DB474F00223506 /* R1_corpo.png */; };
 		9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973619D5DFDB00226DF3 /* Botoes.atlas */; };
 		9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973819D5DFE300226DF3 /* Fundos.atlas */; };
 		9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9495973D19D5E01000226DF3 /* Bicycle.mp3 */; };
@@ -39,10 +52,7 @@
 		9495975119D5E08000226DF3 /* Fundos1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495975019D5E08000226DF3 /* Fundos1.atlas */; };
 		9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495975219D5E18900226DF3 /* CenaGameOver.atlas */; };
 		9495975519D5E1EC00226DF3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975419D5E1EC00226DF3 /* logo.png */; };
-		9495975819D5E1FC00226DF3 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975619D5E1FC00226DF3 /* R1_cabeca.png */; };
-		9495975919D5E1FC00226DF3 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975719D5E1FC00226DF3 /* R1_corpo.png */; };
 		9495975B19D5E29900226DF3 /* chao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9495975A19D5E29900226DF3 /* chao.png */; };
-		94AA49AC19D9F83E00750475 /* Loading.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94AA49AB19D9F83E00750475 /* Loading.atlas */; };
 		94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */; };
 		94C0FB8419CA04B200E2C5BC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8219CA04B200E2C5BC /* Bolts.framework */; };
 		94C0FB8519CA04B200E2C5BC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB8319CA04B200E2C5BC /* FacebookSDK.framework */; };
@@ -56,17 +66,10 @@
 		94C0FB9619CA0AC200E2C5BC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */; };
 		94C0FB9819CA0AD200E2C5BC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9719CA0AD200E2C5BC /* Security.framework */; };
 		94C0FB9A19CA0ADC00E2C5BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */; };
-		94C5B6B019D60D3200316AFE /* B2_Body.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C5B6AD19D60D3200316AFE /* B2_Body.png */; };
 		94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */; };
 		94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94F46EEC19D1EA960066BC33 /* Nuvens.atlas */; };
 		94FA409B19D3596800D60E24 /* RTHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FA409A19D3596800D60E24 /* RTHUD.m */; };
 		94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FA409C19D35B6100D60E24 /* HUD_barrinha.png */; };
-		94FB762019D9CB2700135ACB /* RTBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FB761F19D9CB2700135ACB /* RTBotao.m */; };
-		94FB762419D9D13200135ACB /* B2_Animacao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB762219D9D13200135ACB /* B2_Animacao.atlas */; };
-		94FB763619D9E48800135ACB /* botaoDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763319D9E48800135ACB /* botaoDireita.atlas */; };
-		94FB763719D9E48800135ACB /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763419D9E48800135ACB /* botaoEsquerda.atlas */; };
-		94FB763819D9E48800135ACB /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763519D9E48800135ACB /* botaoPlay.atlas */; };
-		C58F58CC19DB243F0043DE4E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F58CB19DB243F0043DE4E /* icon.png */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -93,6 +96,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7503FFE119D9D294004A4078 /* Loading.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Loading.atlas; sourceTree = "<group>"; };
+		7503FFE319D9F585004A4078 /* RTBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBotao.h; sourceTree = "<group>"; };
+		7503FFE419D9F585004A4078 /* RTBotao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBotao.m; sourceTree = "<group>"; };
+		7503FFE619D9F5FD004A4078 /* B2_Animacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = B2_Animacao.atlas; path = "../Robo B2/B2_Animacao.atlas"; sourceTree = "<group>"; };
+		7503FFE919D9F616004A4078 /* botaoDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoDireita.atlas; sourceTree = "<group>"; };
+		7503FFEA19D9F616004A4078 /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
+		7503FFEB19D9F616004A4078 /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
+		7503FFF019D9F66B004A4078 /* B2_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B2_Body.png; sourceTree = "<group>"; };
+		7503FFF219D9F95C004A4078 /* RTFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFacebook.h; sourceTree = "<group>"; };
+		7503FFF319D9F95C004A4078 /* RTFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFacebook.m; sourceTree = "<group>"; };
 		7531154D19C8B55F00EC3955 /* Robotunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robotunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531155019C8B55F00EC3955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7531155219C8B55F00EC3955 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,8 +129,14 @@
 		7531159119C8CCA200EC3955 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBancoDeDadosController.h; sourceTree = "<group>"; };
 		755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBancoDeDadosController.m; sourceTree = "<group>"; };
+		7598150719CB5B40003487E8 /* RobotuneB2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneB2.png; sourceTree = "<group>"; };
 		7598150819CB5B40003487E8 /* RobotuneR1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneR1.png; sourceTree = "<group>"; };
 		7598150919CB5B40003487E8 /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
+		75F1603719DB2B7E00223506 /* RTRankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRankingViewController.h; sourceTree = "<group>"; };
+		75F1603819DB2B7E00223506 /* RTRankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRankingViewController.m; sourceTree = "<group>"; };
+		75F1603B19DB474F00223506 /* animacaoR1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animacaoR1.atlas; sourceTree = "<group>"; };
+		75F1603C19DB474F00223506 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
+		75F1603D19DB474F00223506 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
 		9495973619D5DFDB00226DF3 /* Botoes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Botoes.atlas; sourceTree = "<group>"; };
 		9495973819D5DFE300226DF3 /* Fundos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos.atlas; sourceTree = "<group>"; };
 		9495973D19D5E01000226DF3 /* Bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bicycle.mp3; sourceTree = "<group>"; };
@@ -131,10 +150,7 @@
 		9495975019D5E08000226DF3 /* Fundos1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos1.atlas; sourceTree = "<group>"; };
 		9495975219D5E18900226DF3 /* CenaGameOver.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = CenaGameOver.atlas; sourceTree = "<group>"; };
 		9495975419D5E1EC00226DF3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		9495975619D5E1FC00226DF3 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
-		9495975719D5E1FC00226DF3 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
 		9495975A19D5E29900226DF3 /* chao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chao.png; sourceTree = "<group>"; };
-		94AA49AB19D9F83E00750475 /* Loading.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Loading.atlas; sourceTree = "<group>"; };
 		94B2661B19D20E90005BAEC9 /* RTCenaGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCenaGameOver.h; sourceTree = "<group>"; };
 		94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCenaGameOver.m; sourceTree = "<group>"; };
 		94C0FB8219CA04B200E2C5BC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Robotunes/Frameworks/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
@@ -150,19 +166,11 @@
 		94C0FB9519CA0AC200E2C5BC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		94C0FB9719CA0AD200E2C5BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		94C0FB9919CA0ADC00E2C5BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		94C5B6AD19D60D3200316AFE /* B2_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B2_Body.png; sourceTree = "<group>"; };
 		94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RT_nuvenzinhas.png; sourceTree = "<group>"; };
 		94F46EEC19D1EA960066BC33 /* Nuvens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nuvens.atlas; sourceTree = "<group>"; };
 		94FA409919D3596800D60E24 /* RTHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHUD.h; sourceTree = "<group>"; };
 		94FA409A19D3596800D60E24 /* RTHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHUD.m; sourceTree = "<group>"; };
 		94FA409C19D35B6100D60E24 /* HUD_barrinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_barrinha.png; sourceTree = "<group>"; };
-		94FB761E19D9CB2700135ACB /* RTBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBotao.h; sourceTree = "<group>"; };
-		94FB761F19D9CB2700135ACB /* RTBotao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBotao.m; sourceTree = "<group>"; };
-		94FB762219D9D13200135ACB /* B2_Animacao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = B2_Animacao.atlas; path = "Robo B2/B2_Animacao.atlas"; sourceTree = "<group>"; };
-		94FB763319D9E48800135ACB /* botaoDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoDireita.atlas; sourceTree = "<group>"; };
-		94FB763419D9E48800135ACB /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
-		94FB763519D9E48800135ACB /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
-		C58F58CB19DB243F0043DE4E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -226,6 +234,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7503FFE819D9F616004A4078 /* BotoesB2 */ = {
+			isa = PBXGroup;
+			children = (
+				7503FFE919D9F616004A4078 /* botaoDireita.atlas */,
+				7503FFEA19D9F616004A4078 /* botaoEsquerda.atlas */,
+				7503FFEB19D9F616004A4078 /* botaoPlay.atlas */,
+			);
+			path = BotoesB2;
+			sourceTree = "<group>";
+		};
+		7503FFEF19D9F632004A4078 /* B2 */ = {
+			isa = PBXGroup;
+			children = (
+				7503FFF019D9F66B004A4078 /* B2_Body.png */,
+				7503FFE619D9F5FD004A4078 /* B2_Animacao.atlas */,
+			);
+			name = B2;
+			path = BotoesB2;
+			sourceTree = "<group>";
+		};
 		7531154419C8B55F00EC3955 = {
 			isa = PBXGroup;
 			children = (
@@ -276,8 +304,6 @@
 				94B2661E19D20EA8005BAEC9 /* SKScenes */,
 				7531156719C8B55F00EC3955 /* Images.xcassets */,
 				7531156119C8B55F00EC3955 /* RTAppDelegate.h */,
-				94FB761E19D9CB2700135ACB /* RTBotao.h */,
-				94FB761F19D9CB2700135ACB /* RTBotao.m */,
 				7531156219C8B55F00EC3955 /* RTAppDelegate.m */,
 				C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */,
 				C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */,
@@ -286,9 +312,13 @@
 				CDEA606919C8B8340099EEA7 /* RTJogador.h */,
 				CDEA606A19C8B8340099EEA7 /* RTJogador.m */,
 				CDEA607919C8BC160099EEA7 /* RTMusica.h */,
+				7503FFF219D9F95C004A4078 /* RTFacebook.h */,
+				7503FFF319D9F95C004A4078 /* RTFacebook.m */,
 				CDEA607A19C8BC160099EEA7 /* RTMusica.m */,
 				CDEA607C19C8BC240099EEA7 /* RTNota.h */,
 				CDEA607D19C8BC240099EEA7 /* RTNota.m */,
+				7503FFE319D9F585004A4078 /* RTBotao.h */,
+				7503FFE419D9F585004A4078 /* RTBotao.m */,
 				C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */,
 				C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */,
 				C5B85A4E19CDDB0200446492 /* RTUteis.h */,
@@ -297,6 +327,8 @@
 				94FA409A19D3596800D60E24 /* RTHUD.m */,
 				CDEA606C19C8BBAF0099EEA7 /* RTViewController.h */,
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
+				75F1603719DB2B7E00223506 /* RTRankingViewController.h */,
+				75F1603819DB2B7E00223506 /* RTRankingViewController.m */,
 				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
 				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
 				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
@@ -339,27 +371,36 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
-				94AA49AB19D9F83E00750475 /* Loading.atlas */,
+				75F1603A19DB474F00223506 /* R1 */,
+				7503FFEF19D9F632004A4078 /* B2 */,
+				7503FFE819D9F616004A4078 /* BotoesB2 */,
+				7503FFE119D9D294004A4078 /* Loading.atlas */,
 				9495975A19D5E29900226DF3 /* chao.png */,
-				9495975619D5E1FC00226DF3 /* R1_cabeca.png */,
-				9495975719D5E1FC00226DF3 /* R1_corpo.png */,
 				9495975219D5E18900226DF3 /* CenaGameOver.atlas */,
 				9495974919D5E03800226DF3 /* Notas */,
 				94F46EEC19D1EA960066BC33 /* Nuvens.atlas */,
 				C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */,
+				7598150719CB5B40003487E8 /* RobotuneB2.png */,
 				7598150819CB5B40003487E8 /* RobotuneR1.png */,
 				7598150919CB5B40003487E8 /* RobotuneY3.png */,
 				94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */,
 				94FA409C19D35B6100D60E24 /* HUD_barrinha.png */,
-				C58F58CB19DB243F0043DE4E /* icon.png */,
 				9495975419D5E1EC00226DF3 /* logo.png */,
-				94FB762619D9D22300135ACB /* BotoesB2 */,
-				94C5B6AC19D60BC300316AFE /* B2 */,
 				9495975019D5E08000226DF3 /* Fundos1.atlas */,
 				9495973819D5DFE300226DF3 /* Fundos.atlas */,
 				9495973619D5DFDB00226DF3 /* Botoes.atlas */,
 			);
 			path = Imagens;
+			sourceTree = "<group>";
+		};
+		75F1603A19DB474F00223506 /* R1 */ = {
+			isa = PBXGroup;
+			children = (
+				75F1603B19DB474F00223506 /* animacaoR1.atlas */,
+				75F1603C19DB474F00223506 /* R1_cabeca.png */,
+				75F1603D19DB474F00223506 /* R1_corpo.png */,
+			);
+			path = R1;
 			sourceTree = "<group>";
 		};
 		9495973C19D5E01000226DF3 /* MUSICAS */ = {
@@ -395,25 +436,6 @@
 				94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */,
 			);
 			name = SKScenes;
-			sourceTree = "<group>";
-		};
-		94C5B6AC19D60BC300316AFE /* B2 */ = {
-			isa = PBXGroup;
-			children = (
-				94FB762219D9D13200135ACB /* B2_Animacao.atlas */,
-				94C5B6AD19D60D3200316AFE /* B2_Body.png */,
-			);
-			name = B2;
-			sourceTree = "<group>";
-		};
-		94FB762619D9D22300135ACB /* BotoesB2 */ = {
-			isa = PBXGroup;
-			children = (
-				94FB763319D9E48800135ACB /* botaoDireita.atlas */,
-				94FB763419D9E48800135ACB /* botaoEsquerda.atlas */,
-				94FB763519D9E48800135ACB /* botaoPlay.atlas */,
-			);
-			path = BotoesB2;
 			sourceTree = "<group>";
 		};
 		C5B85A4A19CDDAC100446492 /* Conectividade */ = {
@@ -527,34 +549,35 @@
 				9495975519D5E1EC00226DF3 /* logo.png in Resources */,
 				9495975B19D5E29900226DF3 /* chao.png in Resources */,
 				C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */,
-				C58F58CC19DB243F0043DE4E /* icon.png in Resources */,
+				7503FFE719D9F5FD004A4078 /* B2_Animacao.atlas in Resources */,
 				9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */,
-				94AA49AC19D9F83E00750475 /* Loading.atlas in Resources */,
 				9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */,
 				9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */,
+				7503FFEC19D9F616004A4078 /* botaoDireita.atlas in Resources */,
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
-				94FB762419D9D13200135ACB /* B2_Animacao.atlas in Resources */,
+				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
 				9495974519D5E01000226DF3 /* How it Begins.mp3 in Resources */,
+				75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */,
 				9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */,
 				9495974819D5E01000226DF3 /* Wallpaper.mp3 in Resources */,
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
+				7503FFEE19D9F616004A4078 /* botaoPlay.atlas in Resources */,
+				75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */,
+				7503FFE219D9D294004A4078 /* Loading.atlas in Resources */,
 				9495974419D5E01000226DF3 /* Carefree.mp3 in Resources */,
-				94C5B6B019D60D3200316AFE /* B2_Body.png in Resources */,
-				94FB763819D9E48800135ACB /* botaoPlay.atlas in Resources */,
-				9495975919D5E1FC00226DF3 /* R1_corpo.png in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
+				75F1604019DB474F00223506 /* R1_corpo.png in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,
 				7531156819C8B55F00EC3955 /* Images.xcassets in Resources */,
 				9495974F19D5E03800226DF3 /* Quebradas.atlas in Resources */,
-				94FB763619D9E48800135ACB /* botaoDireita.atlas in Resources */,
-				9495975819D5E1FC00226DF3 /* R1_cabeca.png in Resources */,
 				9495974E19D5E03800226DF3 /* Completas.atlas in Resources */,
 				9495974719D5E01000226DF3 /* New Friendly.mp3 in Resources */,
-				94FB763719D9E48800135ACB /* botaoEsquerda.atlas in Resources */,
+				7503FFED19D9F616004A4078 /* botaoEsquerda.atlas in Resources */,
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
 				94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */,
+				7503FFF119D9F66B004A4078 /* B2_Body.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,8 +601,10 @@
 				755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */,
 				7531156319C8B55F00EC3955 /* RTAppDelegate.m in Sources */,
 				C5B85A4919CDDABD00446492 /* Reachability.m in Sources */,
-				94FB762019D9CB2700135ACB /* RTBotao.m in Sources */,
+				7503FFF419D9F95C004A4078 /* RTFacebook.m in Sources */,
+				7503FFE519D9F585004A4078 /* RTBotao.m in Sources */,
 				CDEA607E19C8BC240099EEA7 /* RTNota.m in Sources */,
+				75F1603919DB2B7E00223506 /* RTRankingViewController.m in Sources */,
 				94B2661D19D20E90005BAEC9 /* RTCenaGameOver.m in Sources */,
 				94C0FB8C19CA052A00E2C5BC /* RTDadosParse.m in Sources */,
 				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,

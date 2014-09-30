@@ -102,6 +102,7 @@
     self.titulo.anchorPoint = CGPointZero;
     self.titulo.size = self.frame.size;
     self.titulo.zPosition = -10;
+    self.titulo.name = @"titulo";
     [self addChild:self.titulo];
 }
 
@@ -112,6 +113,7 @@
     self.btnFace.size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
     self.btnFace.position = CGPointMake(self.frame.size.width * 0.85, self.frame.size.height * 0.85);
     self.btnFace.zPosition = -9;
+    self.btnFace.name = @"face";
     [self addChild:self.btnFace];
 }
 
@@ -262,6 +264,26 @@
     });
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    UITouch *toque=[touches anyObject];
+    
+    CGPoint posToqueNoMenu =[toque locationInNode:self];
+    
+    //Pega o node na posicao do toque
+    SKNode *nodeTocadoNoMenu=[self nodeAtPoint:posToqueNoMenu];
+    
+    if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
+        [RTDadosParse logarParse];
+       
+    }
+    if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
+    
+    RTRankingViewController *ranking = [storyBoard instantiateInitialViewController];
+    [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
+    }
+}
 
 
 -(void)criarRobotuneY3
