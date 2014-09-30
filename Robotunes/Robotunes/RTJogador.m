@@ -76,7 +76,6 @@
 -(void)atualizarVida:(int)valor
 {
     if (self.vida +valor >=16) {
-        NSLog(@"Valor vida:%i",self.vida);
         self.vida=16;
     }else{
         self.vida = self.vida + valor;
