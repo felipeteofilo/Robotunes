@@ -231,7 +231,7 @@
 }
 //Metodo para dar play na musica
 -(void)playMusica{
-    
+    [self paraMusica];
     [self carregarJogo:self.idMusicaAtual+1];
     
 }
