@@ -86,7 +86,37 @@
         return [objects objectAtIndex:0];
     }
 }
++(NSSortDescriptor*)ordenarCampo:(NSString *)nomeCampo Ascendente:(BOOL)asc{
+    return [[NSSortDescriptor alloc] initWithKey:nomeCampo ascending:asc];
+}
++(NSArray*)todasMusicas{
+    NSManagedObjectContext *contexto=[RTBancoDeDadosController contextoApp];
+    
+    NSFetchRequest *requisicao=[[NSFetchRequest alloc]initWithEntityName:@"Musica"];
+    [requisicao setResultType:NSDictionaryResultType];
+    [requisicao setPropertiesToFetch:@[@"idmusica",@"nome"]];
+    
 
+    [requisicao setSortDescriptors:@[[RTBancoDeDadosController ordenarCampo:@"idmusica" Ascendente:YES]]];
+    
+    NSError *erro;
+    NSArray *objetos=[contexto executeFetchRequest:requisicao error:&erro];
+    
+    NSDictionary *infoMusica;
+    NSMutableArray *retorno=[NSMutableArray array];
+    
+    for (int i=0; i< [objetos count]; i++) {
+        infoMusica=[[NSMutableDictionary alloc]init];
+        
+        
+        NSNumber *idMusica=[NSNumber numberWithInt:[[[objetos objectAtIndex:i]valueForKey:@"idmusica"]intValue]];
+        [infoMusica setValue:idMusica  forKey:@"idMusica"];
+        [infoMusica setValue:[[objetos objectAtIndex:i]valueForKey:@"nome"]  forKey:@"nomeMusica"];
+
+        [retorno addObject:infoMusica];
+    }
+    return retorno;
+}
 +(int)ultimaMusica {
     RTAppDelegate *appDelegate =
     [[UIApplication sharedApplication] delegate];

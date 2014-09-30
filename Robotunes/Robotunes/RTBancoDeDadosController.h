@@ -25,4 +25,5 @@
 +(void)atualizarDataVerificacao;
 +(NSDate*)ultimaDataVerificacao;
 +(Musica*)procurarMusica :(int)idMusica;
++(NSArray*)todasMusicas;
 @end

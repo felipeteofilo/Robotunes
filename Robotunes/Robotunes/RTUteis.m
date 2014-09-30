@@ -48,7 +48,7 @@
     [components setSecond:0];
     
     return [calendar dateFromComponents:components];
-
+    
 }
 
 + (int)diasEntreDataInicial:(NSDate*)dataInicial andDate:(NSDate*)dataFinal
@@ -59,17 +59,18 @@
     NSCalendar *calendario = [NSCalendar currentCalendar];
     
     [calendario rangeOfUnit:NSDayCalendarUnit startDate:&dataIni
-                 interval:NULL forDate:dataInicial];
+                   interval:NULL forDate:dataInicial];
     [calendario rangeOfUnit:NSDayCalendarUnit startDate:&dataFin
-                 interval:NULL forDate:dataFinal];
+                   interval:NULL forDate:dataFinal];
     
     
     
     NSDateComponents *difference = [calendario components:NSDayCalendarUnit
-                                               fromDate:dataInicial toDate:dataFinal options:0];
+                                                 fromDate:dataInicial toDate:dataFinal options:0];
     
     return abs((int)[difference day]);
 }
+
 +(int)sorteioIntEntre:(int)menorNum eMaiorNum:(int)maiorNum{
     //O -1 é para que o numero passado como minimo possa ser sorteado
     int rndValue = (menorNum-1) + arc4random() % (maiorNum - menorNum);

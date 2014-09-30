@@ -25,9 +25,6 @@
         NSError *error;
         self.som = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&error];
         
-        
-        
-        
         [self criarNotas:[musica valueForKey:@"notas"]];
         
         
@@ -67,7 +64,6 @@
     return false;
 }
 
-//TODO: Implementar metodo
 -(BOOL)acabou
 {
     if (![self.som isPlaying]) {

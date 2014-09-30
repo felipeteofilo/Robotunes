@@ -14,6 +14,7 @@
 #import "RTNuvem.h"
 #import "RTUteis.h"
 #import "RTBotao.h"
+#import "RTMusica.h"
 
 @interface RTCenaMenu : SKScene
 
@@ -33,9 +34,12 @@
 @property RTBotao *navegacaoEsq;
 @property SKLabelNode *nomeMusica;
 
+//Toca a musica selecionada
+@property AVAudioPlayer *playerMusica;
+
 //Transicao entre musicas
 @property NSArray *musicasDisponiveis;
-@property int musicaAtual;
+@property int idMusicaAtual;
 
 //Timer para criação das nuvens
 @property (nonatomic) NSTimeInterval intervaloNuvens;
