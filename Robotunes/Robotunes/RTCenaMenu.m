@@ -34,7 +34,7 @@
         [self criarFace];
         
         //Cria e adiciona o chão
-        [self criarChao];
+       // [self criarChao];
         
         //Cria e adiciona o robo de venda
         [self criarRobotuneR1];
@@ -102,6 +102,7 @@
     self.titulo.anchorPoint = CGPointZero;
     self.titulo.size = self.frame.size;
     self.titulo.zPosition = -10;
+    self.titulo.name = @"titulo";
     [self addChild:self.titulo];
 }
 
@@ -159,9 +160,9 @@
     [self addChild:self.robotuneB2Cabeca];
     
     //Anima cabeça B2
-    NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"B2_Animacao"]];
+   // NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"B2_Animacao"]];
     
-    [self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
+    //[self.robotuneB2Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.1]]];
     
     //Define tamanho do botao play
     [self criaBotaoPlay];
@@ -274,6 +275,13 @@
     
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
         [RTDadosParse logarParse];
+       
+    }
+    if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
+    
+    RTRankingViewController *ranking = [storyBoard instantiateInitialViewController];
+    [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
     }
 }
 
