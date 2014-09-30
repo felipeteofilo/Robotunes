@@ -111,6 +111,7 @@
     self.btnFace.size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
     self.btnFace.position = CGPointMake(self.frame.size.width * 0.85, self.frame.size.height * 0.85);
     self.btnFace.zPosition = -9;
+    self.btnFace.name = @"face";
     [self addChild:self.btnFace];
 }
 
@@ -233,6 +234,19 @@
     });
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    UITouch *toque=[touches anyObject];
+    
+    CGPoint posToqueNoMenu =[toque locationInNode:self];
+    
+    //Pega o node na posicao do toque
+    SKNode *nodeTocadoNoMenu=[self nodeAtPoint:posToqueNoMenu];
+    
+    if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
+        [RTDadosParse logarParse];
+    }
+}
 
 -(void)update:(NSTimeInterval)currentTime
 {
