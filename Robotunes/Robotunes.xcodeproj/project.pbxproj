@@ -66,6 +66,7 @@
 		94FB763619D9E48800135ACB /* botaoDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763319D9E48800135ACB /* botaoDireita.atlas */; };
 		94FB763719D9E48800135ACB /* botaoEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763419D9E48800135ACB /* botaoEsquerda.atlas */; };
 		94FB763819D9E48800135ACB /* botaoPlay.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94FB763519D9E48800135ACB /* botaoPlay.atlas */; };
+		C58F58CC19DB243F0043DE4E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F58CB19DB243F0043DE4E /* icon.png */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -161,6 +162,7 @@
 		94FB763319D9E48800135ACB /* botaoDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoDireita.atlas; sourceTree = "<group>"; };
 		94FB763419D9E48800135ACB /* botaoEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoEsquerda.atlas; sourceTree = "<group>"; };
 		94FB763519D9E48800135ACB /* botaoPlay.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = botaoPlay.atlas; sourceTree = "<group>"; };
+		C58F58CB19DB243F0043DE4E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				7598150919CB5B40003487E8 /* RobotuneY3.png */,
 				94EBA82619D1E66900D390C0 /* RT_nuvenzinhas.png */,
 				94FA409C19D35B6100D60E24 /* HUD_barrinha.png */,
+				C58F58CB19DB243F0043DE4E /* icon.png */,
 				9495975419D5E1EC00226DF3 /* logo.png */,
 				94FB762619D9D22300135ACB /* BotoesB2 */,
 				94C5B6AC19D60BC300316AFE /* B2 */,
@@ -524,6 +527,7 @@
 				9495975519D5E1EC00226DF3 /* logo.png in Resources */,
 				9495975B19D5E29900226DF3 /* chao.png in Resources */,
 				C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */,
+				C58F58CC19DB243F0043DE4E /* icon.png in Resources */,
 				9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */,
 				94AA49AC19D9F83E00750475 /* Loading.atlas in Resources */,
 				9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */,

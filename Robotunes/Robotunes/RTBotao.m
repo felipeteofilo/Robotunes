@@ -32,11 +32,13 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     //Faz a animacao do botao
-    [self runAction:[SKAction animateWithTextures:[RTUteis lerFrames:[SKTextureAtlas atlasNamed:self.atlasAnimacao]] timePerFrame:0.07 resize:NO restore:YES]];
+    [self runAction:[SKAction animateWithTextures:[RTUteis lerFrames:[SKTextureAtlas atlasNamed:self.atlasAnimacao]] timePerFrame:0.07 resize:NO restore:YES]completion:^{
+        
+        if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
+            [self.delegateBotao performSelector:self.acaoRealizar];
+        }
+    }];
     
-    if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
-        [self.delegateBotao performSelector:self.acaoRealizar];
-    }
     
 }
 @end

@@ -18,6 +18,7 @@
         //Alimenta array com os nomes da musica
         
         //Seta como musica escolhida a primeira
+        self.musicaAtual=1;
         
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
@@ -202,9 +203,8 @@
 
 //Metodo para dar play na musica
 -(void)playMusica{
-    NSLog(@"Musica tocando");
     
-    [self carregarJogo:3];
+    [self carregarJogo:self.musicaAtual];
 
 }
 //Metodo p navegacao entre musicas
