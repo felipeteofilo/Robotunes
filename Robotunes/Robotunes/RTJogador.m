@@ -69,14 +69,19 @@
     if(valor > 0){
         self.pontos = self.pontos + valor;
     }
-
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaPontos" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.pontos] forKey:@"pontos"]];
 }
 
 -(void)atualizarVida:(int)valor
 {
-    self.vida = self.vida + valor;
-
+    if (self.vida +valor >=16) {
+        NSLog(@"Valor vida:%i",self.vida);
+        self.vida=16;
+    }else{
+        self.vida = self.vida + valor;
+    }
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoMudancaSangue" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.vida] forKey:@"vida"]];
 }
 
