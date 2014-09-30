@@ -104,7 +104,9 @@
     
     NSDictionary *infoMusica;
     NSMutableArray *retorno=[NSMutableArray array];
-    
+    if ([objetos count]==0) {
+        return nil;
+    }
     for (int i=0; i< [objetos count]; i++) {
         infoMusica=[[NSMutableDictionary alloc]init];
         
@@ -115,6 +117,7 @@
 
         [retorno addObject:infoMusica];
     }
+    
     return retorno;
 }
 +(int)ultimaMusica {

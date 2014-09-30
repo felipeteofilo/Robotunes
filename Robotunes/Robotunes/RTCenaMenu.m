@@ -223,15 +223,20 @@
 }
 
 -(void)atualizarLabelMusica{
-    [self.nomeMusica setText:[[self.musicasDisponiveis objectAtIndex:self.idMusicaAtual]objectForKey:@"nomeMusica"]];
+    if (self.musicasDisponiveis) {
+        
+        [self.nomeMusica setText:[[self.musicasDisponiveis objectAtIndex:self.idMusicaAtual]objectForKey:@"nomeMusica"]];
         [self tocaMusicaSelecionada];
+    }
 }
 //Metodo para dar play na musica
 -(void)playMusica{
-    
+    [self paraMusica];
     [self carregarJogo:self.idMusicaAtual+1];
     
 }
+
+
 //Metodo p navegacao entre musicas
 -(void)musicaSeguinte{
     if (self.idMusicaAtual+1 > [self.musicasDisponiveis count]-1) {
@@ -330,6 +335,10 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    if(!self.musicasDisponiveis){
+        [self configuraMusicasAtuais];
+    }
+    
     //COISAS PARA A NUVEM
     //Tempo desde ultimo update
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
