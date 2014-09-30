@@ -15,6 +15,7 @@
 #import "RTUteis.h"
 #import "RTBotao.h"
 #import "RTMusica.h"
+#import "RTRankingViewController.h"
 
 @interface RTCenaMenu : SKScene
 
