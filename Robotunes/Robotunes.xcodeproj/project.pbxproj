@@ -32,6 +32,7 @@
 		7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */; };
 		7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531159119C8CCA200EC3955 /* Storyboard.storyboard */; };
 		755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */; };
+		757B2EDE19DB505900F3B249 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 757B2EDD19DB505900F3B249 /* icon.png */; };
 		7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150719CB5B40003487E8 /* RobotuneB2.png */; };
 		7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150819CB5B40003487E8 /* RobotuneR1.png */; };
 		7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7598150919CB5B40003487E8 /* RobotuneY3.png */; };
@@ -129,6 +130,7 @@
 		7531159119C8CCA200EC3955 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBancoDeDadosController.h; sourceTree = "<group>"; };
 		755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBancoDeDadosController.m; sourceTree = "<group>"; };
+		757B2EDD19DB505900F3B249 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		7598150719CB5B40003487E8 /* RobotuneB2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneB2.png; sourceTree = "<group>"; };
 		7598150819CB5B40003487E8 /* RobotuneR1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneR1.png; sourceTree = "<group>"; };
 		7598150919CB5B40003487E8 /* RobotuneY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotuneY3.png; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				757B2EDD19DB505900F3B249 /* icon.png */,
 				75F1603A19DB474F00223506 /* R1 */,
 				7503FFEF19D9F632004A4078 /* B2 */,
 				7503FFE819D9F616004A4078 /* BotoesB2 */,
@@ -557,6 +560,7 @@
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
 				9495974519D5E01000226DF3 /* How it Begins.mp3 in Resources */,
+				757B2EDE19DB505900F3B249 /* icon.png in Resources */,
 				75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */,
 				9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */,
 				9495974819D5E01000226DF3 /* Wallpaper.mp3 in Resources */,

@@ -236,12 +236,7 @@
     
 }
 
--(void)didMoveToView:(SKView *)view{
-    [super didMoveToView:view];
-    if (!self.musicasDisponiveis) {
-        [RTDadosParse atualizaMusicasCoreData];
-    }
-}
+
 //Metodo p navegacao entre musicas
 -(void)musicaSeguinte{
     if (self.idMusicaAtual+1 > [self.musicasDisponiveis count]-1) {
@@ -340,6 +335,10 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    if(!self.musicasDisponiveis){
+        [self configuraMusicasAtuais];
+    }
+    
     //COISAS PARA A NUVEM
     //Tempo desde ultimo update
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
