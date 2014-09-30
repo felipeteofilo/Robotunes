@@ -71,6 +71,9 @@
 		94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94F46EEC19D1EA960066BC33 /* Nuvens.atlas */; };
 		94FA409B19D3596800D60E24 /* RTHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FA409A19D3596800D60E24 /* RTHUD.m */; };
 		94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FA409C19D35B6100D60E24 /* HUD_barrinha.png */; };
+		C5163DE119DB504B009F15BF /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5163DDE19DB504B009F15BF /* 0.mp3 */; };
+		C5163DE219DB504B009F15BF /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5163DDF19DB504B009F15BF /* 1.mp3 */; };
+		C5163DE319DB504B009F15BF /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5163DE019DB504B009F15BF /* 2.mp3 */; };
 		C5B3791519D0B5DC00E07DA2 /* RTNuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */; };
 		C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */; };
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
@@ -173,6 +176,9 @@
 		94FA409919D3596800D60E24 /* RTHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHUD.h; sourceTree = "<group>"; };
 		94FA409A19D3596800D60E24 /* RTHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHUD.m; sourceTree = "<group>"; };
 		94FA409C19D35B6100D60E24 /* HUD_barrinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_barrinha.png; sourceTree = "<group>"; };
+		C5163DDE19DB504B009F15BF /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
+		C5163DDF19DB504B009F15BF /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		C5163DE019DB504B009F15BF /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		C5B3791319D0B5DC00E07DA2 /* RTNuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTNuvem.h; sourceTree = "<group>"; };
 		C5B3791419D0B5DC00E07DA2 /* RTNuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTNuvem.m; sourceTree = "<group>"; };
 		C5B3791819D0BAB900E07DA2 /* RTNuvenzinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTNuvenzinhas.png; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5163DDD19DB504B009F15BF /* EfeitosSonoros */,
 				9495973C19D5E01000226DF3 /* MUSICAS */,
 				7598150519CB5B40003487E8 /* Imagens */,
 				7531155A19C8B55F00EC3955 /* Robotunes-Info.plist */,
@@ -439,6 +446,16 @@
 				94B2661C19D20E90005BAEC9 /* RTCenaGameOver.m */,
 			);
 			name = SKScenes;
+			sourceTree = "<group>";
+		};
+		C5163DDD19DB504B009F15BF /* EfeitosSonoros */ = {
+			isa = PBXGroup;
+			children = (
+				C5163DDE19DB504B009F15BF /* 0.mp3 */,
+				C5163DDF19DB504B009F15BF /* 1.mp3 */,
+				C5163DE019DB504B009F15BF /* 2.mp3 */,
+			);
+			path = EfeitosSonoros;
 			sourceTree = "<group>";
 		};
 		C5B85A4A19CDDAC100446492 /* Conectividade */ = {
@@ -557,6 +574,8 @@
 				9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */,
 				9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */,
 				7503FFEC19D9F616004A4078 /* botaoDireita.atlas in Resources */,
+				C5163DE219DB504B009F15BF /* 1.mp3 in Resources */,
+				C5163DE119DB504B009F15BF /* 0.mp3 in Resources */,
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
 				9495974519D5E01000226DF3 /* How it Begins.mp3 in Resources */,
@@ -580,6 +599,7 @@
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
+				C5163DE319DB504B009F15BF /* 2.mp3 in Resources */,
 				94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */,
 				7503FFF119D9F66B004A4078 /* B2_Body.png in Resources */,
 			);
