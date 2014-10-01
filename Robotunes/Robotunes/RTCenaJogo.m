@@ -60,9 +60,11 @@
     
     [self.autorMusica setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
     [self.autorMusica setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
+    [self.autorMusica setFontSize:[RTUteis tamanhoFonteoIPad:50 fonteIPhone:20]];
     
     [self.labelTimer setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.4f)];
     [self.labelTimer setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
+    [self.labelTimer setFontSize:[RTUteis tamanhoFonteoIPad:60 fonteIPhone:30]];
     
     [self addChild:self.labelTimer];
     [self addChild:self.autorMusica];
