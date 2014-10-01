@@ -47,19 +47,11 @@
 }
 
 -(void)tocaMusicaSelecionada{
-    [self paraMusica];
-    
-    NSURL *urlSom = [[NSBundle mainBundle]URLForResource:self.nomeMusica.text withExtension:@"mp3"];
-    NSError *error;
-    
-    self.playerMusica = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&error];
-    
-    [self.playerMusica prepareToPlay];
-    [self.playerMusica play];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoTocarMusica" object:nil userInfo:[NSDictionary dictionaryWithObject:self.nomeMusica.text forKey:@"nomeMusica"]];
 }
 
 -(void)paraMusica{
-    [self.playerMusica stop];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NotificacaoPararMusica" object:nil];
 }
 
 -(void)configuraMusicasAtuais{
@@ -250,7 +242,7 @@
 
 -(void)musicaAnterior{
     if (self.idMusicaAtual-1 < 0) {
-        self.idMusicaAtual=[self.musicasDisponiveis count]-1;
+        self.idMusicaAtual=(int)[self.musicasDisponiveis count]-1;
     }else{
         self.idMusicaAtual--;
     }
@@ -313,13 +305,13 @@
     
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
         [RTDadosParse logarParse];
-       
+        
     }
     if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
-    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
-    
-    RTRankingViewController *ranking = [storyBoard instantiateInitialViewController];
-    [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
+        UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
+        
+        RTRankingViewController *ranking = [storyBoard instantiateInitialViewController];
+        [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
     }
 }
 

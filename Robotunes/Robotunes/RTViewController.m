@@ -17,8 +17,24 @@
     //Verifica se precisa atualizar as musicas do coredata
     [RTDadosParse atualizaMusicasCoreData];
     
+    //Registra p receber notificações da Scene de Menu
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarMusica:) name:@"NotificacaoTocarMusica" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pararMusica:) name:@"NotificacaoPararMusica" object:nil];
 }
 
+-(void)tocarMusica:(NSNotification*)notificacao{
+    NSURL *urlSom = [[NSBundle mainBundle]URLForResource:[notificacao.userInfo valueForKey:@"nomeMusica"] withExtension:@"mp3"];
+    NSError *error;
+    
+    self.playerMusica = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&error];
+    
+    [self.playerMusica prepareToPlay];
+    [self.playerMusica setNumberOfLoops:-1];
+    [self.playerMusica play];
+}
+-(void)pararMusica:(NSNotification*)notificacao{
+    [self.playerMusica stop];
+}
 -(void)viewDidLayoutSubviews{
     //Chama a classe mãe
     [super viewDidLayoutSubviews];

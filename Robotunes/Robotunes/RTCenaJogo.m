@@ -10,10 +10,6 @@
 
 @implementation RTCenaJogo
 
-
-
-    
-
 -(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
@@ -257,8 +253,6 @@
         
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
-            [self tocarSomErrado];
-            
             //Perde pontos e vida
             [self.jogador atualizarPontos:-10];
             [self.jogador atualizarVida:-1];
@@ -301,7 +295,10 @@
 
 //TODO: Implementar metodo
 -(void)tocarSomErrado{
+    //Sorteia entre as musicas disponiveis
+    int nomeMusica=arc4random()%3;
     
+    [self runAction:[SKAction playSoundFileNamed:[NSString stringWithFormat:@"%i.mp3",nomeMusica] waitForCompletion:YES]];
 }
 -(void)update:(NSTimeInterval)currentTime
 {
@@ -387,6 +384,7 @@
         if ([self.jogador morreu]) {
             [self transicaoPerdeu];
         }else{
+            
             [self transicaoGanhou];
         }
     }else{

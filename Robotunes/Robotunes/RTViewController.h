@@ -15,4 +15,6 @@
 
 @interface RTViewController : UIViewController
 
+//Player para tocar a musica na Cena de menu
+@property AVAudioPlayer *playerMusica;
 @end
