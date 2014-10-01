@@ -148,8 +148,13 @@
     self.robotuneR1Cabeca = [[SKSpriteNode alloc]initWithImageNamed:@"R1_cabeca"];
     self.robotuneR1Cabeca.anchorPoint = CGPointZero;
     self.robotuneR1Cabeca.size = CGSizeMake(self.frame.size.width * 0.32, self.frame.size.height * 0.32);
-    self.robotuneR1Cabeca.position = CGPointMake(self.frame.size.width * 0.66, self.frame.size.height * 0.33);
+    self.robotuneR1Cabeca.position = CGPointMake(self.frame.size.width * 0.66, self.frame.size.height * 0.314);
+    
     [self addChild:self.robotuneR1Cabeca];
+    
+    NSArray *framesAnimacao=[RTUteis lerFrames:[SKTextureAtlas atlasNamed:@"animacaoR1"]];
+    
+    [self.robotuneR1Cabeca runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAnimacao timePerFrame:0.14]]];
 }
 
 -(void)criarRobotuneB2
