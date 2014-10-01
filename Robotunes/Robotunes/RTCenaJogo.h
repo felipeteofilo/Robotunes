@@ -63,6 +63,13 @@ static const UInt32 ChaoCategoria = 0x1 << 3;
 //Criado propridade p guardar o back atual
 @property SKSpriteNode *background;
 
+//Contador que será usado p dar um timer p user ver jogo
+@property int contador;
+@property SKLabelNode *autorMusica;
+@property SKLabelNode *labelTimer;
+@property (nonatomic) NSTimeInterval timerIniciarJogo;
+@property int musicaTocar;
+@property BOOL jogoRodando;
 
 //Propriedade que conterá o HUD
 @property RTHUD *hud;

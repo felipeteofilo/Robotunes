@@ -13,18 +13,18 @@
 -(id)initWithSize:(CGSize)size andMusica:(int)musica
 {
     if(self = [super initWithSize:size]){
-
+        //Inicia o contador p preparar o user
+        self.contador=3;
+        self.musicaTocar=musica;
+        
         //Cria e configura HUD
         //Adiciona o HUD
         self.hud=[[RTHUD alloc]initHUD:self.frame];
         [self addChild:self.hud];
         
-
+        
         //Acrescenta um fundo branco
         self.backgroundColor = [UIColor whiteColor];
-        
-        //Define a gravidade da Cena
-       // self.physicsWorld.gravity = CGVectorMake(0,-2);
         
         //Determina que o delegate para colisão é a própria cena
         self.physicsWorld.contactDelegate = self;
@@ -47,15 +47,34 @@
         //Cria o jogador
         [self criarJogador];
         
-        Musica *musicaEscolhida = [RTBancoDeDadosController procurarMusica:musica];
-        
-        self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
-        self.combo=1;
+        [self iniciaMusica];
+        [self configLabelTimer];
         
     }
     return self;
 }
 
+-(void)configLabelTimer{
+    self.autorMusica=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    self.labelTimer=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    
+    [self.autorMusica setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    [self.autorMusica setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
+    
+    [self.labelTimer setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame)*0.4f)];
+    [self.labelTimer setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
+    
+    [self addChild:self.labelTimer];
+    [self addChild:self.autorMusica];
+    
+    [self atualizarLabelTimer];
+}
+-(void)iniciaMusica{
+    Musica *musicaEscolhida = [RTBancoDeDadosController procurarMusica:self.musicaTocar];
+    
+    self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
+    self.combo=1;
+}
 -(void)criarImagemFundo
 {
     //Cria a imagem de fundo e define atributos
@@ -120,7 +139,6 @@
 //Metodo para criar as notas na tela
 -(void)criarNotas{
     
-    
     if (!self.tocandoMusica) {
         
         [self.musica.som play];
@@ -167,9 +185,6 @@
         [self addChild:nota];
         
     }
-
-   
-   
 }
 
 
@@ -198,16 +213,16 @@
     
     self.arrayPosicoes = [[NSMutableArray alloc]initWithObjects:posicao1, posicao2, posicao3, posicao4, posicao5, nil];
     
-    //Desenha as linhas na tela 
-//    for (int i = 1; i < self.arrayPosicoes.count; i++) {
-//        float altura = [[self.arrayPosicoes objectAtIndex:i]floatValue];
-//        SKSpriteNode * sprite = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(2,self.frame.size.width)];
-//        [sprite setAnchorPoint:CGPointZero];
-//        [sprite setPosition:CGPointMake(altura, 0)];
-//        [sprite setAlpha:0.5];
-//        [sprite setZPosition:-10];
-//        [self addChild:sprite];
-//    }
+    //Desenha as linhas na tela
+    //    for (int i = 1; i < self.arrayPosicoes.count; i++) {
+    //        float altura = [[self.arrayPosicoes objectAtIndex:i]floatValue];
+    //        SKSpriteNode * sprite = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(2,self.frame.size.width)];
+    //        [sprite setAnchorPoint:CGPointZero];
+    //        [sprite setPosition:CGPointMake(altura, 0)];
+    //        [sprite setAlpha:0.5];
+    //        [sprite setZPosition:-10];
+    //        [self addChild:sprite];
+    //    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -230,6 +245,7 @@
             [self.jogador movimentarPara:@"Esquerda" naPosicao:[self.arrayPosicoes objectAtIndex:self.posicaoAtual]];
         }
     }
+    
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
@@ -256,6 +272,9 @@
             //Perde pontos e vida
             [self.jogador atualizarPontos:-10];
             [self.jogador atualizarVida:-1];
+            
+            self.notasCertasSeq=0;
+            [self atualizarCombo:1];
             
             [firstBody.node removeFromParent];
         }
@@ -288,7 +307,7 @@
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
-             [firstBody.node removeFromParent];
+            [firstBody.node removeFromParent];
         }
     }
 }
@@ -300,17 +319,45 @@
     
     [self runAction:[SKAction playSoundFileNamed:[NSString stringWithFormat:@"%i.mp3",nomeMusica] waitForCompletion:YES]];
 }
+
+-(void)atualizarLabelTimer{
+    
+    [self.autorMusica setText:[NSString stringWithFormat:@"%@",self.musica.autor]];
+    [self.labelTimer setText:[NSString stringWithFormat:@"%i",self.contador]];
+}
 -(void)update:(NSTimeInterval)currentTime
 {
-    //Verifcas
-    [self criarNotas];
     
-    //Chama a verificação do combo
-    [self atualizarCombo];
-    
-    //Validade se acabou o jogo
-    [self fimJogo];
-    
+    CFTimeInterval ultimoUpdate = currentTime - self.timerIniciarJogo;
+
+    if (self.jogoRodando) {
+        
+        //Verifcas
+        [self criarNotas];
+        
+        //Chama a verificação do combo
+        [self atualizarCombo];
+        
+        //Validade se acabou o jogo
+        [self fimJogo];
+    }else{
+        if (ultimoUpdate > 1){
+            self.contador --;
+            NSLog(@"Timer: %i",self.contador);
+            
+            [self atualizarLabelTimer];
+            
+            self.timerIniciarJogo=currentTime;
+            if (self.contador < 0) {
+                
+                //Remove os nodes
+                [self.labelTimer removeFromParent];
+                [self.autorMusica removeFromParent];
+                self.jogoRodando =YES;
+                [self iniciaMusica];
+            }
+        }
+    }
     //    //ACELEROMETRO! NÃO USADO
     //    //VERIFICAÇÃO DE MOVIMENTO
     //    //Se o jogador fizer um movimento para a direita...

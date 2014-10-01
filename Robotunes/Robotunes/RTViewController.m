@@ -44,7 +44,7 @@
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
     skView.showsNodeCount = YES;
     skView.showsFPS=YES;
-    skView.showsPhysics=YES;
+
     [self.view addSubview:skView];
     
     RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
