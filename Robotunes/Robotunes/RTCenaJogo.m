@@ -55,8 +55,8 @@
 }
 
 -(void)configLabelTimer{
-    self.autorMusica=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
-    self.labelTimer=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    self.autorMusica=[SKLabelNode labelNodeWithFontNamed:[RTUteis fonteApp]];
+    self.labelTimer=[SKLabelNode labelNodeWithFontNamed:[RTUteis fonteApp]];
     
     [self.autorMusica setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
     [self.autorMusica setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
@@ -76,6 +76,8 @@
     
     self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
     self.combo=1;
+    
+    NSLog(@"Volume som Musica:%f",[self.musica.som  volume]);
 }
 -(void)criarImagemFundo
 {
@@ -131,6 +133,19 @@
     [self addChild:self.jogador];
 }
 
+-(void)diminuiVolumeMusica{
+    
+    //Valida um valor minimo p n ficar mudo
+    if (self.musica.som.volume > 0.4 ) {
+        [self.musica.som setVolume:self.musica.som.volume -0.2];
+    }
+}
+-(void)aumentaVolumeMusica{
+    //Valida valor máximo p n passar de 1
+    if (self.musica.som.volume < 1.0 ) {
+        [self.musica.som setVolume:self.musica.som.volume +0.2];
+    }
+}
 
 -(SKAction*)acaoDescer{
     SKAction *descer = [SKAction moveToY:0 duration:1.2];
@@ -278,6 +293,9 @@
             self.notasCertasSeq=0;
             [self atualizarCombo:1];
             
+            //Diminui o som da musica
+            [self diminuiVolumeMusica];
+            
             [firstBody.node removeFromParent];
         }
         if ((secondBody.categoryBitMask & JogadorCategoria)!=0) {
@@ -286,6 +304,9 @@
             [self.jogador atualizarVida:1];
             [self.jogador atualizarPontos:10*[self combo]];
             self.notasCertasSeq++;
+            
+            //Aumenta o volume da musica
+            [self aumentaVolumeMusica];
         }
     }
     
@@ -305,6 +326,10 @@
             
             //Volta p o primeito combo
             [self atualizarCombo:1];
+            
+            //Diminui o som da musica
+            [self diminuiVolumeMusica];
+            
             
             [firstBody.node removeFromParent];
         }
