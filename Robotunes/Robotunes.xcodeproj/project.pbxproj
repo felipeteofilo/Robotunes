@@ -79,6 +79,8 @@
 		C5B85A4919CDDABD00446492 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4819CDDABD00446492 /* Reachability.m */; };
 		C5B85A4D19CDDAD000446492 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4C19CDDAD000446492 /* Usuario.m */; };
 		C5B85A5019CDDB0200446492 /* RTUteis.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B85A4F19CDDB0200446492 /* RTUteis.m */; };
+		C5B9DACD19DDCDAB001C3C6E /* hazel grace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5B9DACC19DDCDAB001C3C6E /* hazel grace.ttf */; };
+		C5B9DACF19DDCE71001C3C6E /* ConfiguracoesApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */; };
 		C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526B19CC82E800C6A0A4 /* Musica.m */; };
 		C5F8527019CC833900C6A0A4 /* RTBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F8526F19CC833900C6A0A4 /* RTBarraStatus.m */; };
 		CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA606A19C8B8340099EEA7 /* RTJogador.m */; };
@@ -188,6 +190,8 @@
 		C5B85A4C19CDDAD000446492 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		C5B85A4E19CDDB0200446492 /* RTUteis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTUteis.h; sourceTree = "<group>"; };
 		C5B85A4F19CDDB0200446492 /* RTUteis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTUteis.m; sourceTree = "<group>"; };
+		C5B9DACC19DDCDAB001C3C6E /* hazel grace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "hazel grace.ttf"; path = "../hazel grace.ttf"; sourceTree = "<group>"; };
+		C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfiguracoesApp.plist; sourceTree = "<group>"; };
 		C5F8526A19CC82E800C6A0A4 /* Musica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musica.h; sourceTree = "<group>"; };
 		C5F8526B19CC82E800C6A0A4 /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musica.m; sourceTree = "<group>"; };
 		C5F8526E19CC833900C6A0A4 /* RTBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBarraStatus.h; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
 				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
+				C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */,
 			);
 			path = Robotunes;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5B9DAD019DDCEB0001C3C6E /* Fontes */,
 				C5163DEB19DB53C9009F15BF /* EfeitosSonoros */,
 				9495973C19D5E01000226DF3 /* MUSICAS */,
 				7598150519CB5B40003487E8 /* Imagens */,
@@ -478,6 +484,14 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		C5B9DAD019DDCEB0001C3C6E /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				C5B9DACC19DDCDAB001C3C6E /* hazel grace.ttf */,
+			);
+			name = Fontes;
+			sourceTree = "<group>";
+		};
 		C5F8526D19CC82F100C6A0A4 /* EntidadesCoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +584,7 @@
 				C5163DF319DB78C9009F15BF /* 0.mp3 in Resources */,
 				9495975519D5E1EC00226DF3 /* logo.png in Resources */,
 				9495975B19D5E29900226DF3 /* chao.png in Resources */,
+				C5B9DACF19DDCE71001C3C6E /* ConfiguracoesApp.plist in Resources */,
 				C5B3791919D0BAB900E07DA2 /* RTNuvenzinhas.png in Resources */,
 				7503FFE719D9F5FD004A4078 /* B2_Animacao.atlas in Resources */,
 				9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */,
@@ -598,6 +613,7 @@
 				9495974719D5E01000226DF3 /* New Friendly.mp3 in Resources */,
 				7503FFED19D9F616004A4078 /* botaoEsquerda.atlas in Resources */,
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
+				C5B9DACD19DDCDAB001C3C6E /* hazel grace.ttf in Resources */,
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
 				94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */,

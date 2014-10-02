@@ -24,4 +24,6 @@
 +(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
 +(float)tamanhoFonteoIPad:(float)fonteIpad fonteIPhone:(float)fonteIphone;
 
++(NSString*)fonteApp;
+
 @end

@@ -41,7 +41,7 @@
     [self.combo setText:[NSString stringWithFormat:@"x%i",[combo intValue]]];
 }
 -(void)configuraLabelCombo:(float)fonte{
-    self.combo=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    self.combo=[SKLabelNode labelNodeWithFontNamed:[RTUteis fonteApp]];
     [self.combo setFontSize:fonte];
     [self.combo setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.98f, CGRectGetHeight(self.frame)* -1.1f)];
     [self.combo setFontColor:[UIColor colorWithRed:255/255.0f green:193/255.0f blue:0/255.0f alpha:1]];
@@ -53,7 +53,7 @@
 }
 -(void)configuraLabelPontos:(float)fonte{
     //Configura pontuacao
-    self.pontuacao=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    self.pontuacao=[SKLabelNode labelNodeWithFontNamed:[RTUteis fonteApp]];
     
     [self.pontuacao setFontSize:fonte];
     [self.pontuacao setText:@"0"];

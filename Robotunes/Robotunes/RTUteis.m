@@ -116,4 +116,12 @@
         return fonteIphone;
     }
 }
+
++(NSDictionary*)arquivoConfiguracoes{
+
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"ConfiguracoesApp" ofType:@"plist"]];
+}
++(NSString*)fonteApp{
+    return [[RTUteis arquivoConfiguracoes]valueForKey:@"Fonte"];
+}
 @end

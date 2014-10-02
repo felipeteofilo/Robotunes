@@ -256,7 +256,7 @@
 }
 
 -(void)criaLabelNomeMusica{
-    self.nomeMusica=[SKLabelNode labelNodeWithFontNamed:@"Noteworthy-Bold"];
+    self.nomeMusica=[SKLabelNode labelNodeWithFontNamed:[RTUteis fonteApp]];
     [self.nomeMusica setFontSize:[RTUteis tamanhoFonteoIPad:30.0f fonteIPhone:14.0f]];
     
     [self.nomeMusica setZPosition:100];
