@@ -96,7 +96,7 @@
     [requisicao setResultType:NSDictionaryResultType];
     [requisicao setPropertiesToFetch:@[@"idmusica",@"nome"]];
     
-
+    
     [requisicao setSortDescriptors:@[[RTBancoDeDadosController ordenarCampo:@"idmusica" Ascendente:YES]]];
     
     NSError *erro;
@@ -114,7 +114,7 @@
         NSNumber *idMusica=[NSNumber numberWithInt:[[[objetos objectAtIndex:i]valueForKey:@"idmusica"]intValue]];
         [infoMusica setValue:idMusica  forKey:@"idMusica"];
         [infoMusica setValue:[[objetos objectAtIndex:i]valueForKey:@"nome"]  forKey:@"nomeMusica"];
-
+        
         [retorno addObject:infoMusica];
     }
     
@@ -192,6 +192,14 @@
     
     [RTBancoDeDadosController atualizarDataVerificacao];
 }
+
++(void)marcaSincronizado{
+    Usuario *user=[RTBancoDeDadosController procurarUsuario];
+    
+    [user setSincronizarpontos:[NSNumber numberWithBool:NO]];
+    [user setPontos:[NSNumber numberWithInt:0]];
+}
+
 +(float)pontuacaoSalva{
     RTAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *contexto=[appDelegate managedObjectContext];
@@ -223,11 +231,8 @@
     
     float ultimaPontuacao=[RTBancoDeDadosController pontuacaoSalva];
     
-    //Só salva a pontuação se for maior q a anterior
-    if (!pontos > ultimaPontuacao) {
-        return;
-    }
-    
+    pontos = ultimaPontuacao+pontos;
+
     NSManagedObject *infoUser=[RTBancoDeDadosController procurarUsuario];
     
     if (!infoUser) {

@@ -7,9 +7,9 @@
 //
 
 #import "RTJogador.h"
+#import "RTFacebook.h"
 
 @implementation RTJogador
-
 
 -(id)initWithSize :(CGSize)size
 {
@@ -147,6 +147,18 @@
             break;
     }
 }
+
+-(void)salvarScore{
+    //Salva no BD
+    [RTBancoDeDadosController salvarPontuacaoUser:self.pontos];
+    
+    //Verifica se tem Internet
+    if ([RTUteis possuiConexao]) {
+        //Tenta mandar no FB
+        [RTFacebook sincronisaPontosFB];
+    }
+}
+
 
 
 @end

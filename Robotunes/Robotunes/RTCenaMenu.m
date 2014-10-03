@@ -7,6 +7,7 @@
 //
 
 #import "RTCenaMenu.h"
+#import "RTFacebook.h"
 #define tempoParaMudar 300;
 
 @implementation RTCenaMenu
@@ -309,7 +310,11 @@
     SKNode *nodeTocadoNoMenu=[self nodeAtPoint:posToqueNoMenu];
     
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
-        [RTDadosParse logarParse];
+        if ([RTFacebook estaLogadoFB]) {
+           // [RTFacebook deletaScoreApp];
+        }else {
+            [RTFacebook logarFace];
+        }
         
     }
     if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
@@ -339,8 +344,7 @@
     //COISAS PARA A NUVEM
     //Tempo desde ultimo update
     CFTimeInterval ultimoUpdate = currentTime - self.intervaloNuvens;
-    
-    
+
     //A cada meio segundo tenta criar uma nuvem
     if (ultimoUpdate > 0.4) {
         if ([RTUteis sortearChanceSim:15]) {

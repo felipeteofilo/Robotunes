@@ -29,7 +29,6 @@
 		7531157219C8B55F00EC3955 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7531155619C8B55F00EC3955 /* CoreData.framework */; };
 		7531157A19C8B55F00EC3955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7531157819C8B55F00EC3955 /* InfoPlist.strings */; };
 		7531157C19C8B55F00EC3955 /* RobotunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531157B19C8B55F00EC3955 /* RobotunesTests.m */; };
-		7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */; };
 		7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7531159119C8CCA200EC3955 /* Storyboard.storyboard */; };
 		755FAE9219C8D5CE005A818D /* RTBancoDeDadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */; };
 		757B2EDE19DB505900F3B249 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 757B2EDD19DB505900F3B249 /* icon.png */; };
@@ -40,6 +39,7 @@
 		75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603B19DB474F00223506 /* animacaoR1.atlas */; };
 		75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603C19DB474F00223506 /* R1_cabeca.png */; };
 		75F1604019DB474F00223506 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603D19DB474F00223506 /* R1_corpo.png */; };
+		9425F22E19DF4D5B00011E7C /* RANKS.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425F22D19DF4D5B00011E7C /* RANKS.png */; };
 		9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973619D5DFDB00226DF3 /* Botoes.atlas */; };
 		9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973819D5DFE300226DF3 /* Fundos.atlas */; };
 		9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9495973D19D5E01000226DF3 /* Bicycle.mp3 */; };
@@ -130,8 +130,6 @@
 		7531157719C8B55F00EC3955 /* RobotunesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobotunesTests-Info.plist"; sourceTree = "<group>"; };
 		7531157919C8B55F00EC3955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7531157B19C8B55F00EC3955 /* RobotunesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotunesTests.m; sourceTree = "<group>"; };
-		7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTViewControllerTeste.h; sourceTree = "<group>"; };
-		7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTViewControllerTeste.m; sourceTree = "<group>"; };
 		7531159119C8CCA200EC3955 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		755FAE9019C8D5CE005A818D /* RTBancoDeDadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBancoDeDadosController.h; sourceTree = "<group>"; };
 		755FAE9119C8D5CE005A818D /* RTBancoDeDadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTBancoDeDadosController.m; sourceTree = "<group>"; };
@@ -144,6 +142,7 @@
 		75F1603B19DB474F00223506 /* animacaoR1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animacaoR1.atlas; sourceTree = "<group>"; };
 		75F1603C19DB474F00223506 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
 		75F1603D19DB474F00223506 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
+		9425F22D19DF4D5B00011E7C /* RANKS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RANKS.png; sourceTree = "<group>"; };
 		9495973619D5DFDB00226DF3 /* Botoes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Botoes.atlas; sourceTree = "<group>"; };
 		9495973819D5DFE300226DF3 /* Fundos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos.atlas; sourceTree = "<group>"; };
 		9495973D19D5E01000226DF3 /* Bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bicycle.mp3; sourceTree = "<group>"; };
@@ -341,8 +340,6 @@
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
 				75F1603719DB2B7E00223506 /* RTRankingViewController.h */,
 				75F1603819DB2B7E00223506 /* RTRankingViewController.m */,
-				7531158A19C8C9F300EC3955 /* RTViewControllerTeste.h */,
-				7531158B19C8C9F300EC3955 /* RTViewControllerTeste.m */,
 				7531159119C8CCA200EC3955 /* Storyboard.storyboard */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
 				C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */,
@@ -386,6 +383,7 @@
 		7598150519CB5B40003487E8 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				9425F22D19DF4D5B00011E7C /* RANKS.png */,
 				757B2EDD19DB505900F3B249 /* icon.png */,
 				75F1603A19DB474F00223506 /* R1 */,
 				7503FFEF19D9F632004A4078 /* B2 */,
@@ -614,6 +612,7 @@
 				7503FFED19D9F616004A4078 /* botaoEsquerda.atlas in Resources */,
 				7531159219C8CCA200EC3955 /* Storyboard.storyboard in Resources */,
 				C5B9DACD19DDCDAB001C3C6E /* hazel grace.ttf in Resources */,
+				9425F22E19DF4D5B00011E7C /* RANKS.png in Resources */,
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
 				94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */,
@@ -650,7 +649,6 @@
 				C5F8526C19CC82E800C6A0A4 /* Musica.m in Sources */,
 				94FA409B19D3596800D60E24 /* RTHUD.m in Sources */,
 				CDEA606B19C8B8340099EEA7 /* RTJogador.m in Sources */,
-				7531158C19C8C9F300EC3955 /* RTViewControllerTeste.m in Sources */,
 				CDEA607219C8BBCA0099EEA7 /* RTCenaMenu.m in Sources */,
 				CDEA607B19C8BC160099EEA7 /* RTMusica.m in Sources */,
 				C5B85A4D19CDDAD000446492 /* Usuario.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "RTBancoDeDadosController.h"
 
 @interface RTJogador : SKSpriteNode
 
@@ -53,5 +54,5 @@
 -(void)dancarMal;
 //metodo de init do jogador
 -(id)initWithSize :(CGSize)size;
-
+-(void)salvarScore;
 @end

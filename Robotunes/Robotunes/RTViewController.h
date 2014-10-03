@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "RTCenaMenu.h"
-#import "RTCenaJogo.h"
-#import "RTCenaGameOver.h"
+//#import "RTCenaMenu.h"
+//#import "RTCenaGameOver.h"
 #import "RTDadosParse.h"
 
 @interface RTViewController : UIViewController

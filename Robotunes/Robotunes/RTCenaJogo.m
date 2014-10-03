@@ -7,6 +7,7 @@
 //
 
 #import "RTCenaJogo.h"
+#import "RTCenaGameOver.h"
 
 @implementation RTCenaJogo
 
@@ -21,7 +22,6 @@
         //Adiciona o HUD
         self.hud=[[RTHUD alloc]initHUD:self.frame];
         [self addChild:self.hud];
-        
         
         //Acrescenta um fundo branco
         self.backgroundColor = [UIColor whiteColor];
@@ -76,8 +76,6 @@
     
     self.musica = [[RTMusica alloc]initMusica:musicaEscolhida];
     self.combo=1;
-    
-    NSLog(@"Volume som Musica:%f",[self.musica.som  volume]);
 }
 -(void)criarImagemFundo
 {
@@ -96,7 +94,7 @@
 -(void)criarChao
 {
     //Cria o chão e define atributos
-    SKSpriteNode *chao = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.size.width, self.size.height * 0.01)];
+    SKSpriteNode *chao = [SKSpriteNode spriteNodeWithImageNamed:@"chao"];
     //chao.anchorPoint = CGPointZero;
     chao.position = CGPointMake(CGRectGetMidX(self.frame),0);
     chao.zPosition = -1;
@@ -370,7 +368,6 @@
     }else{
         if (ultimoUpdate > 1){
             self.contador --;
-            NSLog(@"Timer: %i",self.contador);
             
             [self atualizarLabelTimer];
             
@@ -461,10 +458,14 @@
             
             [self transicaoGanhou];
         }
+        
+        [self.jogador salvarScore];
     }else{
         if ([self.jogador morreu]) {
             [self transicaoPerdeu];
+            [self.jogador salvarScore];
         }
+        
     }
 }
 @end

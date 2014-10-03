@@ -7,6 +7,8 @@
 //
 
 #import "RTViewController.h"
+#import "RTCenaMenu.h"
+#import "RTFacebook.h"
 
 @implementation RTViewController
 
@@ -20,6 +22,7 @@
     //Registra p receber notificações da Scene de Menu
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarMusica:) name:@"NotificacaoTocarMusica" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pararMusica:) name:@"NotificacaoPararMusica" object:nil];
+    
 }
 
 -(void)tocarMusica:(NSNotification*)notificacao{
@@ -38,7 +41,7 @@
 -(void)viewDidLayoutSubviews{
     //Chama a classe mãe
     [super viewDidLayoutSubviews];
-    
+    [RTFacebook logarFace];
     //Inicia a view
     
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
@@ -49,6 +52,8 @@
     
     RTCenaMenu *menu = [[RTCenaMenu alloc]initWithSize:skView.bounds.size];
     menu.scaleMode = SKSceneScaleModeAspectFill;
+    
+   
     
     [skView presentScene:menu];
     

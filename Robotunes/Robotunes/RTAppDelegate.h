@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "RTViewController.h"
-#import "RTViewControllerTeste.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>

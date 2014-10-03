@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface RTFacebook : NSObject
+#import "RTBancoDeDadosController.h"
 
+@interface RTFacebook : NSObject <FBLoginViewDelegate>
 
 @property Boolean erro;
 
 -(Boolean)mandarPontos :(int)pontos;
-
++(BOOL)estaLogadoFB;
++(void)sincronisaPontosFB;
++(void)deletaScoreApp;
++(void)logarFace;
 @end

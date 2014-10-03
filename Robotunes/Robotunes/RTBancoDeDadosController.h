@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RTAppDelegate.h"
-#import "RTUteis.h"
+//#import "RTUteis.h"
+
 //Classes para acessar as entidades
 #import "Musica.h"
 #import "Usuario.h"
@@ -26,4 +27,5 @@
 +(NSDate*)ultimaDataVerificacao;
 +(Musica*)procurarMusica :(int)idMusica;
 +(NSArray*)todasMusicas;
++(void)marcaSincronizado;
 @end

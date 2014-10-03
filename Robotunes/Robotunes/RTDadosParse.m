@@ -7,7 +7,7 @@
 //
 
 #import "RTDadosParse.h"
-
+#import "RTFacebook.h"
 
 @implementation RTDadosParse
 
@@ -49,7 +49,7 @@
 +(void)logarParse{
     
     //Pega as info basicas do user
-    [PFFacebookUtils logInWithPermissions:@[@"publish_actions",@"user_games_activity",@"user_friends"] block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
         
         //Não logou
         if (!user) {
@@ -63,6 +63,7 @@
         }
         //Logou
         else{
+            [RTFacebook deletaScoreApp];
             NSLog(@"User logado");
         }
     }];

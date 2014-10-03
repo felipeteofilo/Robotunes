@@ -39,13 +39,71 @@
                   }
                   
               }];
-             
          }
-         
      }];
     
     return self.erro;
 }
 
++(BOOL)estaLogadoFB{
+    if ([FBSession activeSession].state == FBSessionStateOpen) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 
++(void)sincronisaPontosFB{
+    RTFacebook *facebook=[[RTFacebook alloc]init];
+    
+    //Verifica se esta locago
+    if ([RTFacebook estaLogadoFB]) {
+        [facebook mandarPontos:[RTBancoDeDadosController pontuacaoSalva]];
+        
+        [RTBancoDeDadosController marcaSincronizado];
+    }
+}
++(void)deletaScoreApp{
+    [FBRequestConnection startWithGraphPath:@"me/scores" parameters:nil HTTPMethod:@"DELETE" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (error) {
+            NSLog(@"erro");
+        }
+        else{
+            NSLog(@"sem erro");
+        }
+    }];
+}
+
++(void)logarFace{
+    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"publish_actions",@"user_games_activity",@"user_friends"]];
+    if (FBSession.activeSession.state == FBSessionStateOpen
+        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+        [FBSession.activeSession closeAndClearTokenInformation];
+    }
+    // Initialize a session object
+    else{
+        
+        
+        [FBSession setActiveSession:session];
+        
+        // Open the session
+        [session openWithBehavior:FBSessionLoginBehaviorForcingWebView
+                completionHandler:^(FBSession *session,
+                                    FBSessionState status,
+                                    NSError *error) {
+                    
+                    if(error == nil)
+                    {
+                        NSLog(@"login successful");
+                        
+                    }
+                    else
+                    {
+                        NSLog(@"login unsuccessful");
+                    }
+                    
+                }];
+    }
+    
+}
 @end
