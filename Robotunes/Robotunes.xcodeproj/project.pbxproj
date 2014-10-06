@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C10A24A19E2B87A00279059 /* fundoRank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C10A24919E2B87A00279059 /* fundoRank.png */; };
-		3CBB1BAF19E2815200A6B71E /* Storyboardteste.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CBB1BAE19E2815200A6B71E /* Storyboardteste.storyboard */; };
 		3CBB1BB119E28A8F00A6B71E /* RANKS.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBB1BB019E28A8F00A6B71E /* RANKS.png */; };
 		7503FFE219D9D294004A4078 /* Loading.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7503FFE119D9D294004A4078 /* Loading.atlas */; };
 		7503FFE519D9F585004A4078 /* RTBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7503FFE419D9F585004A4078 /* RTBotao.m */; };
@@ -41,8 +40,6 @@
 		75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603B19DB474F00223506 /* animacaoR1.atlas */; };
 		75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603C19DB474F00223506 /* R1_cabeca.png */; };
 		75F1604019DB474F00223506 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603D19DB474F00223506 /* R1_corpo.png */; };
-		9425F23119DF4F9A00011E7C /* RANKS_Moldura.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425F22F19DF4F9A00011E7C /* RANKS_Moldura.png */; };
-		9425F23219DF4F9A00011E7C /* RANKS1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425F23019DF4F9A00011E7C /* RANKS1.png */; };
 		9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973619D5DFDB00226DF3 /* Botoes.atlas */; };
 		9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973819D5DFE300226DF3 /* Fundos.atlas */; };
 		9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9495973D19D5E01000226DF3 /* Bicycle.mp3 */; };
@@ -106,7 +103,6 @@
 
 /* Begin PBXFileReference section */
 		3C10A24919E2B87A00279059 /* fundoRank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundoRank.png; sourceTree = "<group>"; };
-		3CBB1BAE19E2815200A6B71E /* Storyboardteste.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboardteste.storyboard; sourceTree = "<group>"; };
 		3CBB1BB019E28A8F00A6B71E /* RANKS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RANKS.png; sourceTree = "<group>"; };
 		7503FFE119D9D294004A4078 /* Loading.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Loading.atlas; sourceTree = "<group>"; };
 		7503FFE319D9F585004A4078 /* RTBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTBotao.h; sourceTree = "<group>"; };
@@ -147,8 +143,7 @@
 		75F1603B19DB474F00223506 /* animacaoR1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animacaoR1.atlas; sourceTree = "<group>"; };
 		75F1603C19DB474F00223506 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
 		75F1603D19DB474F00223506 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
-		9425F22F19DF4F9A00011E7C /* RANKS_Moldura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RANKS_Moldura.png; sourceTree = "<group>"; };
-		9425F23019DF4F9A00011E7C /* RANKS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RANKS1.png; sourceTree = "<group>"; };
+		9400B07819E30D0700AF9FCB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9495973619D5DFDB00226DF3 /* Botoes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Botoes.atlas; sourceTree = "<group>"; };
 		9495973819D5DFE300226DF3 /* Fundos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos.atlas; sourceTree = "<group>"; };
 		9495973D19D5E01000226DF3 /* Bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bicycle.mp3; sourceTree = "<group>"; };
@@ -346,7 +341,6 @@
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
 				75F1603719DB2B7E00223506 /* RTRankingViewController.h */,
 				75F1603819DB2B7E00223506 /* RTRankingViewController.m */,
-				3CBB1BAE19E2815200A6B71E /* Storyboardteste.storyboard */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
 				C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */,
 			);
@@ -356,6 +350,7 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9400B07819E30D0700AF9FCB /* Storyboard.storyboard */,
 				C5B9DAD019DDCEB0001C3C6E /* Fontes */,
 				C5163DEB19DB53C9009F15BF /* EfeitosSonoros */,
 				9495973C19D5E01000226DF3 /* MUSICAS */,
@@ -391,8 +386,6 @@
 			children = (
 				3C10A24919E2B87A00279059 /* fundoRank.png */,
 				3CBB1BB019E28A8F00A6B71E /* RANKS.png */,
-				9425F22F19DF4F9A00011E7C /* RANKS_Moldura.png */,
-				9425F23019DF4F9A00011E7C /* RANKS1.png */,
 				757B2EDD19DB505900F3B249 /* icon.png */,
 				75F1603A19DB474F00223506 /* R1 */,
 				7503FFEF19D9F632004A4078 /* B2 */,
@@ -599,7 +592,6 @@
 				9495975319D5E18900226DF3 /* CenaGameOver.atlas in Resources */,
 				7503FFEC19D9F616004A4078 /* botaoDireita.atlas in Resources */,
 				94FA409D19D35B6100D60E24 /* HUD_barrinha.png in Resources */,
-				3CBB1BAF19E2815200A6B71E /* Storyboardteste.storyboard in Resources */,
 				7598150B19CB5B40003487E8 /* RobotuneB2.png in Resources */,
 				3CBB1BB119E28A8F00A6B71E /* RANKS.png in Resources */,
 				3C10A24A19E2B87A00279059 /* fundoRank.png in Resources */,
@@ -611,7 +603,6 @@
 				7598150C19CB5B40003487E8 /* RobotuneR1.png in Resources */,
 				7503FFEE19D9F616004A4078 /* botaoPlay.atlas in Resources */,
 				75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */,
-				9425F23219DF4F9A00011E7C /* RANKS1.png in Resources */,
 				7503FFE219D9D294004A4078 /* Loading.atlas in Resources */,
 				C5163DF119DB53C9009F15BF /* 2.mp3 in Resources */,
 				9495974419D5E01000226DF3 /* Carefree.mp3 in Resources */,
@@ -627,7 +618,6 @@
 				9495974619D5E01000226DF3 /* Licensas Musicas.txt in Resources */,
 				94EBA82719D1E66900D390C0 /* RT_nuvenzinhas.png in Resources */,
 				94F46EED19D1EA960066BC33 /* Nuvens.atlas in Resources */,
-				9425F23119DF4F9A00011E7C /* RANKS_Moldura.png in Resources */,
 				7503FFF119D9F66B004A4078 /* B2_Body.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

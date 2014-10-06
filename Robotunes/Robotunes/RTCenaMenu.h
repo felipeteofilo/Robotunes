@@ -53,6 +53,7 @@
 
 @property SKSpriteNode *titulo;
 @property SKSpriteNode *btnFace;
+@property SKSpriteNode *btnRank;
 @property SKSpriteNode *chao;
 
 @end

@@ -194,10 +194,15 @@
 }
 
 +(void)marcaSincronizado{
+    NSManagedObjectContext *contexto=[RTBancoDeDadosController contextoApp];
+    
     Usuario *user=[RTBancoDeDadosController procurarUsuario];
     
     [user setSincronizarpontos:[NSNumber numberWithBool:NO]];
     [user setPontos:[NSNumber numberWithInt:0]];
+    
+    NSError *erro;
+    [contexto save:&erro];
 }
 
 +(float)pontuacaoSalva{
@@ -216,8 +221,10 @@
     if ([objetos count]==0) {
         return 0;
     }else{
+        NSLog(@"%f",[[[objetos objectAtIndex:0]valueForKey:@"pontos"]floatValue]);
         return [[[objetos objectAtIndex:0]valueForKey:@"pontos"]floatValue];
     }
+    
 }
 
 //Pega o contexto do app p manipular o BD

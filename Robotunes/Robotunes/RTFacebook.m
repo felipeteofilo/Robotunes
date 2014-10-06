@@ -12,7 +12,8 @@
 
 -(Boolean)mandarPontos :(int)pontos{
     
-    [FBRequestConnection startWithGraphPath:@"me/scores"
+    
+    [FBRequestConnection startWithGraphPath:@"me/scores/"
                                  parameters:nil
                                  HTTPMethod:@"GET"
                           completionHandler:
@@ -21,12 +22,24 @@
              self.erro = true;
          }
          else{
-             int pontosAtuais =[[[[result objectForKey:@"data"]objectAtIndex:0]objectForKey:@"score"]intValue];
+             int pontosAtuais = 0;
              
              
-             NSDictionary *pontosEnviar = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d",pontos+ pontosAtuais],@"score",nil];
+             for (int i =0; i < [[result objectForKey:@"data"]count]; i++) {
+                 NSString *IDaplicacao = [[[[result objectForKey:@"data"]objectAtIndex:i]objectForKey:@"application"]objectForKey:@"id"];
+                 
+                 if ([IDaplicacao isEqualToString:@"677025905716549"]) {
+                     pontosAtuais=[[[[result objectForKey:@"data"]objectAtIndex:i]objectForKey:@"score"]intValue];
+                     break;
+                 }
+             }
              
-             [FBRequestConnection startWithGraphPath:@"me/scores"
+             
+             
+             NSDictionary *pontosEnviar = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i",pontos+ pontosAtuais],@"score",nil];
+             
+             
+             [FBRequestConnection startWithGraphPath:@"me/scores/"
                                           parameters:pontosEnviar
                                           HTTPMethod:@"POST"
                                    completionHandler:
@@ -80,14 +93,13 @@
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         
         
+        
         UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Conectado" message:@"Você já está conectado com o Facebook!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
        
         [alerta show];
     }
     // Initialize a session object
     else{
-        
-        
         [FBSession setActiveSession:session];
         
         // Open the session
@@ -110,4 +122,5 @@
     }
     
 }
+
 @end

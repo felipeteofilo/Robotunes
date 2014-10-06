@@ -19,6 +19,8 @@
         //Variaveis para controle da mudança no menu
         self.tempo = -80;
         self.fundoAtual = 1;
+       
+       
         
         //Cria e adiciona o fundo
         [self criarFundos];
@@ -28,6 +30,9 @@
         
         //Cria o Botão do Facebook
         [self criarFace];
+        
+        //Cria botao Rank
+        [self criarRank];
         
         //Cria e adiciona o chão
         [self criarChao];
@@ -127,6 +132,17 @@
     self.btnFace.zPosition = -9;
     self.btnFace.name = @"face";
     [self addChild:self.btnFace];
+}
+
+-(void)criarRank
+{
+    self.btnRank = [[SKSpriteNode alloc]initWithImageNamed:@"btnRank"];
+    self.btnRank.anchorPoint = CGPointZero;
+    self.btnRank.size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
+    self.btnRank.position = CGPointMake(self.frame.size.width * 0.05, self.frame.size.height * 0.85);
+    self.btnRank.zPosition = -9;
+    self.btnRank.name = @"Rank";
+    [self addChild:self.btnRank];
 }
 
 -(void)criarChao
@@ -312,10 +328,12 @@
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
         [RTFacebook logarFace];
     }
-    if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
-       // UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboardteste" bundle:[NSBundle mainBundle]];
+    if ([nodeTocadoNoMenu.name isEqualToString:@"Rank"]){
+      
         
         RTRankingViewController *ranking = [[RTRankingViewController alloc]init];
+        
+        
         [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
     }
 }

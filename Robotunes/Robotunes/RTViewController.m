@@ -41,7 +41,7 @@
 -(void)viewDidLayoutSubviews{
     //Chama a classe mãe
     [super viewDidLayoutSubviews];
-    [RTFacebook logarFace];
+    
     //Inicia a view
     
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];

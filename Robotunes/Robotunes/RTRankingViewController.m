@@ -20,20 +20,28 @@
 {
     [super viewDidLoad];
     
+
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
     UIImageView *fundo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fundoRank"]];
     
-    [fundo setFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width)];
+    [fundo setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
     UIImageView *molduraRank = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"RANKS"]];
     
+    
+    
+    [molduraRank setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    
+    self.tabelaRanking =[[UITableView alloc]initWithFrame:CGRectMake(self.view.bounds.size.height * 0.29, self.view.bounds.size.width * 0.115, self.view.bounds.size.height * 0.744, self.view.bounds.size.width * 0.54)style:UITableViewStylePlain];
+    
+    [self.tabelaRanking setUserInteractionEnabled:YES];
+    
    
-    
-    [molduraRank setFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width)];
-    
-    
-    self.tabelaRanking =[[UITableView alloc]initWithFrame:CGRectMake(self.view.frame.size.width * 0.29, self.view.frame.size.height * 0.115, self.view.frame.size.width * 0.744, self.view.frame.size.height * 0.54)style:UITableViewStylePlain];
-    
-    [self.tabelaRanking setUserInteractionEnabled:NO];
     
     [self.tabelaRanking setBackgroundColor:[UIColor colorWithWhite:0.1 alpha:0.3]];
     
@@ -51,7 +59,7 @@
     
     [self.view addSubview:self.tabelaRanking];
     
-    UIButton *botaoVoltar = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.55, self.view.frame.size.width*0.91, self.view.frame.size.width *0.24, self.view.frame.size.width * 0.07)];
+    UIButton *botaoVoltar = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.42, self.view.bounds.size.height*0.91, self.view.bounds.size.width *0.165, self.view.bounds.size.height * 0.07)];
     
     
     
@@ -70,11 +78,12 @@
                           completionHandler:
      ^(FBRequestConnection *connection, id result, NSError *error) {
          self.scores = result;
-         NSLog(@"%@",self.scores);
+         
          [self.tabelaRanking reloadData];
          
      }];
 }
+
 
 -(void)voltarMenu{
     [self dismissViewControllerAnimated:NO completion:nil];
@@ -87,12 +96,12 @@
     
 }
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return self.view.frame.size.width * 0.08;
+    return self.view.bounds.size.width * 0.08;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return self.view.frame.size.width * 0.015; // you can have your own choice, of course
+    return self.view.bounds.size.width * 0.015; // you can have your own choice, of course
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -141,6 +150,8 @@
     
     [cell.textLabel setText:usuario];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
     

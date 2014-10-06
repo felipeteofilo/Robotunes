@@ -14,4 +14,5 @@
 @property NSMutableDictionary *scores;
 
 @property NSMutableArray *fotos;
+
 @end
