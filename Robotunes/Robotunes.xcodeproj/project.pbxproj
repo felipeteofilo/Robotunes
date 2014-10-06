@@ -40,6 +40,7 @@
 		75F1603E19DB474F00223506 /* animacaoR1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603B19DB474F00223506 /* animacaoR1.atlas */; };
 		75F1603F19DB474F00223506 /* R1_cabeca.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603C19DB474F00223506 /* R1_cabeca.png */; };
 		75F1604019DB474F00223506 /* R1_corpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F1603D19DB474F00223506 /* R1_corpo.png */; };
+		9457E8E919E3347E0021315D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9457E8E819E3347E0021315D /* Storyboard.storyboard */; };
 		9495973719D5DFDB00226DF3 /* Botoes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973619D5DFDB00226DF3 /* Botoes.atlas */; };
 		9495973919D5DFE300226DF3 /* Fundos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9495973819D5DFE300226DF3 /* Fundos.atlas */; };
 		9495974319D5E01000226DF3 /* Bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9495973D19D5E01000226DF3 /* Bicycle.mp3 */; };
@@ -143,7 +144,7 @@
 		75F1603B19DB474F00223506 /* animacaoR1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animacaoR1.atlas; sourceTree = "<group>"; };
 		75F1603C19DB474F00223506 /* R1_cabeca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_cabeca.png; sourceTree = "<group>"; };
 		75F1603D19DB474F00223506 /* R1_corpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = R1_corpo.png; sourceTree = "<group>"; };
-		9400B07819E30D0700AF9FCB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9457E8E819E3347E0021315D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9495973619D5DFDB00226DF3 /* Botoes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Botoes.atlas; sourceTree = "<group>"; };
 		9495973819D5DFE300226DF3 /* Fundos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fundos.atlas; sourceTree = "<group>"; };
 		9495973D19D5E01000226DF3 /* Bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bicycle.mp3; sourceTree = "<group>"; };
@@ -341,6 +342,7 @@
 				CDEA606D19C8BBAF0099EEA7 /* RTViewController.m */,
 				75F1603719DB2B7E00223506 /* RTRankingViewController.h */,
 				75F1603819DB2B7E00223506 /* RTRankingViewController.m */,
+				9457E8E819E3347E0021315D /* Storyboard.storyboard */,
 				7531155919C8B55F00EC3955 /* Supporting Files */,
 				C5B9DACE19DDCE71001C3C6E /* ConfiguracoesApp.plist */,
 			);
@@ -350,7 +352,6 @@
 		7531155919C8B55F00EC3955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9400B07819E30D0700AF9FCB /* Storyboard.storyboard */,
 				C5B9DAD019DDCEB0001C3C6E /* Fontes */,
 				C5163DEB19DB53C9009F15BF /* EfeitosSonoros */,
 				9495973C19D5E01000226DF3 /* MUSICAS */,
@@ -551,6 +552,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "FELIPE TEOFILO SOUZA SANTOS";
 				TargetAttributes = {
+					7531154C19C8B55F00EC3955 = {
+						DevelopmentTeam = ERCN3R99BZ;
+					};
 					7531156C19C8B55F00EC3955 = {
 						TestTargetID = 7531154C19C8B55F00EC3955;
 					};
@@ -606,6 +610,7 @@
 				7503FFE219D9D294004A4078 /* Loading.atlas in Resources */,
 				C5163DF119DB53C9009F15BF /* 2.mp3 in Resources */,
 				9495974419D5E01000226DF3 /* Carefree.mp3 in Resources */,
+				9457E8E919E3347E0021315D /* Storyboard.storyboard in Resources */,
 				7531155D19C8B55F00EC3955 /* InfoPlist.strings in Resources */,
 				75F1604019DB474F00223506 /* R1_corpo.png in Resources */,
 				7598150D19CB5B40003487E8 /* RobotuneY3.png in Resources */,

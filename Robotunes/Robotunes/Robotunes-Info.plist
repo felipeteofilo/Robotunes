@@ -41,8 +41,6 @@
 	<array>
 		<string>hazel grace.ttf</string>
 	</array>
-	<key>UIMainStoryboardFile</key>
-	<string>Storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

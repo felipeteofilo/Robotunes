@@ -45,8 +45,8 @@
     //Inicia a view
     
     SKView *skView = [[SKView alloc]initWithFrame:self.view.bounds];
-    skView.showsNodeCount = YES;
-    skView.showsFPS=YES;
+    
+    
 
     [self.view addSubview:skView];
     
