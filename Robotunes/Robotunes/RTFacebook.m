@@ -78,7 +78,11 @@
     FBSession *session = [[FBSession alloc] initWithPermissions:@[@"publish_actions",@"user_games_activity",@"user_friends"]];
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-        [FBSession.activeSession closeAndClearTokenInformation];
+        
+        
+        UIAlertView *alerta = [[UIAlertView alloc]initWithTitle:@"Conectado" message:@"Você já está conectado com o Facebook!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+       
+        [alerta show];
     }
     // Initialize a session object
     else{

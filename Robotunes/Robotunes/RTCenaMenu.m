@@ -310,17 +310,12 @@
     SKNode *nodeTocadoNoMenu=[self nodeAtPoint:posToqueNoMenu];
     
     if ([nodeTocadoNoMenu.name isEqualToString:@"face"]) {
-        if ([RTFacebook estaLogadoFB]) {
-           // [RTFacebook deletaScoreApp];
-        }else {
-            [RTFacebook logarFace];
-        }
-        
+        [RTFacebook logarFace];
     }
     if ([nodeTocadoNoMenu.name isEqualToString:@"titulo"]){
-        UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]];
+       // UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Storyboardteste" bundle:[NSBundle mainBundle]];
         
-        RTRankingViewController *ranking = [storyBoard instantiateInitialViewController];
+        RTRankingViewController *ranking = [[RTRankingViewController alloc]init];
         [self.view.window.rootViewController presentViewController:ranking animated:NO completion:nil];
     }
 }

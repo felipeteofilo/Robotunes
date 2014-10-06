@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface RTRankingViewController : UIViewController <UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *tabelaRanking;
+@interface RTRankingViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@property UITableView *tabelaRanking;
 @property NSMutableDictionary *scores;
+
+@property NSMutableArray *fotos;
 @end
