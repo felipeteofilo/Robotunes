@@ -129,7 +129,7 @@
     NSString *nomeDoUsuario = [[[[self.scores objectForKey:@"data"]objectAtIndex:indexPath.section ] objectForKey:@"user"]objectForKey:@"name"];
     int scoreDoUsuario =[[[[self.scores objectForKey:@"data"]objectAtIndex:indexPath.section] objectForKey:@"score"]intValue];
     
-    NSString *usuario = [NSString stringWithFormat:@"%d: %@ : %d",indexPath.section+1,nomeDoUsuario,scoreDoUsuario];
+    NSString *usuario = [NSString stringWithFormat:@"%ld: %@ : %d",indexPath.section+1,nomeDoUsuario,scoreDoUsuario];
     
     NSString *idDoUsuario= [[[[self.scores objectForKey:@"data"]objectAtIndex:indexPath.section] objectForKey:@"user"]objectForKey:@"id"];
     
